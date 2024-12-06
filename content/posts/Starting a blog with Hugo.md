@@ -17,6 +17,7 @@ First, create a folder in your Obsidian vault named `posts`.
 ## Install Hugo
 
 Next, install Hugo and add it to your environment variables.
+Link: [https://gohugo.io/installation/](https://gohugo.io/installation/)
 
 ```powershell
 ## Verify Hugo works
