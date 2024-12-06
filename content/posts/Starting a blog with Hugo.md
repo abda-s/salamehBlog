@@ -4,45 +4,56 @@ date: 2024-12-06
 draft: "false"
 tags:
 ---
+## Setting Up 
 
+Before starting, ensure that you have **Git**, **Go** and **Python** installed on your system.
 
-first download git and go and python
+## Create Folder for Posts
 
-firstly create a folder in the obsidian vault with the name of posts
+First, create a folder in your Obsidian vault named `posts`.
+
 !![Image Description](/images/Pasted%20image%2020241206164602.png)
 
-install hugo and add it to the env var 
+## Install Hugo
+
+Next, install Hugo and add it to your environment variables.
 
 ```powershell
 ## Verify Hugo works
 hugo version
 
 ## Create a new site 
-
 hugo new site websitename
 cd websitename
-
 ```
 
-after this you have to initialize a git repo
+## Initialize Git Repository
+
+After creating your Hugo site, initialize a Git repository:
+
 ```powershell
 git init
 ```
 
+## Download a Hugo Theme
 
-now download a hugo theme from here [https://themes.gohugo.io/](https://themes.gohugo.io/)
+Go to [Hugo Themes](https://themes.gohugo.io/) and download a theme of your choice. For this example, we’ll use the theme **Hugo Ficurinia** from [GitLab](https://gitlab.com/gabmus/hugo-ficurinia).
 
-I have choose this one https://gitlab.com/gabmus/hugo-ficurinia
-
-
-now you have to add this theme to the hugo website with this command
+Use the following command to add the Hugo theme to your site:
 
 ```powershell
 git submodule add -f [the repo link of the theme] themes/[name of the theme]
 ```
+ 
+ For me I did this:
 
-- Most themes you download will have an example configuration you can use. This is usually the best way to make sure Hugo works well and out of the box.
-- For the _hugo-ficurinia_ theme, they gave this example config below.
+```powershell
+git submodule add -f https://gitlab.com/gabmus/hugo-ficurinia.git themes/hugo-ficurinia
+```
+## Example Theme Configuration
+
+Most themes come with an example configuration, which is typically the best way to get started. For the **hugo-ficurinia** theme:
+
 ```toml
 baseURL = "https://example.com/"
 theme = "hugo-ficurinia"
@@ -169,35 +180,42 @@ summaryLength = 70  # number of words for article summaries
 # it allows to output the article list as paged JSON so that "pages" can be retrieved via javascript
 [outputs]
     home = ["HTML", "JSON"]
-```
+    ```
 
-now replace what is in the hugo.toml file with the text that the theme documentation
+you can use the previse configuration in your `hugo.toml` file:
+
 !![Image Description](/images/Pasted%20image%2020241206143800.png)
+## Test the Hugo Site Locally
 
-lests test if every thing is working and run the server locally
-```pwershell
+Run the Hugo server to test if everything is set up correctly:
+
+```powershell
 hugo server -t [themename]
 ```
 
-it's working but there isn't any posts !![Image Description](/images/Pasted%20image%2020241206144110.png)
+It's working but there isn't any posts !![Image Description](/images/Pasted%20image%2020241206144110.png)
+## Add Posts
 
-lest add some posts
+If everything is working but you don’t see any posts, create a `posts` folder inside the `content` directory:
 
-go the content folder and create a new folder and name it posts
 ```powershell
 cd content
 mkdir posts
 ```
 
-now we have to sync the note in the posts folder in your obisidian with the posts folder in the hugo folder 
+## Sync Obsidian Notes with Hugo Posts
 
-with this command
-```powershell 
-robocopy sourcepath destination /mir
+To sync your Obsidian notes with the Hugo posts folder, use the `robocopy` command:
+
+```powershell
+robocopy [sourcepath] [destination] /mir
 ```
-!![Image Description](/images/Pasted%20image%2020241206144306.png)
 
-when starting a new post add theses on the top they are meta data for hugo 
+!![Image Description](/images/Pasted%20image%2020241206144306.png)
+## Add Metadata for New Posts
+
+When starting a new post, make sure to add the following metadata at the top of your markdown file:
+
 ```
 ---
 title: blogtitle
@@ -209,17 +227,20 @@ tags:
 ---
 ```
 
+!![Image Description](/images/Pasted%20image%2020241206175820.png)
+## Add Images to Hugo
 
-there is still a problem when i add an image in my post in obsidian it does not appear in the blog cuz the image source is only in obisidian we have to add the image to hugo with this python script
+When you add images to your Obsidian notes, they won’t appear in the Hugo site because the image source is only in Obsidian. To fix this, use the following Python script to copy the images to the Hugo static folder.
+
 ```python
 import os
 import re
 import shutil
 
 # Paths (using raw strings to handle Windows backslashes correctly)
-posts_dir = r"C:\Users\chuck\Documents\salamehBlog\content\posts"
-attachments_dir = r"C:\Users\chuck\Documents\my_second_brain\neotokos\Attachments"
-static_images_dir = r"C:\Users\chuck\Documents\salamehBlog\static\images"
+posts_dir = r"C:\Users\3adas\Documents\salamehBlog\content\posts"
+attachments_dir = r"C:\Users\3adas\Documents\my_second_brain\neotokos\Attachments"
+static_images_dir = r"C:\Users\3adas\Documents\salamehBlog\static\images"
 
 # Step 1: Process each markdown file in the posts directory
 for filename in os.listdir(posts_dir):
@@ -248,59 +269,256 @@ for filename in os.listdir(posts_dir):
             file.write(content)
 
 print("Markdown files processed and images copied successfully.")
-
 ```
-name the file images.py and save it in the root folder in hugo
 
-run the script to add the images from your obsidian to the blog
+### Run the Python Script
+
+Save the above Python script as `images.py` in the root folder of your Hugo site. Run the script using:
+
 ```powershell
 python images.py
 ```
-!![Image Description](/images/Pasted%20image%2020241206145530.png)
 
-now lets upload this code to github
-create a new repo 
 
-click on the plus icon
-!![Image Description](/images/Pasted%20image%2020241206145729.png)
-now click on New repository
-!![Image Description](/images/Pasted%20image%2020241206145803.png)
-now write a name for your repo I'll write salamehBlog 
-and make the repo public
-!![Image Description](/images/Pasted%20image%2020241206150019.png)
-now scroll down and click on the create repo
-!![Image Description](/images/Pasted%20image%2020241206150113.png)
+## Upload the Code to GitHub
 
-after you cliock the button you'll go to a new page scroll down untill you see this 
-!![Image Description](/images/Pasted%20image%2020241206150557.png)
-copy the first line and past it in the terminal 
+To upload your Hugo site to GitHub, follow these steps:
+
+### Step 1: Create a New Repository
+
+1. Click the **plus icon** in GitHub.  
+    !![Image Description](/images/Pasted%20image%2020241206145729.png)
+    
+2. Select **New repository** from the dropdown menu.  
+    !![Image Description](/images/Pasted%20image%2020241206145803.png)
+    
+3. Name your repository. For example, you could use `salamehBlog`, Set the repository to **Public**.
+    !![Image Description](/images/Pasted%20image%2020241206150019.png)
+    
+4. Click **Create repository**.  
+    !![Image Description](/images/Pasted%20image%2020241206150113.png)
+    
+
+---
+
+### Step 2: Push Your Code to GitHub
+
+1. Add the remote origin for your repository:
+    ```powershell
+git remote add origin https://github.com/username/salamehBlog.git
+    ```
+	
+2. Build the website:
 ```powershell
-git remote add origin https://github.com/abda-s/salamehBlog.git
-```
-
-now type in the terminal 
-```
 hugo
 ```
-to make sure every mark down file is converted to html
-
-now lets add every thing to the repo with:
-```
+	
+3. Add all files to the staging area:
+    ```powershell
 git add .
-```
-
-now lets commit the changes
-```
-git commit -m "first commit"
-```
-
-now lets push every thing to github
-```bash
-git push -u origin master
-```
-
-```bash
+    ```
+    
+4. Commit your changes:
+    ```powershell
+git commit -m "Initial commit"
+    ```
+    
+5. Push the code to GitHub:
+    ```powershell
+git push -u origin main
+    ```
+	
+6. Create a new branch for GitHub pages to deploy from 
+```powershell
 git subtree split --prefix public -b gh-pages-deploy
 git push origin gh-pages-deploy:gh-pages --force
 git branch -D gh-pages-deploy
 ```
+
+After completing these steps, your Hugo website will be successfully uploaded to GitHub and ready for deployment.
+
+## Deployment
+
+1. Navigate to the **Settings** of your GitHub repository.
+    
+2. Select **Pages** from the left-hand menu.
+    
+3. Choose the `gh-pages` branch and set your custom domain.  
+    !![Image Description](/images/Pasted%20image%2020241206182531.png)
+    
+4. In the `public` folder of your Hugo project, create a file named `CNAME`.
+	!![Image Description](/images/Pasted%20image%2020241206182922.png)
+1. Add your custom domain (e.g., `blog.salameh.top`) inside the `CNAME` file.
+
+##  Automation Script
+
+Now that everything is set up, we need to address the challenge of running multiple commands each time we want to publish a post. This process is prone to human error and can be cumbersome. To streamline this, we’ll create a PowerShell script that automates the entire workflow.
+
+1. **Create the Script**  
+    In the root folder of your blog, create a new file named `updateblog.ps1` and paste the following code into it:
+
+```powershell
+# PowerShell Script for Windows
+
+# Set variables for Obsidian to Hugo copy
+$sourcePath = "C:\Users\3adas\OneDrive\Notes\posts"
+$destinationPath = "C:\Users\3adas\Documents\salamehBlog\content\posts"
+
+# Set Github repo
+$myrepo = "reponame"
+
+# Set error handling
+$ErrorActionPreference = "Stop"
+Set-StrictMode -Version Latest
+
+# Change to the script's directory
+$ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Definition
+Set-Location $ScriptDir
+
+# Check for required commands
+$requiredCommands = @('git', 'hugo')
+
+# Check for Python command (python or python3)
+if (Get-Command 'python' -ErrorAction SilentlyContinue) {
+    $pythonCommand = 'python'
+} elseif (Get-Command 'python3' -ErrorAction SilentlyContinue) {
+    $pythonCommand = 'python3'
+} else {
+    Write-Error "Python is not installed or not in PATH."
+    exit 1
+}
+
+foreach ($cmd in $requiredCommands) {
+    if (-not (Get-Command $cmd -ErrorAction SilentlyContinue)) {
+        Write-Error "$cmd is not installed or not in PATH."
+        exit 1
+    }
+}
+
+# Step 1: Check if Git is initialized, and initialize if necessary
+if (-not (Test-Path ".git")) {
+    Write-Host "Initializing Git repository..."
+    git init
+    git remote add origin $myrepo
+} else {
+    Write-Host "Git repository already initialized."
+    $remotes = git remote
+    if (-not ($remotes -contains 'origin')) {
+        Write-Host "Adding remote origin..."
+        git remote add origin $myrepo
+    }
+}
+
+# Step 2: Sync posts from Obsidian to Hugo content folder using Robocopy
+Write-Host "Syncing posts from Obsidian..."
+
+if (-not (Test-Path $sourcePath)) {
+    Write-Error "Source path does not exist: $sourcePath"
+    exit 1
+}
+
+if (-not (Test-Path $destinationPath)) {
+    Write-Error "Destination path does not exist: $destinationPath"
+    exit 1
+}
+
+# Use Robocopy to mirror the directories
+$robocopyOptions = @('/MIR', '/Z', '/W:5', '/R:3')
+$robocopyResult = robocopy $sourcePath $destinationPath @robocopyOptions
+
+if ($LASTEXITCODE -ge 8) {
+    Write-Error "Robocopy failed with exit code $LASTEXITCODE"
+    exit 1
+}
+
+# Step 3: Process Markdown files with Python script to handle image links
+Write-Host "Processing image links in Markdown files..."
+if (-not (Test-Path "images.py")) {
+    Write-Error "Python script images.py not found."
+    exit 1
+}
+
+# Execute the Python script
+try {
+    & $pythonCommand images.py
+} catch {
+    Write-Error "Failed to process image links."
+    exit 1
+}
+
+# Step 4: Build the Hugo site
+Write-Host "Building the Hugo site..."
+
+try {
+    hugo
+} catch {
+    Write-Error "Hugo build failed."
+    exit 1
+}
+
+# Step 5: Add changes to Git
+Write-Host "Staging changes for Git..."
+$hasChanges = (git status --porcelain) -ne ""
+if (-not $hasChanges) {
+    Write-Host "No changes to stage."
+} else {
+    git add .
+}
+
+# Step 6: Commit changes with a dynamic message
+$commitMessage = "synced posts on $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
+$hasStagedChanges = (git diff --cached --name-only) -ne ""
+if (-not $hasStagedChanges) {
+    Write-Host "No changes to commit."
+} else {
+    Write-Host "Committing changes..."
+    git commit -m "$commitMessage"
+}
+
+# Step 7: Push all changes to the main branch
+Write-Host "Deploying to GitHub Master..."
+try {
+    git push origin master
+} catch {
+    Write-Error "Failed to push to Master branch."
+    exit 1
+}
+
+# Step 8: Push the public folder to the gh-pages branch using subtree split and force push
+Write-Host "Deploying to GitHub pages..."
+
+# Check if the temporary branch exists and delete it
+$branchExists = git branch --list "gh-pages-deploy"
+if ($branchExists) {
+    git branch -D gh-pages-deploy
+}
+
+# Perform subtree split
+try {
+    git subtree split --prefix public -b gh-pages-deploy
+} catch {
+    Write-Error "Subtree split failed."
+    exit 1
+}
+
+# Push to gh-pages branch with force
+try {
+    git push origin gh-pages-deploy:gh-pages --force
+} catch {
+    Write-Error "Failed to push to hostinger branch."
+    git branch -D gh-pages-deploy
+    exit 1
+}
+
+# Delete the temporary branch
+git branch -D gh-pages-deploy
+
+Write-Host "All done! Site synced, processed, committed, built, and deployed."
+```
+
+2. **Run the Script**  
+    Each time you want to sync or upload a new post, simply execute the script:
+    
+    ```powershell
+.\updateblog.ps1
+    ```
