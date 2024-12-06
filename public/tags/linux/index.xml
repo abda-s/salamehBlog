@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/feed_style.xsl" type="text/xsl"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="https://www.rssboard.org/media-rss">
   <channel>
-    <title>Linux on Abdullah Salameh blog</title>
+    <title>Linux on Abdullah Salameh&#39;s Blog</title>
     <link>/tags/linux/</link>
-    <description>Recent content in Linux on Abdullah Salameh blog</description>
+    <description>Recent content in Linux on Abdullah Salameh&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Fri, 06 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/linux/index.xml" rel="self" type="application/rss+xml" /><icon>/logo.svg</icon>
@@ -41,7 +41,7 @@ Link: <a href="https://gohugo.io/installation/">https://gohugo.io/installation/
 <p>Most themes come with an example configuration, which is typically the best way to get started. For the <strong>hugo-ficurinia</strong> theme:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#a6e22e">baseURL</span> = <span style="color:#e6db74">&#34;/&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">theme</span> = <span style="color:#e6db74">&#34;hugo-ficurinia&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#34;Abdullah Salameh blog&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#34;Abdullah Salameh&#39;s Blog&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">languageCode</span> = <span style="color:#e6db74">&#34;en&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">defaultContentLanguage</span> = <span style="color:#e6db74">&#34;en&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># this will be included in the footer after the current year the site is last</span>

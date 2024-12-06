@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/web-manifest-combined.json",
-  "name": "Abdullah Salameh blog",
-  "short_name": "Abdullah Salameh blog",
+  "name": "Abdullah Salameh's Blog",
+  "short_name": "Abdullah Salameh's Blog",
   "start_url": "/",
   "display": "standalone",
   

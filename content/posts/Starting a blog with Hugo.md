@@ -61,7 +61,7 @@ Most themes come with an example configuration, which is typically the best way 
 ```toml
 baseURL = "/"
 theme = "hugo-ficurinia"
-title = "Abdullah Salameh blog"
+title = "Abdullah Salameh's Blog"
 languageCode = "en"
 defaultContentLanguage = "en"
 # this will be included in the footer after the current year the site is last

@@ -1,6 +1,6 @@
 baseURL = "/"
 theme = "hugo-ficurinia"
-title = "Abdullah Salameh blog"
+title = "Abdullah Salameh's Blog"
 languageCode = "en"
 defaultContentLanguage = "en"
 # this will be included in the footer after the current year the site is last
