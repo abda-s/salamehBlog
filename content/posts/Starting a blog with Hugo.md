@@ -304,9 +304,9 @@ To upload your Hugo site to GitHub, follow these steps:
 ### Step 2: Push Your Code to GitHub
 
 1. Add the remote origin for your repository:
-    ```powershell
+```powershell
 git remote add origin https://github.com/username/salamehBlog.git
-    ```
+```
 	
 2. Build the website:
 ```powershell
@@ -314,19 +314,19 @@ hugo
 ```
 	
 3. Add all files to the staging area:
-    ```powershell
+```powershell
 git add .
-    ```
+```
     
 4. Commit your changes:
-    ```powershell
+```powershell
 git commit -m "Initial commit"
-    ```
+```
     
 5. Push the code to GitHub:
-    ```powershell
+```powershell
 git push -u origin main
-    ```
+```
 	
 6. Create a new branch for GitHub pages to deploy from 
 ```powershell
@@ -518,6 +518,6 @@ Write-Host "All done! Site synced, processed, committed, built, and deployed."
 
 2. **Run the Script**  
     Each time you want to sync or upload a new post, simply execute the script:
-    ```powershell
+```powershell
 .\updateblog.ps1
-    ```
+```
