@@ -1,0 +1,32 @@
+
+{
+    
+    
+    
+    
+    
+    
+    
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+    "articles": [{"date":"2024-12-06","image":"","imageAlt":"","link":"https://example.com/posts/learning-vim/","summary":"\u003cp\u003eEverything is based on this video.\u003c/p\u003e\n\u003c!-- raw HTML omitted --\u003e\n\u003ch2 id=\"installing-vim\"\u003eInstalling VIM\u003c/h2\u003e\n\u003cp\u003eFirst, check if it’s installed by typing \u003ccode\u003evi\u003c/code\u003e or \u003ccode\u003evim\u003c/code\u003e in the terminal. If you see the following output:\n!\u003cimg src=\"/images/Pasted%20image%2020241205183304.png\" alt=\"Image Description\"\u003e\nit means the program is installed. Otherwise, you’ll need to install it using your Linux package manager.\u003c/p\u003e\n\u003cp\u003eIf you\u0026rsquo;re on Ubuntu, use the following commands:\u003c/p\u003e\n\u003cdiv class=\"highlight\"\u003e\u003cpre tabindex=\"0\" style=\"color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;\"\u003e\u003ccode class=\"language-shell\" data-lang=\"shell\"\u003e\u003cspan style=\"display:flex;\"\u003e\u003cspan\u003esudo apt install vi \n\u003c/span\u003e\u003c/span\u003e\u003c/code\u003e\u003c/pre\u003e\u003c/div\u003e\u003cp\u003eor\u003c/p\u003e\n\u003cdiv class=\"highlight\"\u003e\u003cpre tabindex=\"0\" style=\"color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;\"\u003e\u003ccode class=\"language-shell\" data-lang=\"shell\"\u003e\u003cspan style=\"display:flex;\"\u003e\u003cspan\u003esudo apt install vim \n\u003c/span\u003e\u003c/span\u003e\u003c/code\u003e\u003c/pre\u003e\u003c/div\u003e\u003ch2 id=\"understanding-vim-modes\"\u003eUnderstanding vim Modes\u003c/h2\u003e\n\u003cp\u003eVim has several modes, each designed for specific tasks. Vim’s modes are its core strength, allowing efficient text manipulation and navigation. Each mode has a specific purpose, and transitioning between them is seamless.\u003c/p\u003e","tags":[],"title":"Learning vim"},{"date":"0001-01-01","image":"","imageAlt":"","link":"https://example.com/posts/starting-a-blog-with-hugo/","summary":"\u003cp\u003efirst download git and go and python\u003c/p\u003e\n\u003cp\u003efirstly create a folder in the obsidian vault with the name of posts\n!\u003cimg src=\"/images/Pasted%20image%2020241206142134.png\" alt=\"Image Description\"\u003e\u003c/p\u003e\n\u003cp\u003einstall hugo and add it to the env var\u003c/p\u003e\n\u003cdiv class=\"highlight\"\u003e\u003cpre tabindex=\"0\" style=\"color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;\"\u003e\u003ccode class=\"language-powershell\" data-lang=\"powershell\"\u003e\u003cspan style=\"display:flex;\"\u003e\u003cspan\u003e\u003cspan style=\"color:#75715e\"\u003e## Verify Hugo works\u003c/span\u003e\n\u003c/span\u003e\u003c/span\u003e\u003cspan style=\"display:flex;\"\u003e\u003cspan\u003ehugo version\n\u003c/span\u003e\u003c/span\u003e\u003cspan style=\"display:flex;\"\u003e\u003cspan\u003e\n\u003c/span\u003e\u003c/span\u003e\u003cspan style=\"display:flex;\"\u003e\u003cspan\u003e\u003cspan style=\"color:#75715e\"\u003e## Create a new site \u003c/span\u003e\n\u003c/span\u003e\u003c/span\u003e\u003cspan style=\"display:flex;\"\u003e\u003cspan\u003e\n\u003c/span\u003e\u003c/span\u003e\u003cspan style=\"display:flex;\"\u003e\u003cspan\u003ehugo new site websitename\n\u003c/span\u003e\u003c/span\u003e\u003cspan style=\"display:flex;\"\u003e\u003cspan\u003ecd websitename\n\u003c/span\u003e\u003c/span\u003e\u003c/code\u003e\u003c/pre\u003e\u003c/div\u003e\u003cp\u003eafter this you have to initialize a git repo\u003c/p\u003e\n\u003cdiv class=\"highlight\"\u003e\u003cpre tabindex=\"0\" style=\"color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;\"\u003e\u003ccode class=\"language-powershell\" data-lang=\"powershell\"\u003e\u003cspan style=\"display:flex;\"\u003e\u003cspan\u003egit init\n\u003c/span\u003e\u003c/span\u003e\u003c/code\u003e\u003c/pre\u003e\u003c/div\u003e\u003cp\u003enow download a hugo theme from here \u003ca href=\"https://themes.gohugo.io/\"\u003ehttps://themes.gohugo.io/\u003c/a\u003e\u003c/p\u003e\n\u003cp\u003eI have choose this one \u003ca href=\"https://gitlab.com/gabmus/hugo-ficurinia\"\u003ehttps://gitlab.com/gabmus/hugo-ficurinia\u003c/a\u003e\u003c/p\u003e","tags":[],"title":""},{"date":"0001-01-01","image":"","imageAlt":"","link":"https://example.com/manifest/index.json","summary":"","tags":[],"title":"Manifest"},{"date":"0001-01-01","image":"","imageAlt":"","link":"https://example.com/search/","summary":"","tags":[],"title":"Search"}],
+    "test": "Learning vim      Manifest   Search   ",
+    "page": "1",
+    "next": ""
+}
+
