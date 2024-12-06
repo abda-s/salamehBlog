@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "/salamehBlog"
 theme = "hugo-ficurinia"
 title = "My nice blog"
 languageCode = "en"
