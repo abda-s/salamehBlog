@@ -518,7 +518,6 @@ Write-Host "All done! Site synced, processed, committed, built, and deployed."
 
 2. **Run the Script**  
     Each time you want to sync or upload a new post, simply execute the script:
-    
     ```powershell
 .\updateblog.ps1
     ```
