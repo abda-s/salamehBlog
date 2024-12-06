@@ -39,19 +39,18 @@ Link: <a href="https://gohugo.io/installation/">https://gohugo.io/installation/
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>git submodule add <span style="color:#f92672">-f</span> https<span style="color:#960050;background-color:#1e0010">:</span>//gitlab.com/gabmus/hugo-ficurinia.git themes/hugo-ficurinia
 </span></span></code></pre></div><h2 id="example-theme-configuration">Example Theme Configuration</h2>
 <p>Most themes come with an example configuration, which is typically the best way to get started. For the <strong>hugo-ficurinia</strong> theme:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#a6e22e">baseURL</span> = <span style="color:#e6db74">&#34;https://example.com/&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#a6e22e">baseURL</span> = <span style="color:#e6db74">&#34;/&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">theme</span> = <span style="color:#e6db74">&#34;hugo-ficurinia&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#34;My nice blog&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#34;Abdullah Salameh blog&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">languageCode</span> = <span style="color:#e6db74">&#34;en&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">defaultContentLanguage</span> = <span style="color:#e6db74">&#34;en&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># this will be included in the footer after the current year the site is last</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># built, followed by the (c) symbol</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># you can use markdown inside this field</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">copyright</span> = <span style="color:#e6db74">&#34;Some copyright notice - [my license](https://example.com/license)&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">paginate</span> = <span style="color:#ae81ff">5</span>  <span style="color:#75715e"># number of articles per page in the index</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">summaryLength</span> = <span style="color:#ae81ff">70</span>  <span style="color:#75715e"># number of words for article summaries</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">summaryLength</span> = <span style="color:#ae81ff">50</span>  <span style="color:#75715e"># number of words for article summaries</span>
 </span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">params</span>]
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">author</span> = <span style="color:#e6db74">&#34;Gabriele Musco&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">author</span> = <span style="color:#e6db74">&#34;Abdullah Salameh&#34;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">description</span> = <span style="color:#e6db74">&#34;A description for my website&#34;</span>  <span style="color:#75715e"># this will be added as metadata</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">posts</span> = <span style="color:#e6db74">&#34;posts&#34;</span>  <span style="color:#75715e"># content directory where to find home page posts; default searches in &#34;posts&#34; and &#34;post&#34;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">showPostsLink</span> = <span style="color:#66d9ef">true</span>  <span style="color:#75715e"># show or hide the link to the simple post list</span>
@@ -71,8 +70,8 @@ Link: <a href="https://gohugo.io/installation/">https://gohugo.io/installation/
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">icon512</span> = <span style="color:#e6db74">&#34;/icon512.png&#34;</span>  <span style="color:#75715e"># 512x512 png image</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">logoRightOfTitle</span> = <span style="color:#66d9ef">false</span>  <span style="color:#75715e"># positions the logo to the right of the title; default: false</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">showTags</span> = <span style="color:#66d9ef">true</span>  <span style="color:#75715e"># show the Tags menu item; default true</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">showRss</span> = <span style="color:#66d9ef">true</span>  <span style="color:#75715e"># show the link for the RSS feed; default true</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">imageInArticlePreview</span> = <span style="color:#66d9ef">false</span>  <span style="color:#75715e"># show images in article preview; default false</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">showRss</span> = <span style="color:#66d9ef">false</span>  <span style="color:#75715e"># show the link for the RSS feed; default true</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">imageInArticlePreview</span> = <span style="color:#66d9ef">true</span>  <span style="color:#75715e"># show images in article preview; default false</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fitImageInArticlePreview</span> = <span style="color:#66d9ef">false</span>  <span style="color:#75715e"># make article preview images fit the article preview instead of getting cropped</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">articleSummary</span> = <span style="color:#66d9ef">true</span>  <span style="color:#75715e"># show a summary in article preview; default true</span>
 </span></span><span style="display:flex;"><span>    
@@ -84,14 +83,14 @@ Link: <a href="https://gohugo.io/installation/">https://gohugo.io/installation/
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">mainFontSizeMultiplier</span> = <span style="color:#ae81ff">1.0</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">monoFontSizeMultiplier</span> = <span style="color:#ae81ff">1.0</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">contentWidth</span> = <span style="color:#e6db74">&#34;1000px&#34;</span>  <span style="color:#75715e"># maximum width of the site content, css syntax</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">paperCards</span> = <span style="color:#66d9ef">false</span>  <span style="color:#75715e"># enable paper card style; default false</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">paperCards</span> = <span style="color:#66d9ef">true</span>  <span style="color:#75715e"># enable paper card style; default false</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">buttonTags</span> = <span style="color:#66d9ef">false</span>  <span style="color:#75715e"># enable button tag style; default false</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">tagsInArticlePreview</span> = <span style="color:#66d9ef">true</span>  <span style="color:#75715e"># enable tags list in the article preview card</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">gridView</span> = <span style="color:#66d9ef">false</span>  <span style="color:#75715e"># show post list as a grid. goes well with paperCards</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">gridView</span> = <span style="color:#66d9ef">true</span>  <span style="color:#75715e"># show post list as a grid. goes well with paperCards</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">bigArticleTitle</span> = <span style="color:#66d9ef">false</span>  <span style="color:#75715e"># makes the title in the single article view bigger</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">navtype</span> = <span style="color:#e6db74">&#34;standard&#34;</span>  <span style="color:#75715e"># changes the style of the pagination, available styles are: &#34;standard&#34;, &#34;circles&#34;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">enableShadow</span> = <span style="color:#66d9ef">false</span>  <span style="color:#75715e"># shows a shadow around some elements</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">menuStyle</span> = <span style="color:#e6db74">&#34;standard&#34;</span>  <span style="color:#75715e"># changes the style of the main site navigation menu, available styles are: &#34;standard&#34;, &#34;buttons&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">menuStyle</span> = <span style="color:#e6db74">&#34;buttons&#34;</span>  <span style="color:#75715e"># changes the style of the main site navigation menu, available styles are: &#34;standard&#34;, &#34;buttons&#34;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">inputStyle</span> = <span style="color:#e6db74">&#34;standard&#34;</span> <span style="color:#75715e"># changes the style of inputs (like the searchbar), available styles are: &#34;standard&#34;, &#34;buttons&#34;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">enableSearch</span> = <span style="color:#66d9ef">true</span>  <span style="color:#75715e"># enable search page</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">searchbarEverywhere</span> = <span style="color:#66d9ef">true</span>  <span style="color:#75715e"># if the searchbar should be shown in every page; requires enableSearch</span>
@@ -136,7 +135,7 @@ Link: <a href="https://gohugo.io/installation/">https://gohugo.io/installation/
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">enableJumbotron</span> = <span style="color:#66d9ef">false</span>  <span style="color:#75715e"># enables jumbotron, as described below</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e"># related articles will be selected randomly based on tags and shown at</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e"># the bottom of the article, after the comments</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">enableRelatedArticles</span> = <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">enableRelatedArticles</span> = <span style="color:#66d9ef">true</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">relatedArticlesNum</span> = <span style="color:#ae81ff">2</span>  <span style="color:#75715e"># how many related articles to show</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">randomRelated</span> = <span style="color:#66d9ef">false</span>  <span style="color:#75715e"># sorts related articles in random order (randomized at built time)</span>
 </span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">menu</span>]
@@ -151,30 +150,24 @@ Link: <a href="https://gohugo.io/installation/">https://gohugo.io/installation/
 </span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">weight</span> = <span style="color:#ae81ff">10</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e"># these links (menu.icons) will be added as icon links below the main nav</span>
 </span></span><span style="display:flex;"><span>    [[<span style="color:#a6e22e">menu</span>.<span style="color:#a6e22e">icons</span>]]
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">identifier</span> = <span style="color:#e6db74">&#34;gitlab&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;GitLab&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">url</span> = <span style="color:#e6db74">&#34;https://gitlab.com/gabmus&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">identifier</span> = <span style="color:#e6db74">&#34;github&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;Github&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">url</span> = <span style="color:#e6db74">&#34;https://github.com/abda-s&#34;</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">weight</span> = <span style="color:#ae81ff">10</span>
 </span></span><span style="display:flex;"><span>    [[<span style="color:#a6e22e">menu</span>.<span style="color:#a6e22e">icons</span>]]
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">identifier</span> = <span style="color:#e6db74">&#34;gnome&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;GNOME GitLab&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">url</span> = <span style="color:#e6db74">&#34;https://gitlab.gnome.org/gabmus&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">identifier</span> = <span style="color:#e6db74">&#34;linkedin&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;LinkedIn&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">url</span> = <span style="color:#e6db74">&#34;https://www.linkedin.com/in/abdullah-salameh/&#34;</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">weight</span> = <span style="color:#ae81ff">20</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># this section is necessary if you want infinite scrolling</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># it allows to output the article list as paged JSON so that &#34;pages&#34; can be retrieved via javascript</span>
 </span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">outputs</span>]
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">home</span> = [<span style="color:#e6db74">&#34;HTML&#34;</span>, <span style="color:#e6db74">&#34;JSON&#34;</span>]
-</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">```</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">you</span> <span style="color:#a6e22e">can</span> <span style="color:#a6e22e">use</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">previse</span> <span style="color:#a6e22e">configuration</span> <span style="color:#a6e22e">in</span> <span style="color:#a6e22e">your</span> <span style="color:#960050;background-color:#1e0010">`</span><span style="color:#a6e22e">hugo</span>.<span style="color:#a6e22e">toml</span><span style="color:#960050;background-color:#1e0010">`</span> <span style="color:#a6e22e">file</span><span style="color:#960050;background-color:#1e0010">:</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">!</span>[<span style="color:#a6e22e">Image</span> <span style="color:#a6e22e">Description</span>]<span style="color:#960050;background-color:#1e0010">(/</span><span style="color:#a6e22e">images</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">Pasted</span><span style="color:#960050;background-color:#1e0010">%</span><span style="color:#ae81ff">20</span><span style="color:#a6e22e">image</span><span style="color:#960050;background-color:#1e0010">%</span><span style="color:#ae81ff">2020241206143800</span>.<span style="color:#a6e22e">png</span><span style="color:#960050;background-color:#1e0010">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">## Test the Hugo Site Locally</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Run</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">Hugo</span> <span style="color:#a6e22e">server</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">test</span> <span style="color:#a6e22e">if</span> <span style="color:#a6e22e">everything</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">set</span> <span style="color:#a6e22e">up</span> <span style="color:#a6e22e">correctly</span><span style="color:#960050;background-color:#1e0010">:</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">```</span><span style="color:#a6e22e">powershell</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">hugo</span> <span style="color:#a6e22e">server</span> <span style="color:#a6e22e">-t</span> [<span style="color:#a6e22e">themename</span>]
+</span></span></code></pre></div><p>you can use the previse configuration in your <code>hugo.toml</code> file:</p>
+<p><img src="/images/Pasted%20image%2020241206143800.png" alt="Image Description"></p>
+<h2 id="test-the-hugo-site-locally">Test the Hugo Site Locally</h2>
+<p>Run the Hugo server to test if everything is set up correctly:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>hugo server -t [<span style="color:#66d9ef">themename</span>]
 </span></span></code></pre></div><p>It&rsquo;s working but there isn&rsquo;t any posts <img src="/images/Pasted%20image%2020241206144110.png" alt="Image Description"></p>
 <h2 id="add-posts">Add Posts</h2>
 <p>If everything is working but you don’t see any posts, create a <code>posts</code> folder inside the <code>content</code> directory:</p>
@@ -203,7 +196,7 @@ tags:
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Paths (using raw strings to handle Windows backslashes correctly)</span>
 </span></span><span style="display:flex;"><span>posts_dir <span style="color:#f92672">=</span> <span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;C:\Users\3adas\Documents\salamehBlog\content\posts&#34;</span>
-</span></span><span style="display:flex;"><span>attachments_dir <span style="color:#f92672">=</span> <span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;C:\Users\3adas\Documents\my_second_brain\neotokos\Attachments&#34;</span>
+</span></span><span style="display:flex;"><span>attachments_dir <span style="color:#f92672">=</span> <span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;C:\Users\3adas\OneDrive\Notes\files&#34;</span>
 </span></span><span style="display:flex;"><span>static_images_dir <span style="color:#f92672">=</span> <span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;C:\Users\3adas\Documents\salamehBlog\static\images&#34;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Step 1: Process each markdown file in the posts directory</span>
@@ -214,14 +207,14 @@ tags:
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">with</span> open(filepath, <span style="color:#e6db74">&#34;r&#34;</span>, encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>) <span style="color:#66d9ef">as</span> file:
 </span></span><span style="display:flex;"><span>            content <span style="color:#f92672">=</span> file<span style="color:#f92672">.</span>read()
 </span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Step 2: Find all image links in the format ![Image Description](/images/Pasted%20image%20...%20.png)</span>
-</span></span><span style="display:flex;"><span>        images <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>findall(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;\[\[([^]]*\.png)\]\]&#39;</span>, content)
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Step 2: Find all image links in the format ![[image.extension]]</span>
+</span></span><span style="display:flex;"><span>        images <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>findall(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;\[\[([^]]+\.(png|jpg|jpeg|gif|bmp|webp|svg))\]\]&#39;</span>, content, re<span style="color:#f92672">.</span>IGNORECASE)
 </span></span><span style="display:flex;"><span>        
 </span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Step 3: Replace image links and ensure URLs are correctly formatted</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> image <span style="color:#f92672">in</span> images:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> image, _ <span style="color:#f92672">in</span> images:  <span style="color:#75715e"># `_` is unused, it contains the extension from the regex group</span>
 </span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Prepare the Markdown-compatible link with %20 replacing spaces</span>
 </span></span><span style="display:flex;"><span>            markdown_image <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;![Image Description](/images/</span><span style="color:#e6db74">{</span>image<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39; &#39;</span>, <span style="color:#e6db74">&#39;%20&#39;</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">)&#34;</span>
-</span></span><span style="display:flex;"><span>            content <span style="color:#f92672">=</span> content<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;[[</span><span style="color:#e6db74">{</span>image<span style="color:#e6db74">}</span><span style="color:#e6db74">]]&#34;</span>, markdown_image)
+</span></span><span style="display:flex;"><span>            content <span style="color:#f92672">=</span> content<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;![[</span><span style="color:#e6db74">{</span>image<span style="color:#e6db74">}</span><span style="color:#e6db74">]]&#34;</span>, markdown_image)
 </span></span><span style="display:flex;"><span>            
 </span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Step 4: Copy the image to the Hugo static/images directory if it exists</span>
 </span></span><span style="display:flex;"><span>            image_source <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(attachments_dir, image)
@@ -318,7 +311,7 @@ In the root folder of your blog, create a new file named <code>updateblog.ps1</c
 </span></span><span style="display:flex;"><span>$sourcePath = <span style="color:#e6db74">&#34;C:\Users\3adas\OneDrive\Notes\posts&#34;</span>
 </span></span><span style="display:flex;"><span>$destinationPath = <span style="color:#e6db74">&#34;C:\Users\3adas\Documents\salamehBlog\content\posts&#34;</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Set Github repo</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Set Github repo </span>
 </span></span><span style="display:flex;"><span>$myrepo = <span style="color:#e6db74">&#34;reponame&#34;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Set error handling</span>
@@ -402,7 +395,6 @@ In the root folder of your blog, create a new file named <code>updateblog.ps1</c
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Step 4: Build the Hugo site</span>
 </span></span><span style="display:flex;"><span>Write-Host <span style="color:#e6db74">&#34;Building the Hugo site...&#34;</span>
-</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span> {
 </span></span><span style="display:flex;"><span>    hugo
 </span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">catch</span> {
@@ -410,14 +402,20 @@ In the root folder of your blog, create a new file named <code>updateblog.ps1</c
 </span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">1</span>
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Step 5: Add changes to Git</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Step 5: Add changes to Git, including handling deletions</span>
 </span></span><span style="display:flex;"><span>Write-Host <span style="color:#e6db74">&#34;Staging changes for Git...&#34;</span>
-</span></span><span style="display:flex;"><span>$hasChanges = (git status --porcelain) <span style="color:#f92672">-ne</span> <span style="color:#e6db74">&#34;&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#f92672">-not</span> $hasChanges) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Detect changes and include deletions</span>
+</span></span><span style="display:flex;"><span>$gitStatus = git status --porcelain
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#f92672">-not</span> $gitStatus) {
 </span></span><span style="display:flex;"><span>    Write-Host <span style="color:#e6db74">&#34;No changes to stage.&#34;</span>
 </span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">else</span> {
-</span></span><span style="display:flex;"><span>    git add .
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Stage all changes, including deletions</span>
+</span></span><span style="display:flex;"><span>    Write-Host <span style="color:#e6db74">&#34;Staging all changes, including deletions...&#34;</span>
+</span></span><span style="display:flex;"><span>    git add --all
 </span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Step 6: Commit changes with a dynamic message</span>
 </span></span><span style="display:flex;"><span>$commitMessage = <span style="color:#e6db74">&#34;synced posts on </span>$(Get-Date -Format <span style="color:#e6db74">&#39;yyyy-MM-dd HH:mm:ss&#39;</span>)<span style="color:#e6db74">&#34;</span>

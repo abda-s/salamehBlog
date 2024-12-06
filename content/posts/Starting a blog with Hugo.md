@@ -59,19 +59,18 @@ git submodule add -f https://gitlab.com/gabmus/hugo-ficurinia.git themes/hugo-fi
 Most themes come with an example configuration, which is typically the best way to get started. For the **hugo-ficurinia** theme:
 
 ```toml
-baseURL = "https://example.com/"
+baseURL = "/"
 theme = "hugo-ficurinia"
-title = "My nice blog"
+title = "Abdullah Salameh blog"
 languageCode = "en"
 defaultContentLanguage = "en"
 # this will be included in the footer after the current year the site is last
 # built, followed by the (c) symbol
 # you can use markdown inside this field
-copyright = "Some copyright notice - [my license](https://example.com/license)"
 paginate = 5  # number of articles per page in the index
-summaryLength = 70  # number of words for article summaries
+summaryLength = 50  # number of words for article summaries
 [params]
-    author = "Gabriele Musco"
+    author = "Abdullah Salameh"
     description = "A description for my website"  # this will be added as metadata
     posts = "posts"  # content directory where to find home page posts; default searches in "posts" and "post"
     showPostsLink = true  # show or hide the link to the simple post list
@@ -91,8 +90,8 @@ summaryLength = 70  # number of words for article summaries
     icon512 = "/icon512.png"  # 512x512 png image
     logoRightOfTitle = false  # positions the logo to the right of the title; default: false
     showTags = true  # show the Tags menu item; default true
-    showRss = true  # show the link for the RSS feed; default true
-    imageInArticlePreview = false  # show images in article preview; default false
+    showRss = false  # show the link for the RSS feed; default true
+    imageInArticlePreview = true  # show images in article preview; default false
     fitImageInArticlePreview = false  # make article preview images fit the article preview instead of getting cropped
     articleSummary = true  # show a summary in article preview; default true
     
@@ -104,14 +103,14 @@ summaryLength = 70  # number of words for article summaries
     mainFontSizeMultiplier = 1.0
     monoFontSizeMultiplier = 1.0
     contentWidth = "1000px"  # maximum width of the site content, css syntax
-    paperCards = false  # enable paper card style; default false
+    paperCards = true  # enable paper card style; default false
     buttonTags = false  # enable button tag style; default false
     tagsInArticlePreview = true  # enable tags list in the article preview card
-    gridView = false  # show post list as a grid. goes well with paperCards
+    gridView = true  # show post list as a grid. goes well with paperCards
     bigArticleTitle = false  # makes the title in the single article view bigger
     navtype = "standard"  # changes the style of the pagination, available styles are: "standard", "circles"
     enableShadow = false  # shows a shadow around some elements
-    menuStyle = "standard"  # changes the style of the main site navigation menu, available styles are: "standard", "buttons"
+    menuStyle = "buttons"  # changes the style of the main site navigation menu, available styles are: "standard", "buttons"
     inputStyle = "standard" # changes the style of inputs (like the searchbar), available styles are: "standard", "buttons"
     enableSearch = true  # enable search page
     searchbarEverywhere = true  # if the searchbar should be shown in every page; requires enableSearch
@@ -156,7 +155,7 @@ summaryLength = 70  # number of words for article summaries
     enableJumbotron = false  # enables jumbotron, as described below
     # related articles will be selected randomly based on tags and shown at
     # the bottom of the article, after the comments
-    enableRelatedArticles = false
+    enableRelatedArticles = true
     relatedArticlesNum = 2  # how many related articles to show
     randomRelated = false  # sorts related articles in random order (randomized at built time)
 [menu]
@@ -171,20 +170,20 @@ summaryLength = 70  # number of words for article summaries
         weight = 10
     # these links (menu.icons) will be added as icon links below the main nav
     [[menu.icons]]
-        identifier = "gitlab"
-        name = "GitLab"
-        url = "https://gitlab.com/gabmus"
+        identifier = "github"
+        name = "Github"
+        url = "https://github.com/abda-s"
         weight = 10
     [[menu.icons]]
-        identifier = "gnome"
-        name = "GNOME GitLab"
-        url = "https://gitlab.gnome.org/gabmus"
+        identifier = "linkedin"
+        name = "LinkedIn"
+        url = "https://www.linkedin.com/in/abdullah-salameh/"
         weight = 20
 # this section is necessary if you want infinite scrolling
 # it allows to output the article list as paged JSON so that "pages" can be retrieved via javascript
 [outputs]
     home = ["HTML", "JSON"]
-    ```
+```
 
 you can use the previse configuration in your `hugo.toml` file:
 
@@ -243,7 +242,7 @@ import shutil
 
 # Paths (using raw strings to handle Windows backslashes correctly)
 posts_dir = r"C:\Users\3adas\Documents\salamehBlog\content\posts"
-attachments_dir = r"C:\Users\3adas\Documents\my_second_brain\neotokos\Attachments"
+attachments_dir = r"C:\Users\3adas\OneDrive\Notes\files"
 static_images_dir = r"C:\Users\3adas\Documents\salamehBlog\static\images"
 
 # Step 1: Process each markdown file in the posts directory
@@ -254,14 +253,14 @@ for filename in os.listdir(posts_dir):
         with open(filepath, "r", encoding="utf-8") as file:
             content = file.read()
         
-        # Step 2: Find all image links in the format ![Image Description](/images/Pasted%20image%20...%20.png)
-        images = re.findall(r'\[\[([^]]*\.png)\]\]', content)
+        # Step 2: Find all image links in the format ![[image.extension]]
+        images = re.findall(r'\[\[([^]]+\.(png|jpg|jpeg|gif|bmp|webp|svg))\]\]', content, re.IGNORECASE)
         
         # Step 3: Replace image links and ensure URLs are correctly formatted
-        for image in images:
+        for image, _ in images:  # `_` is unused, it contains the extension from the regex group
             # Prepare the Markdown-compatible link with %20 replacing spaces
             markdown_image = f"![Image Description](/images/{image.replace(' ', '%20')})"
-            content = content.replace(f"[[{image}]]", markdown_image)
+            content = content.replace(f"![[{image}]]", markdown_image)
             
             # Step 4: Copy the image to the Hugo static/images directory if it exists
             image_source = os.path.join(attachments_dir, image)
@@ -273,6 +272,7 @@ for filename in os.listdir(posts_dir):
             file.write(content)
 
 print("Markdown files processed and images copied successfully.")
+
 ```
 
 ### Run the Python Script
@@ -368,7 +368,7 @@ Now that everything is set up, we need to address the challenge of running multi
 $sourcePath = "C:\Users\3adas\OneDrive\Notes\posts"
 $destinationPath = "C:\Users\3adas\Documents\salamehBlog\content\posts"
 
-# Set Github repo
+# Set Github repo 
 $myrepo = "reponame"
 
 # Set error handling
@@ -452,7 +452,6 @@ try {
 
 # Step 4: Build the Hugo site
 Write-Host "Building the Hugo site..."
-
 try {
     hugo
 } catch {
@@ -460,14 +459,20 @@ try {
     exit 1
 }
 
-# Step 5: Add changes to Git
+# Step 5: Add changes to Git, including handling deletions
 Write-Host "Staging changes for Git..."
-$hasChanges = (git status --porcelain) -ne ""
-if (-not $hasChanges) {
+
+# Detect changes and include deletions
+$gitStatus = git status --porcelain
+
+if (-not $gitStatus) {
     Write-Host "No changes to stage."
 } else {
-    git add .
+    # Stage all changes, including deletions
+    Write-Host "Staging all changes, including deletions..."
+    git add --all
 }
+
 
 # Step 6: Commit changes with a dynamic message
 $commitMessage = "synced posts on $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
@@ -518,6 +523,7 @@ try {
 git branch -D gh-pages-deploy
 
 Write-Host "All done! Site synced, processed, committed, built, and deployed."
+
 ```
 
 2. **Run the Script**  
