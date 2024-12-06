@@ -95,14 +95,20 @@ try {
     exit 1
 }
 
-# Step 5: Add changes to Git
+# Step 5: Add changes to Git, including handling deletions
 Write-Host "Staging changes for Git..."
-$hasChanges = (git status --porcelain) -ne ""
-if (-not $hasChanges) {
+
+# Detect changes and include deletions
+$gitStatus = git status --porcelain
+
+if (-not $gitStatus) {
     Write-Host "No changes to stage."
 } else {
-    git add .
+    # Stage all changes, including deletions
+    Write-Host "Staging all changes, including deletions..."
+    git add --all
 }
+
 
 # Step 6: Commit changes with a dynamic message
 $commitMessage = "synced posts on $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
