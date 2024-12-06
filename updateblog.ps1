@@ -105,7 +105,7 @@ if (-not $hasChanges) {
 }
 
 # Step 6: Commit changes with a dynamic message
-$commitMessage = "New Blog Post on $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
+$commitMessage = "synced posts on $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
 $hasStagedChanges = (git diff --cached --name-only) -ne ""
 if (-not $hasStagedChanges) {
     Write-Host "No changes to commit."
