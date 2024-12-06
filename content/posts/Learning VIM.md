@@ -3,6 +3,8 @@ title: Learning vim
 date: 2024-12-05
 draft: "false"
 tags:
+  - linux
+description: This guide covers installing Vim, understanding its modes (Normal, Insert, Visual, Command-Line), essential commands, combining actions, and customizing settings with `:set` for efficient text editing.
 ---
  
 Everything is based on this video.

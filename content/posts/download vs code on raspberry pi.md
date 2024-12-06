@@ -3,6 +3,8 @@ title: Download VS-Code on Linux
 date: 2024-04-12
 draft: "false"
 tags:
+  - linux
+description: This guide explains downloading and installing Visual Studio Code on Linux using a `.deb` file. It includes navigating the website, terminal commands for installation, and a lighthearted waiting tip.
 ---
 
 1. Visit the [Visual Studio Code download page](https://code.visualstudio.com/download).
