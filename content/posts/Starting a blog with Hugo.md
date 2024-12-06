@@ -295,11 +295,12 @@ git commit -m "first commit"
 ```
 
 now lets push every thing to github
-```
+```bash
 git push -u origin master
 ```
 
-
+```bash
 git subtree split --prefix public -b gh-pages-deploy
 git push origin gh-pages-deploy:gh-pages --force
 git branch -D gh-pages-deploy
+```
