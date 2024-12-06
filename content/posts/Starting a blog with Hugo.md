@@ -9,7 +9,7 @@ tags:
 first download git and go and python
 
 firstly create a folder in the obsidian vault with the name of posts
-!![Image Description](/images/Pasted%20image%2020241206142134.png)
+!![Image Description](/images/Pasted%20image%2020241206164602.png)
 
 install hugo and add it to the env var 
 
