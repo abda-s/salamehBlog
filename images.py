@@ -15,11 +15,11 @@ for filename in os.listdir(posts_dir):
         with open(filepath, "r", encoding="utf-8") as file:
             content = file.read()
         
-        # Step 2: Find all image links in the format ![Image Description](/images/Pasted%20image%20...%20.png)
+        # Step 2: Find all image links in the format ![[image.extension]]
         images = re.findall(r'\[\[([^]]+\.(png|jpg|jpeg|gif|bmp|webp|svg))\]\]', content, re.IGNORECASE)
         
         # Step 3: Replace image links and ensure URLs are correctly formatted
-        for image in images:
+        for image, _ in images:  # `_` is unused, it contains the extension from the regex group
             # Prepare the Markdown-compatible link with %20 replacing spaces
             markdown_image = f"![Image Description](/images/{image.replace(' ', '%20')})"
             content = content.replace(f"![[{image}]]", markdown_image)
