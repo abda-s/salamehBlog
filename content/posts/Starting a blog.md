@@ -1,5 +1,5 @@
 ---
-title: Starting a blog with Hugo
+title: Starting a blog
 date: 2024-12-06
 draft: "false"
 tags:

@@ -9,11 +9,11 @@
     
     
     <item>
-      <title>Starting a blog with Hugo</title>
-      <link>/posts/starting-a-blog-with-hugo/</link>
+      <title>Starting a blog</title>
+      <link>/posts/starting-a-blog/</link>
       <pubDate>Fri, 06 Dec 2024 00:00:00 +0000</pubDate>
       
-      <guid>/posts/starting-a-blog-with-hugo/</guid>
+      <guid>/posts/starting-a-blog/</guid>
       <description><![CDATA[<p>This image illustrates the workflow of this blog.</p>
 <p><img src="/images/Starting%20a%20blog%20with%20Hugo.png" alt="Image Description"></p>
 <h2 id="setting-up">Setting Up</h2>
