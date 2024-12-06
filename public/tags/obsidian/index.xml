@@ -18,7 +18,7 @@
 <p>Before starting, ensure that you have <strong>Git</strong>, <strong>Go</strong> and <strong>Python</strong> installed on your system.</p>
 <h2 id="create-folder-for-posts">Create Folder for Posts</h2>
 <p>First, create a folder in your Obsidian vault named <code>posts</code>.</p>
-<p><img src="/images/Pasted%20image%2020241206164602.png" alt="Image Description"></p>
+<p>![[Pasted image 20241206164602.png]]</p>
 <h2 id="install-hugo">Install Hugo</h2>
 <p>Next, install Hugo and add it to your environment variables.
 Link: <a href="https://gohugo.io/installation/">https://gohugo.io/installation/</a></p>
@@ -168,14 +168,14 @@ Link: <a href="https://gohugo.io/installation/">https://gohugo.io/installation/
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">you</span> <span style="color:#a6e22e">can</span> <span style="color:#a6e22e">use</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">previse</span> <span style="color:#a6e22e">configuration</span> <span style="color:#a6e22e">in</span> <span style="color:#a6e22e">your</span> <span style="color:#960050;background-color:#1e0010">`</span><span style="color:#a6e22e">hugo</span>.<span style="color:#a6e22e">toml</span><span style="color:#960050;background-color:#1e0010">`</span> <span style="color:#a6e22e">file</span><span style="color:#960050;background-color:#1e0010">:</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">!</span>[<span style="color:#a6e22e">Image</span> <span style="color:#a6e22e">Description</span>]<span style="color:#960050;background-color:#1e0010">(/</span><span style="color:#a6e22e">images</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">Pasted</span><span style="color:#960050;background-color:#1e0010">%</span><span style="color:#ae81ff">20</span><span style="color:#a6e22e">image</span><span style="color:#960050;background-color:#1e0010">%</span><span style="color:#ae81ff">2020241206143800</span>.<span style="color:#a6e22e">png</span><span style="color:#960050;background-color:#1e0010">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">!</span>[[<span style="color:#a6e22e">Pasted</span> <span style="color:#a6e22e">image</span> <span style="color:#ae81ff">20241206143800</span>.<span style="color:#a6e22e">png</span>]]
 </span></span><span style="display:flex;"><span><span style="color:#75715e">## Test the Hugo Site Locally</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">Run</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">Hugo</span> <span style="color:#a6e22e">server</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">test</span> <span style="color:#a6e22e">if</span> <span style="color:#a6e22e">everything</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">set</span> <span style="color:#a6e22e">up</span> <span style="color:#a6e22e">correctly</span><span style="color:#960050;background-color:#1e0010">:</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">```</span><span style="color:#a6e22e">powershell</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">hugo</span> <span style="color:#a6e22e">server</span> <span style="color:#a6e22e">-t</span> [<span style="color:#a6e22e">themename</span>]
-</span></span></code></pre></div><p>It&rsquo;s working but there isn&rsquo;t any posts <img src="/images/Pasted%20image%2020241206144110.png" alt="Image Description"></p>
+</span></span></code></pre></div><p>It&rsquo;s working but there isn&rsquo;t any posts ![[Pasted image 20241206144110.png]]</p>
 <h2 id="add-posts">Add Posts</h2>
 <p>If everything is working but you don’t see any posts, create a <code>posts</code> folder inside the <code>content</code> directory:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>cd content
@@ -183,7 +183,7 @@ Link: <a href="https://gohugo.io/installation/">https://gohugo.io/installation/
 </span></span></code></pre></div><h2 id="sync-obsidian-notes-with-hugo-posts">Sync Obsidian Notes with Hugo Posts</h2>
 <p>To sync your Obsidian notes with the Hugo posts folder, use the <code>robocopy</code> command:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>robocopy [<span style="color:#66d9ef">sourcepath] [destination</span>] /mir
-</span></span></code></pre></div><p><img src="/images/Pasted%20image%2020241206144306.png" alt="Image Description"></p>
+</span></span></code></pre></div><p>![[Pasted image 20241206144306.png]]</p>
 <h2 id="add-metadata-for-new-posts">Add Metadata for New Posts</h2>
 <p>When starting a new post, make sure to add the following metadata at the top of your markdown file:</p>
 <pre tabindex="0"><code>---
@@ -194,7 +194,7 @@ tags:
   - tag1
   - tag2
 ---
-</code></pre><p><img src="/images/Pasted%20image%2020241206175820.png" alt="Image Description"></p>
+</code></pre><p>![[Pasted image 20241206175820.png]]</p>
 <h2 id="add-images-to-hugo">Add Images to Hugo</h2>
 <p>When you add images to your Obsidian notes, they won’t appear in the Hugo site because the image source is only in Obsidian. To fix this, use the following Python script to copy the images to the Hugo static folder.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> os
@@ -242,19 +242,19 @@ tags:
 <ol>
 <li>
 <p>Click the <strong>plus icon</strong> in GitHub.<br>
-<img src="/images/Pasted%20image%2020241206145729.png" alt="Image Description"></p>
+![[Pasted image 20241206145729.png]]</p>
 </li>
 <li>
 <p>Select <strong>New repository</strong> from the dropdown menu.<br>
-<img src="/images/Pasted%20image%2020241206145803.png" alt="Image Description"></p>
+![[Pasted image 20241206145803.png]]</p>
 </li>
 <li>
 <p>Name your repository. For example, you could use <code>salamehBlog</code>, Set the repository to <strong>Public</strong>.
-<img src="/images/Pasted%20image%2020241206150019.png" alt="Image Description"></p>
+![[Pasted image 20241206150019.png]]</p>
 </li>
 <li>
 <p>Click <strong>Create repository</strong>.<br>
-<img src="/images/Pasted%20image%2020241206150113.png" alt="Image Description"></p>
+![[Pasted image 20241206150113.png]]</p>
 </li>
 </ol>
 <hr>
@@ -296,11 +296,11 @@ tags:
 </li>
 <li>
 <p>Choose the <code>gh-pages</code> branch and set your custom domain.<br>
-<img src="/images/Pasted%20image%2020241206182531.png" alt="Image Description"></p>
+![[Pasted image 20241206182531.png]]</p>
 </li>
 <li>
 <p>In the <code>public</code> folder of your Hugo project, create a file named <code>CNAME</code>.
-<img src="/images/Pasted%20image%2020241206182922.png" alt="Image Description"></p>
+![[Pasted image 20241206182922.png]]</p>
 </li>
 <li>
 <p>Add your custom domain (e.g., <code>blog.salameh.top</code>) inside the <code>CNAME</code> file.</p>
