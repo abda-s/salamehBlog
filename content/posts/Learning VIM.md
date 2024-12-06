@@ -1,5 +1,5 @@
 ---
-title: Learning vim
+title: Learning VIM
 date: 2024-12-05
 draft: "false"
 tags:
