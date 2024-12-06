@@ -5,10 +5,16 @@
     <loc>/</loc>
     <lastmod>2024-12-06T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>/tags/linux/</loc>
+    <lastmod>2024-12-06T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>/posts/</loc>
     <lastmod>2024-12-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/posts/starting-a-blog-with-hugo/</loc>
+    <lastmod>2024-12-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
     <lastmod>2024-12-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/posts/learning-vim/</loc>
@@ -22,7 +28,5 @@
     <loc>/manifest/index.json</loc>
   </url><url>
     <loc>/search/</loc>
-  </url><url>
-    <loc>/tags/</loc>
   </url>
 </urlset>

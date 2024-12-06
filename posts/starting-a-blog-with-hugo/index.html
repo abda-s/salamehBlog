@@ -30,7 +30,7 @@
         
             Starting a blog with Hugo  &ndash;
         
-        My nice blog
+        Abdullah Salameh blog
     </title>
 
     
@@ -41,40 +41,31 @@
         <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
     
     
-    <link type="text/css" rel="stylesheet" href=/css/styles.abbd6311bb4b6ca58f8e7398140529245ae0f6428b759fcd830742eee2619eabb900ba9914a9affb82aa9a16a9b9ea727bb315315a976a0db0e7513a5f12c504.css integrity="sha512-q71jEbtLbKWPjnOYFAUpJFrg9kKLdZ/NgwdC7uJhnqu5ALqZFKmv&#43;4Kqmhapuepye7MVMVqXag2w51E6XxLFBA==" />
-<meta name="author" content="Gabriele Musco" />
+    <link type="text/css" rel="stylesheet" href=/css/styles.b657e76299a517f55422c2bd3c1c0224dda09bed73b57ce0cfcc947fd20fc41577521a374a033f5ef8490f931b8c326f591f7438db3ddbfaf79fb3531f50aa45.css integrity="sha512-tlfnYpmlF/VUIsK9PBwCJN2gm&#43;1ztXzgz8yUf9IPxBV3Uho3SgM/XvhJD5MbjDJvWR90ONs92/r3n7NTH1CqRQ==" />
+<meta name="author" content="Abdullah Salameh" />
 
     
+        <meta name="keywords" content='linux' />
     
-        <meta name="description" content="Setting Up&lt;/h2&gt;
-&lt;p&gt;Before starting, ensure that you have &lt;strong&gt;Git&lt;/strong&gt;, &lt;strong&gt;Go&lt;/strong&gt; and &lt;strong&gt;Python&lt;/strong&gt; installed on your system.&lt;/p&gt;
-&lt;h2 id=&#34;create-folder-for-posts&#34;&gt;Create Folder for Posts&lt;/h2&gt;
-&lt;p&gt;First, create a folder in your Obsidian vault named &lt;code&gt;posts&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/images/Pasted%20image%2020241206164602.png&#34; alt=&#34;Image Description&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;install-hugo&#34;&gt;Install Hugo&lt;/h2&gt;
-&lt;p&gt;Next, install Hugo and add it to your environment variables.
-Link: &lt;a href=&#34;https://gohugo.io/installation/&#34;&gt;https://gohugo.io/installation/&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;## Verify Hugo works&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hugo version
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;## Create a new site &lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hugo new site websitename
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd websitename
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;initialize-git-repository&#34;&gt;Initialize Git Repository&lt;/h2&gt;
-&lt;p&gt;After creating your Hugo site, initialize a Git repository:&lt;/p&gt;" />
+    
+        <meta name="description" content="Set up a blog with Hugo and Obsidian by installing Hugo, initializing a site, and syncing Obsidian notes. Add themes, configure settings, and integrate images with a Python script." />
     
 
 <meta property="og:site_name"
-    content='My nice blog' />
+    content='Abdullah Salameh blog' />
 
     <meta property="og:title" content="Starting a blog with Hugo" />
     <meta property="og:type" content="article" />
     
     <meta
-        property="article:author" content="Gabriele Musco" />
+        property="article:author" content="Abdullah Salameh" />
     <meta
         property="article:published_time"
         content='2024-12-06T00:00:00Z&#43;0000' />
+    
+        
+            <meta property="article:tag" content="linux" />
+        
     
     <meta property="og:url" content="/posts/starting-a-blog-with-hugo/" />
     
@@ -82,8 +73,7 @@ Link: &lt;a href=&#34;https://gohugo.io/installation/&#34;&gt;https://gohugo.io
     <meta property="og:image"
         content="/icon512.png" />
     
-        <meta property="og:description" content="&lt;h2 id=&#34;setting-up&#34;&gt;Setting Up&lt;/h2&gt;
-&lt;p&gt;Before starting, ensure that you have &lt;strong&gt;Git&lt;/strong&gt;, &lt;strong&gt;Go&lt;/strong&gt; and &lt;strong&gt;Python&lt;/strong&gt; installed on " />
+        <meta property="og:description" content="Set up a blog with Hugo and Obsidian by installing Hugo, initializing a site, and syncing Obsidian notes. Add themes, configure settings, and integrate images with a Python script." />
     
 
 <meta name="twitter:card" content="summary_large_image" />
@@ -100,8 +90,7 @@ Link: &lt;a href=&#34;https://gohugo.io/installation/&#34;&gt;https://gohugo.io
     <meta name="twitter:image"
         content="/icon512.png" />
     
-        <meta name="twitter:description" content="&lt;h2 id=&#34;setting-up&#34;&gt;Setting Up&lt;/h2&gt;
-&lt;p&gt;Before starting, ensure that you have &lt;strong&gt;Git&lt;/strong&gt;, &lt;strong&gt;Go&lt;/strong&gt; and &lt;strong&gt;Python&lt;/strong&gt; installed on " />
+        <meta name="twitter:description" content="Set up a blog with Hugo and Obsidian by installing Hugo, initializing a site, and syncing Obsidian notes. Add themes, configure settings, and integrate images with a Python script." />
     
 
 <link rel="manifest" href="/manifest/index.json" />
@@ -120,7 +109,7 @@ Link: &lt;a href=&#34;https://gohugo.io/installation/&#34;&gt;https://gohugo.io
             <div class="rightOfLogo">
                 <div class="titleAndHamburger">
                     <h1>
-                        <a class="unstyledLink" href="/">My nice blog</a>
+                        <a class="unstyledLink" href="/">Abdullah Salameh blog</a>
                         
                     </h1>
                     
@@ -163,22 +152,7 @@ Link: &lt;a href=&#34;https://gohugo.io/installation/&#34;&gt;https://gohugo.io
 
     </div>
     <div id="links">
-        <a
-    
-        rel="noreferrer"
-    
-    target="_blank"
-    class="nerdlink"
-    href="/index.xml">
-    
-    
-        &#xf09e;
-    
-    <span>
-        RSS
-    </span>
-</a>
-
+        
         
         <a
     
@@ -186,13 +160,13 @@ Link: &lt;a href=&#34;https://gohugo.io/installation/&#34;&gt;https://gohugo.io
     
     target="_blank"
     class="nerdlink"
-    href="https://gitlab.com/gabmus">
+    href="https://github.com/abda-s">
     
     
-        &#xf296;
+        &#xf09b;
     
     <span>
-        GitLab
+        Github
     </span>
 </a>
 <a
@@ -201,13 +175,13 @@ Link: &lt;a href=&#34;https://gohugo.io/installation/&#34;&gt;https://gohugo.io
     
     target="_blank"
     class="nerdlink"
-    href="https://gitlab.gnome.org/gabmus">
+    href="https://www.linkedin.com/in/abdullah-salameh/">
     
     
-        &#xf361;
+        &#xf0e1;
     
     <span>
-        GNOME GitLab
+        LinkedIn
     </span>
 </a>
 
@@ -695,6 +669,17 @@ Each time you want to sync or upload a new post, simply execute the script:</li>
 </span></span></code></pre></div></div>
 </article>
 
+    
+    <p class="articleTagsContainer">
+        <span> </span>
+        <strong>Tags:</strong>
+        
+            <a
+                
+                href="/tags/linux/">#linux</a>
+        
+    </p>
+
 
 
     <script
@@ -719,6 +704,86 @@ initComments({
 })
 </script>
 
+
+    
+    
+        
+        <div class="relatedArticlesContainer">
+            <hr />
+            <h2>More posts like this</h2>
+            <div class="postlist gridView">
+                <article class="card postlistitem">
+    <div>
+        <h2>
+            <a href="/posts/learning-vim/">Learning vim</a>
+        </h2>
+        <p class="date">
+            <span title='Date'>󰃭 </span>
+    2024-12-05
+
+
+            
+                | 
+                <span title='Tags'> </span>
+                
+                    <a href="/tags/linux">#linux</a>
+                
+            
+        </p>
+        
+            
+        
+        
+            <div class="articlePreview">
+                <p>
+                    
+                        This guide covers installing Vim, understanding its modes (Normal, Insert, Visual, Command-Line), essential commands, combining actions, and customizing settings with `:set` for efficient text editing.
+                    
+                </p>
+                <p><a href="/posts/learning-vim/">Continue reading </a></p>
+            </div>
+        
+    </div>
+    <hr />
+</article>
+<article class="card postlistitem">
+    <div>
+        <h2>
+            <a href="/posts/download-vs-code-on-raspberry-pi/">Download VS-Code on Linux</a>
+        </h2>
+        <p class="date">
+            <span title='Date'>󰃭 </span>
+    2024-04-12
+
+
+            
+                | 
+                <span title='Tags'> </span>
+                
+                    <a href="/tags/linux">#linux</a>
+                
+            
+        </p>
+        
+            
+        
+        
+            <div class="articlePreview">
+                <p>
+                    
+                        This guide explains downloading and installing Visual Studio Code on Linux using a `.deb` file. It includes navigating the website, terminal commands for installation, and a lighthearted waiting tip.
+                    
+                </p>
+                <p><a href="/posts/download-vs-code-on-raspberry-pi/">Continue reading </a></p>
+            </div>
+        
+    </div>
+    <hr />
+</article>
+
+            </div>
+        </div>
+    
 
 
                     </main><footer>
