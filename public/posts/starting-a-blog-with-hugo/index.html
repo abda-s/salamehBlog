@@ -28,6 +28,8 @@
 
 <title>
         
+            Starting a blog with Hugo  &ndash;
+        
         My nice blog
     </title>
 
@@ -39,7 +41,7 @@
         <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
     
     
-    <link type="text/css" rel="stylesheet" href=https://example.com/css/styles.abbd6311bb4b6ca58f8e7398140529245ae0f6428b759fcd830742eee2619eabb900ba9914a9affb82aa9a16a9b9ea727bb315315a976a0db0e7513a5f12c504.css integrity="sha512-q71jEbtLbKWPjnOYFAUpJFrg9kKLdZ/NgwdC7uJhnqu5ALqZFKmv&#43;4Kqmhapuepye7MVMVqXag2w51E6XxLFBA==" />
+    <link type="text/css" rel="stylesheet" href=/css/styles.abbd6311bb4b6ca58f8e7398140529245ae0f6428b759fcd830742eee2619eabb900ba9914a9affb82aa9a16a9b9ea727bb315315a976a0db0e7513a5f12c504.css integrity="sha512-q71jEbtLbKWPjnOYFAUpJFrg9kKLdZ/NgwdC7uJhnqu5ALqZFKmv&#43;4Kqmhapuepye7MVMVqXag2w51E6XxLFBA==" />
 <meta name="author" content="Gabriele Musco" />
 
     
@@ -64,20 +66,20 @@
 <meta property="og:site_name"
     content='My nice blog' />
 
-    <meta property="og:title" content="" />
+    <meta property="og:title" content="Starting a blog with Hugo" />
     <meta property="og:type" content="article" />
     
     <meta
         property="article:author" content="Gabriele Musco" />
     <meta
         property="article:published_time"
-        content='0001-01-01T00:00:00Z&#43;0000' />
+        content='2024-12-06T00:00:00Z&#43;0000' />
     
-    <meta property="og:url" content="https://example.com/posts/starting-a-blog-with-hugo/" />
+    <meta property="og:url" content="/posts/starting-a-blog-with-hugo/" />
     
     
     <meta property="og:image"
-        content="https://example.com/icon512.png" />
+        content="/icon512.png" />
     
         <meta property="og:description" content="&lt;p&gt;first download git and go and python&lt;/p&gt;
 &lt;p&gt;firstly create a folder in the obsidian vault with the name of posts
@@ -86,17 +88,17 @@
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:domain"
-      content='example.com'
+      content=''
 />
-<meta property="twitter:url" content="https://example.com/posts/starting-a-blog-with-hugo/" />
+<meta property="twitter:url" content="/posts/starting-a-blog-with-hugo/" />
 
 
-    <meta name="twitter:title" content="" />
+    <meta name="twitter:title" content="Starting a blog with Hugo" />
     
     
     
     <meta name="twitter:image"
-        content="https://example.com/icon512.png" />
+        content="/icon512.png" />
     
         <meta name="twitter:description" content="&lt;p&gt;first download git and go and python&lt;/p&gt;
 &lt;p&gt;firstly create a folder in the obsidian vault with the name of posts
@@ -219,12 +221,12 @@
                     <main>
 <article class="card single">
     
-        <h1></h1>
+        <h1>Starting a blog with Hugo</h1>
     
     
         <p class="date">
             <span title='Date'>󰃭 </span>
-    0001-01-01
+    2024-12-06
 
 
         </p>
@@ -390,11 +392,82 @@
 </span></span></code></pre></div><p>now we have to sync the note in the posts folder in your obisidian with the posts folder in the hugo folder</p>
 <p>with this command</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>robocopy sourcepath destination /mir
-</span></span></code></pre></div><p>python images.py</p>
-<p>git add .
-git commit -m &ldquo;fixing shit 2&rdquo;
-git push -u origin master</p>
-<p>git subtree split &ndash;prefix public -b gh-pages-deploy
+</span></span></code></pre></div><p>!<img src="/images/Pasted%20image%2020241206144306.png" alt="Image Description"></p>
+<p>when starting a new post add theses on the top they are meta data for hugo</p>
+<pre tabindex="0"><code>---
+title: blogtitle
+date: 2024-11-06
+draft: false
+tags:
+  - tag1
+  - tag2
+---
+</code></pre><p>there is still a problem when i add an image in my post in obsidian it does not appear in the blog cuz the image source is only in obisidian we have to add the image to hugo with this python script</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> os
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> re
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> shutil
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Paths (using raw strings to handle Windows backslashes correctly)</span>
+</span></span><span style="display:flex;"><span>posts_dir <span style="color:#f92672">=</span> <span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;C:\Users\chuck\Documents\salamehBlog\content\posts&#34;</span>
+</span></span><span style="display:flex;"><span>attachments_dir <span style="color:#f92672">=</span> <span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;C:\Users\chuck\Documents\my_second_brain\neotokos\Attachments&#34;</span>
+</span></span><span style="display:flex;"><span>static_images_dir <span style="color:#f92672">=</span> <span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;C:\Users\chuck\Documents\salamehBlog\static\images&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Step 1: Process each markdown file in the posts directory</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> filename <span style="color:#f92672">in</span> os<span style="color:#f92672">.</span>listdir(posts_dir):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> filename<span style="color:#f92672">.</span>endswith(<span style="color:#e6db74">&#34;.md&#34;</span>):
+</span></span><span style="display:flex;"><span>        filepath <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(posts_dir, filename)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">with</span> open(filepath, <span style="color:#e6db74">&#34;r&#34;</span>, encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>) <span style="color:#66d9ef">as</span> file:
+</span></span><span style="display:flex;"><span>            content <span style="color:#f92672">=</span> file<span style="color:#f92672">.</span>read()
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Step 2: Find all image links in the format ![Image Description](/images/Pasted%20image%20...%20.png)</span>
+</span></span><span style="display:flex;"><span>        images <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>findall(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;\[\[([^]]*\.png)\]\]&#39;</span>, content)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Step 3: Replace image links and ensure URLs are correctly formatted</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> image <span style="color:#f92672">in</span> images:
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Prepare the Markdown-compatible link with %20 replacing spaces</span>
+</span></span><span style="display:flex;"><span>            markdown_image <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;![Image Description](/images/</span><span style="color:#e6db74">{</span>image<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39; &#39;</span>, <span style="color:#e6db74">&#39;%20&#39;</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">)&#34;</span>
+</span></span><span style="display:flex;"><span>            content <span style="color:#f92672">=</span> content<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;[[</span><span style="color:#e6db74">{</span>image<span style="color:#e6db74">}</span><span style="color:#e6db74">]]&#34;</span>, markdown_image)
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Step 4: Copy the image to the Hugo static/images directory if it exists</span>
+</span></span><span style="display:flex;"><span>            image_source <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(attachments_dir, image)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>exists(image_source):
+</span></span><span style="display:flex;"><span>                shutil<span style="color:#f92672">.</span>copy(image_source, static_images_dir)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Step 5: Write the updated content back to the markdown file</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">with</span> open(filepath, <span style="color:#e6db74">&#34;w&#34;</span>, encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>) <span style="color:#66d9ef">as</span> file:
+</span></span><span style="display:flex;"><span>            file<span style="color:#f92672">.</span>write(content)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Markdown files processed and images copied successfully.&#34;</span>)
+</span></span></code></pre></div><p>name the file images.py and save it in the root folder in hugo</p>
+<p>run the script to add the images from your obsidian to the blog</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>python images.py
+</span></span></code></pre></div><p>!<img src="/images/Pasted%20image%2020241206145530.png" alt="Image Description"></p>
+<p>now lets upload this code to github
+create a new repo</p>
+<p>click on the plus icon
+!<img src="/images/Pasted%20image%2020241206145729.png" alt="Image Description">
+now click on New repository
+!<img src="/images/Pasted%20image%2020241206145803.png" alt="Image Description">
+now write a name for your repo I&rsquo;ll write salamehBlog
+and make the repo public
+!<img src="/images/Pasted%20image%2020241206150019.png" alt="Image Description">
+now scroll down and click on the create repo
+!<img src="/images/Pasted%20image%2020241206150113.png" alt="Image Description"></p>
+<p>after you cliock the button you&rsquo;ll go to a new page scroll down untill you see this
+!<img src="/images/Pasted%20image%2020241206150557.png" alt="Image Description">
+copy the first line and past it in the terminal</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>git remote add origin https<span style="color:#960050;background-color:#1e0010">:</span>//github.com/abda-s/salamehBlog.git
+</span></span></code></pre></div><p>now type in the terminal</p>
+<pre tabindex="0"><code>hugo
+</code></pre><p>to make sure every mark down file is converted to html</p>
+<p>now lets add every thing to the repo with:</p>
+<pre tabindex="0"><code>git add .
+</code></pre><p>now lets commit the changes</p>
+<pre tabindex="0"><code>git commit -m &#34;first commit&#34;
+</code></pre><p>now lets push every thing to github</p>
+<pre tabindex="0"><code>git push -u origin master
+</code></pre><p>git subtree split &ndash;prefix public -b gh-pages-deploy
 git push origin gh-pages-deploy:gh-pages &ndash;force
 git branch -D gh-pages-deploy</p>
 </div>
@@ -430,7 +503,7 @@ initComments({
     <hr />
 
 <p><small>
-        2024 &copy; Some copyright notice - <a href="https://example.com/license">my license</a>
+        2024 &copy; 
     </small></p>
     <p><small>
         <a href='https://gitlab.com/gabmus/hugo-ficurinia'>Ficurinia theme</a> for <a href='https://gohugo.io'>Hugo</a> by <a href='https://gabmus.org'>Gabriele Musco</a>. Licensed under <a href='https://www.gnu.org/licenses/agpl-3.0.html'>GNU AGPLv3</a>.

@@ -1,3 +1,11 @@
+---
+title: Starting a blog with Hugo
+date: 2024-12-06
+draft: "false"
+tags:
+---
+
+
 first download git and go and python
 
 firstly create a folder in the obsidian vault with the name of posts
@@ -187,12 +195,110 @@ with this command
 ```powershell 
 robocopy sourcepath destination /mir
 ```
+!![Image Description](/images/Pasted%20image%2020241206144306.png)
 
+when starting a new post add theses on the top they are meta data for hugo 
+```
+---
+title: blogtitle
+date: 2024-11-06
+draft: false
+tags:
+  - tag1
+  - tag2
+---
+```
+
+
+there is still a problem when i add an image in my post in obsidian it does not appear in the blog cuz the image source is only in obisidian we have to add the image to hugo with this python script
+```python
+import os
+import re
+import shutil
+
+# Paths (using raw strings to handle Windows backslashes correctly)
+posts_dir = r"C:\Users\chuck\Documents\salamehBlog\content\posts"
+attachments_dir = r"C:\Users\chuck\Documents\my_second_brain\neotokos\Attachments"
+static_images_dir = r"C:\Users\chuck\Documents\salamehBlog\static\images"
+
+# Step 1: Process each markdown file in the posts directory
+for filename in os.listdir(posts_dir):
+    if filename.endswith(".md"):
+        filepath = os.path.join(posts_dir, filename)
+        
+        with open(filepath, "r", encoding="utf-8") as file:
+            content = file.read()
+        
+        # Step 2: Find all image links in the format ![Image Description](/images/Pasted%20image%20...%20.png)
+        images = re.findall(r'\[\[([^]]*\.png)\]\]', content)
+        
+        # Step 3: Replace image links and ensure URLs are correctly formatted
+        for image in images:
+            # Prepare the Markdown-compatible link with %20 replacing spaces
+            markdown_image = f"![Image Description](/images/{image.replace(' ', '%20')})"
+            content = content.replace(f"[[{image}]]", markdown_image)
+            
+            # Step 4: Copy the image to the Hugo static/images directory if it exists
+            image_source = os.path.join(attachments_dir, image)
+            if os.path.exists(image_source):
+                shutil.copy(image_source, static_images_dir)
+
+        # Step 5: Write the updated content back to the markdown file
+        with open(filepath, "w", encoding="utf-8") as file:
+            file.write(content)
+
+print("Markdown files processed and images copied successfully.")
+
+```
+name the file images.py and save it in the root folder in hugo
+
+run the script to add the images from your obsidian to the blog
+```powershell
 python images.py
+```
+!![Image Description](/images/Pasted%20image%2020241206145530.png)
 
+now lets upload this code to github
+create a new repo 
+
+click on the plus icon
+!![Image Description](/images/Pasted%20image%2020241206145729.png)
+now click on New repository
+!![Image Description](/images/Pasted%20image%2020241206145803.png)
+now write a name for your repo I'll write salamehBlog 
+and make the repo public
+!![Image Description](/images/Pasted%20image%2020241206150019.png)
+now scroll down and click on the create repo
+!![Image Description](/images/Pasted%20image%2020241206150113.png)
+
+after you cliock the button you'll go to a new page scroll down untill you see this 
+!![Image Description](/images/Pasted%20image%2020241206150557.png)
+copy the first line and past it in the terminal 
+```powershell
+git remote add origin https://github.com/abda-s/salamehBlog.git
+```
+
+now type in the terminal 
+```
+hugo
+```
+to make sure every mark down file is converted to html
+
+now lets add every thing to the repo with:
+```
 git add .
-git commit -m "fixing shit 2"
+```
+
+now lets commit the changes
+```
+git commit -m "first commit"
+```
+
+now lets push every thing to github
+```
 git push -u origin master
+```
+
 
 git subtree split --prefix public -b gh-pages-deploy
 git push origin gh-pages-deploy:gh-pages --force
