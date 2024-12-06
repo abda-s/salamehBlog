@@ -4,6 +4,7 @@ date: 2024-12-06
 draft: "false"
 tags:
   - linux
+  - obsidian
 description: Set up a blog with Hugo and Obsidian by installing Hugo, initializing a site, and syncing Obsidian notes. Add themes, configure settings, and integrate images with a Python script.
 ---
 ## Setting Up 

@@ -1,6 +1,6 @@
 ---
 title: Download VS-Code on Linux
-date: 2024-04-12
+date: 2024-12-04
 draft: "false"
 tags:
   - linux
