@@ -14,7 +14,9 @@
       <pubDate>Fri, 06 Dec 2024 00:00:00 +0000</pubDate>
       
       <guid>/posts/starting-a-blog-with-hugo/</guid>
-      <description><![CDATA[<h2 id="setting-up">Setting Up</h2>
+      <description><![CDATA[<p>This image illustrates the workflow of this blog.</p>
+<p><img src="/images/Starting%20a%20blog%20with%20Hugo.png" alt="Image Description"></p>
+<h2 id="setting-up">Setting Up</h2>
 <p>Before starting, ensure that you have <strong>Git</strong>, <strong>Go</strong> and <strong>Python</strong> installed on your system.</p>
 <h2 id="create-folder-for-posts">Create Folder for Posts</h2>
 <p>First, create a folder in your Obsidian vault named <code>posts</code>.</p>

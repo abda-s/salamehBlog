@@ -7,6 +7,9 @@ tags:
   - obsidian
 description: Set up a blog with Hugo and Obsidian by installing Hugo, initializing a site, and syncing Obsidian notes. Add themes, configure settings, and integrate images with a Python script.
 ---
+This image illustrates the workflow of this blog.
+
+![Image Description](/images/Starting%20a%20blog%20with%20Hugo.png)
 ## Setting Up 
 
 Before starting, ensure that you have **Git**, **Go** and **Python** installed on your system.
