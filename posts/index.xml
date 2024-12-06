@@ -640,7 +640,8 @@ In Vim, <strong>capitalized versions of commands often extend or modify the beha
 <p>First, create a folder in your Obsidian vault named <code>posts</code>.</p>
 <p>!<img src="/images/Pasted%20image%2020241206164602.png" alt="Image Description"></p>
 <h2 id="install-hugo">Install Hugo</h2>
-<p>Next, install Hugo and add it to your environment variables.</p>
+<p>Next, install Hugo and add it to your environment variables.
+Link: <a href="https://gohugo.io/installation/">https://gohugo.io/installation/</a></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e">## Verify Hugo works</span>
 </span></span><span style="display:flex;"><span>hugo version
 </span></span><span style="display:flex;"><span>
