@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/feed_style.xsl" type="text/xsl"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="https://www.rssboard.org/media-rss">
   <channel>
     <title>Posts on My nice blog</title>
-    <link>/posts/</link>
+    <link>/salamehBlog/posts/</link>
     <description>Recent content in Posts on My nice blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 06 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" /><icon>/logo.svg</icon>
+    <lastBuildDate>Fri, 06 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="/salamehBlog/posts/index.xml" rel="self" type="application/rss+xml" /><icon>/logo.svg</icon>
     
     
     <item>
       <title>Learning vim</title>
-      <link>/posts/learning-vim/</link>
+      <link>/salamehBlog/posts/learning-vim/</link>
       <pubDate>Fri, 06 Dec 2024 00:00:00 +0000</pubDate>
       
-      <guid>/posts/learning-vim/</guid>
+      <guid>/salamehBlog/posts/learning-vim/</guid>
       <description><![CDATA[<p>Everything is based on this video.</p>
 <!-- raw HTML omitted -->
 <h2 id="installing-vim">Installing VIM</h2>
@@ -630,10 +630,10 @@ In Vim, <strong>capitalized versions of commands often extend or modify the beha
     
     <item>
       <title>Starting a blog with Hugo</title>
-      <link>/posts/starting-a-blog-with-hugo/</link>
+      <link>/salamehBlog/posts/starting-a-blog-with-hugo/</link>
       <pubDate>Fri, 06 Dec 2024 00:00:00 +0000</pubDate>
       
-      <guid>/posts/starting-a-blog-with-hugo/</guid>
+      <guid>/salamehBlog/posts/starting-a-blog-with-hugo/</guid>
       <description><![CDATA[<p>first download git and go and python</p>
 <p>firstly create a folder in the obsidian vault with the name of posts
 !<img src="/images/Pasted%20image%2020241206142134.png" alt="Image Description"></p>
