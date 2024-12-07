@@ -14,11 +14,11 @@ To run ROS on a Raspberry Pi, we need to install Ubuntu because ROS isn't offici
 ## Installing Ubuntu Server on Raspberry Pi
 ### 1. Download the Raspberry Pi Imager  
 First, go to the [official website](https://www.raspberrypi.com/software/) and download the Raspberry Pi Imager.
-![Download Imager](1.png)
+![Image Description](/images/1.png)
     
 ### 2. Install the Imager  
 After downloading the imager, open the file to start the installation process. Click **Install** and then **Next** when prompted.
-![Installation Prompt](2.png)
+![Image Description](/images/2.png)
 ### 3. Launch the App  
 Once the imager is installed, open the application.    
 ![Image Description](/images/Pasted%20image%2020241202212428.png)    
