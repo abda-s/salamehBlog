@@ -16,8 +16,8 @@
         
         
     
-    "articles": [{"date":"0001-01-01","image":"","imageAlt":"","link":"/manifest/index.json","summary":"","tags":[],"title":"Manifest"},{"date":"0001-01-01","image":"","imageAlt":"","link":"/search/","summary":"","tags":[],"title":"Search"}],
-    "test": "About me   Starting a blog   Learning VIM   Download VS-Code on Linux      Manifest   Search   ",
+    "articles": [{"date":"0001-01-01","image":"","imageAlt":"","link":"/posts/running-ros-on-raspberry-pi/","summary":"\u003cp\u003eTo run ROS on a Raspberry Pi, we need to install Ubuntu because ROS isn\u0026rsquo;t officially supported on Raspberry Pi OS. Given the hardware limitations of the Raspberry Pi 3 with only 1GB of RAM, it\u0026rsquo;s not powerful enough to handle Ubuntu Core efficiently. Instead, we need to install \u003cstrong\u003eUbuntu Server\u003c/strong\u003e, which is a lightweight alternative that can better accommodate the limited resources of the Raspberry Pi.\u003c/p\u003e","tags":[],"title":"Running ROS on Raspberry Pi"},{"date":"0001-01-01","image":"","imageAlt":"","link":"/search/","summary":"","tags":[],"title":"Search"}],
+    "test": "About me   Starting a blog   Learning VIM   Download VS-Code on Linux   Manifest   Running ROS on Raspberry Pi   Search   ",
     "page": "2",
     "next": ""
 }
