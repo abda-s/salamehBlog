@@ -1,5 +1,12 @@
 ---
 title: Running ROS on Raspberry Pi
+date: 2024-11-29
+draft: "true"
+description: To run ROS on a Raspberry Pi, you'll need to install **Ubuntu Server**, as it's lightweight and suitable for the Raspberry Pi's limited hardware resources. Follow steps to prepare an SD card using Raspberry Pi Imager, configure Wi-Fi via `netplan`, and enable SSH for remote access. Once Ubuntu Server is installed and connected, you're ready to set up ROS or other applications efficiently.
+tags:
+  - linux
+  - ROS
+  - raspberry-pi
 ---
 
 To run ROS on a Raspberry Pi, we need to install Ubuntu because ROS isn't officially supported on Raspberry Pi OS. Given the hardware limitations of the Raspberry Pi 3 with only 1GB of RAM, it's not powerful enough to handle Ubuntu Core efficiently. Instead, we need to install **Ubuntu Server**, which is a lightweight alternative that can better accommodate the limited resources of the Raspberry Pi.
