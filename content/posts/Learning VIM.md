@@ -7,8 +7,7 @@ tags:
 description: This guide covers installing Vim, understanding its modes (Normal, Insert, Visual, Command-Line), essential commands, combining actions, and customizing settings with `:set` for efficient text editing.
 ---
  
-Everything is based on this video.
-<iframe width="560" height="315" src="https://www.youtube.com/embed/RZ4p-saaQkc?si=T-sAvGrA3sC_6A7T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+Everything is based on this [video](https://youtu.be/RZ4p-saaQkc).
 
 ## Installing VIM
 First, check if it’s installed by typing `vi` or `vim` in the terminal. If you see the following output:
