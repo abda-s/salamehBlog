@@ -3,7 +3,10 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>/</loc>
-    <lastmod>2024-12-06T00:00:00+00:00</lastmod>
+    <lastmod>2024-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/about/</loc>
+    <lastmod>2024-12-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/linux/</loc>
     <lastmod>2024-12-06T00:00:00+00:00</lastmod>
@@ -23,7 +26,7 @@
     <loc>/posts/learning-vim/</loc>
     <lastmod>2024-12-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/download-vs-code-on-raspberry-pi/</loc>
+    <loc>/posts/download-vs-code-on-linux/</loc>
     <lastmod>2024-12-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/categories/</loc>
