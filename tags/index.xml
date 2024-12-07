@@ -31,5 +31,29 @@
     </item>
     
     
+    
+    <item>
+      <title>Raspberry-Pi</title>
+      <link>/tags/raspberry-pi/</link>
+      <pubDate>Fri, 29 Nov 2024 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/raspberry-pi/</guid>
+      <description><![CDATA[]]></description>
+      
+    </item>
+    
+    
+    
+    <item>
+      <title>ROS</title>
+      <link>/tags/ros/</link>
+      <pubDate>Fri, 29 Nov 2024 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/ros/</guid>
+      <description><![CDATA[]]></description>
+      
+    </item>
+    
+    
   </channel>
 </rss>
