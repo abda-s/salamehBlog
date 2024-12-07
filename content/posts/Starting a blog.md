@@ -188,7 +188,7 @@ summaryLength = 50  # number of words for article summaries
     home = ["HTML", "JSON"]
 ```
 
-you can use the previse configuration in your `hugo.toml` file:
+you can use the previous configuration in your `hugo.toml` file:
 
 ![Image Description](/images/Pasted%20image%2020241206143800.png)
 ## Test the Hugo Site Locally
