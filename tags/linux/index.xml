@@ -485,8 +485,7 @@ Each time you want to sync or upload a new post, simply execute the script:</li>
       <pubDate>Thu, 05 Dec 2024 00:00:00 +0000</pubDate>
       
       <guid>/posts/learning-vim/</guid>
-      <description><![CDATA[<p>Everything is based on this video.</p>
-<!-- raw HTML omitted -->
+      <description><![CDATA[<p>Everything is based on this <a href="https://youtu.be/RZ4p-saaQkc">video</a>.</p>
 <h2 id="installing-vim">Installing VIM</h2>
 <p>First, check if it’s installed by typing <code>vi</code> or <code>vim</code> in the terminal. If you see the following output:
 <img src="/images/Pasted%20image%2020241205183304.png" alt="Image Description">
