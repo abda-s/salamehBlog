@@ -12,8 +12,12 @@
         
         
     
-    "articles": [{"date":"0001-01-01","image":"","imageAlt":"","link":"/search/","summary":"","tags":[],"title":"Search"}],
-    "test": "About me   Starting a blog   Learning VIM   Download VS-Code on Linux   Manifest   Search   ",
+        
+        
+        
+    
+    "articles": [{"date":"0001-01-01","image":"","imageAlt":"","link":"/manifest/index.json","summary":"","tags":[],"title":"Manifest"},{"date":"0001-01-01","image":"","imageAlt":"","link":"/search/","summary":"","tags":[],"title":"Search"}],
+    "test": "About me   Starting a blog   Learning VIM   Download VS-Code on Linux   Running ROS on Raspberry Pi   Manifest   Search   ",
     "page": "2",
     "next": ""
 }
