@@ -5,7 +5,64 @@
     <description>Recent content in Posts on Abdullah Salameh&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 06 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" /><icon>/logo.svg</icon>
+    <lastBuildDate>Mon, 09 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" /><icon>/logo.svg</icon>
+    
+    
+    <item>
+      <title>Troubleshooting VirtualBox Clipboard Issues on Ubuntu</title>
+      <link>/posts/troubleshooting-virtualbox-clipboard-issues-on-ubuntu/</link>
+      <pubDate>Mon, 09 Dec 2024 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/troubleshooting-virtualbox-clipboard-issues-on-ubuntu/</guid>
+      <description><![CDATA[<p>I&rsquo;m running Ubuntu on VirtualBox on a Windows host. Despite setting up everything I could think of, the clipboard functionality refuses to cooperate. Here’s a breakdown of my situation and the steps I’ve tried so far.</p>
+<h4 id="whats-set-up">What’s Set Up:</h4>
+<ol>
+<li>
+<p><strong>Guest Additions Installed</strong>:<br>
+The <code>vbox_GAs_6.1.36</code> icon appears correctly, and shared folders between the VirtualBox guest and the Windows host work without a hitch.</p>
+</li>
+<li>
+<p><strong>Extension Pack Installed</strong>:<br>
+I’ve installed <code>Oracle_VM_VirtualBox_Extension_Pack.vbox-extpack-6.1.36a</code>.</p>
+</li>
+<li>
+<p><strong>Clipboard Settings</strong>:<br>
+Clipboard sharing is set to <em>Bidirectional</em> under the <strong>Devices</strong> menu.</p>
+</li>
+<li>
+<p><strong>Drag and Drop</strong>:<br>
+Set to <em>Bidirectional</em> as well, but it doesn’t work either.</p>
+</li>
+</ol>
+<h4 id="the-problem">The Problem:</h4>
+<ul>
+<li>Copying text from Google Chrome on the host and pasting it into Firefox within the VirtualBox guest doesn’t work.</li>
+<li>Copying text from Notepad on the host and pasting it into LibreOffice Writer on the guest also fails.</li>
+</ul>
+<h4 id="what-ive-tried">What I’ve Tried:</h4>
+<p>I’ve double-checked all settings and even reinstalled Guest Additions, but the clipboard issue persists.</p>
+<h4 id="possible-solution">Possible Solution:</h4>
+<p>If you’re facing a similar problem, the following commands might resolve it:</p>
+<ol>
+<li>
+<p><strong>Update and Install Necessary Packages</strong><br>
+Run the following commands in your Ubuntu terminal:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get update
+</span></span><span style="display:flex;"><span>sudo apt-get install virtualbox-guest-x11
+</span></span><span style="display:flex;"><span>sudo apt install linux-headers-<span style="color:#66d9ef">$(</span>uname -r<span style="color:#66d9ef">)</span> build-essential dkms
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Enable Clipboard Support</strong><br>
+Once the above packages are installed, run:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo VBoxClient --clipboard
+</span></span></code></pre></div><p>Then, restart your virtual machine, after restarting the VM if it still does not work do the same command again and it will work inshallah:</p>
+</li>
+</ol>
+<p>These steps should enable clipboard functionality. If it still doesn’t work, double-check that the Guest Additions installation was successful and matches your VirtualBox version.</p>
+]]></description>
+      
+    </item>
+    
     
     
     <item>
