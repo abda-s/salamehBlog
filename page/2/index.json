@@ -16,8 +16,16 @@
         
         
     
-    "articles": [{"date":"0001-01-01","image":"","imageAlt":"","link":"/manifest/index.json","summary":"","tags":[],"title":"Manifest"},{"date":"0001-01-01","image":"","imageAlt":"","link":"/search/","summary":"","tags":[],"title":"Search"}],
-    "test": "Troubleshooting VirtualBox Clipboard Issues on Ubuntu   About me   Starting a blog   Learning VIM   Download VS-Code on Linux   Manifest   Search   ",
+        
+        
+        
+    
+        
+        
+        
+    
+    "articles": [{"date":"2024-12-04","image":"","imageAlt":"","link":"/posts/download-vs-code-on-linux/","summary":"This guide explains downloading and installing Visual Studio Code on Linux using a `.deb` file. It includes navigating the website, terminal commands for installation, and a lighthearted waiting tip.","tags":["linux"],"title":"Download VS-Code on Linux"},{"date":"0001-01-01","image":"","imageAlt":"","link":"/posts/untitled/","summary":"\u003cp\u003eLaser distance sensor lidar (LDS)\u003c/p\u003e","tags":[],"title":""},{"date":"0001-01-01","image":"","imageAlt":"","link":"/manifest/index.json","summary":"","tags":[],"title":"Manifest"},{"date":"0001-01-01","image":"","imageAlt":"","link":"/search/","summary":"","tags":[],"title":"Search"}],
+    "test": "Setting up ESP8266   Troubleshooting VirtualBox Clipboard Issues on Ubuntu   About me   Starting a blog   Learning VIM   Download VS-Code on Linux      Manifest   Search   ",
     "page": "2",
     "next": ""
 }

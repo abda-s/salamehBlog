@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/feed_style.xsl" type="text/xsl"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="https://www.rssboard.org/media-rss">
+  <channel>
+    <title>ESP on Abdullah Salameh&#39;s Blog</title>
+    <link>/tags/esp/</link>
+    <description>Recent content in ESP on Abdullah Salameh&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 12 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/esp/index.xml" rel="self" type="application/rss+xml" /><icon>/logo.svg</icon>
+    
+    
+    <item>
+      <title>Setting up ESP8266</title>
+      <link>/posts/setting-up-esp8266/</link>
+      <pubDate>Thu, 12 Dec 2024 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/setting-up-esp8266/</guid>
+      <description><![CDATA[<h1 id="esp8266-diagram">esp8266 Diagram</h1>
+<p><img src="/images/8a1901b6b834b9f702bc8b98f1865959.png" alt="Image Description"></p>
+<ol>
+<li>
+<p>In your Arduino IDE, go to File&gt; Preferences
+<img src="/images/25c1dcb22468c322c64fae03eeb38268.png" alt="Image Description"></p>
+</li>
+<li>
+<p>Enter the following into the “Additional Board Manager URLs” field:</p>
+</li>
+</ol>
+<pre tabindex="0"><code> http://arduino.esp8266.com/stable/package_esp8266com_index.json
+</code></pre><p>click the “OK” button:
+<img src="/images/cb2a6a5bc38d8fb0ed3c738c7666fb57.png" alt="Image Description">
+<strong>Note</strong>:if you already have the ESP8266 boards URL, you can separate the URLs with a comma as follows</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>https://dl.espressif.com/dl/package_esp32_index.json, http://arduino.esp8266.com/stable/package_esp8266com_index.json
+</span></span></code></pre></div><ol start="3">
+<li>
+<p>Open the Boards Manager. Go to Tools &gt; Board &gt; Boards Manager…
+<img src="/images/dca58c790d2582c1a35485c0f4eeb457.png" alt="Image Description"></p>
+</li>
+<li>
+<p>Search for ESP8266 and press install button for the “ESP32 by Espressif Systems“:
+<img src="/images/4cf3bafdc181e501c758294e42974b24.png" alt="Image Description"></p>
+</li>
+<li>
+<p>That’s it. It should be installed after a few seconds.
+<img src="/images/aa1a8bef9d8e750951f1346f42f92aed.png" alt="Image Description"></p>
+</li>
+</ol>
+]]></description>
+      
+    </item>
+    
+    
+  </channel>
+</rss>
