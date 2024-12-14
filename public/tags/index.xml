@@ -9,11 +9,23 @@
     
     
     <item>
-      <title>Asas</title>
-      <link>/tags/asas/</link>
+      <title>Linux</title>
+      <link>/tags/linux/</link>
       <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
       
-      <guid>/tags/asas/</guid>
+      <guid>/tags/linux/</guid>
+      <description><![CDATA[]]></description>
+      
+    </item>
+    
+    
+    
+    <item>
+      <title>ROS</title>
+      <link>/tags/ros/</link>
+      <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/ros/</guid>
       <description><![CDATA[]]></description>
       
     </item>
@@ -26,18 +38,6 @@
       <pubDate>Thu, 12 Dec 2024 00:00:00 +0000</pubDate>
       
       <guid>/tags/esp/</guid>
-      <description><![CDATA[]]></description>
-      
-    </item>
-    
-    
-    
-    <item>
-      <title>Linux</title>
-      <link>/tags/linux/</link>
-      <pubDate>Mon, 09 Dec 2024 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/linux/</guid>
       <description><![CDATA[]]></description>
       
     </item>
