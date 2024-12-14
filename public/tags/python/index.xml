@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/feed_style.xsl" type="text/xsl"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="https://www.rssboard.org/media-rss">
+  <channel>
+    <title>Python on Abdullah Salameh&#39;s Blog</title>
+    <link>/tags/python/</link>
+    <description>Recent content in Python on Abdullah Salameh&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 09 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" /><icon>/logo.svg</icon>
+    
+    
+    <item>
+      <title>A Beginner&#39;s Guide to Object-Oriented Programming (OOP) in Python</title>
+      <link>/posts/oop-in-python/</link>
+      <pubDate>Mon, 09 Dec 2024 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/oop-in-python/</guid>
+      <description><![CDATA[<h3 id="a-beginners-guide-to-object-oriented-programming-oop-in-python">A Beginner&rsquo;s Guide to Object-Oriented Programming (OOP) in Python</h3>
+<p>Object-oriented programming (OOP) is a cornerstone programming paradigm in Python. It allows developers to create reusable and modular code by organizing functionality into objects, which are instances of classes. In this guide, we’ll walk you through the basics of OOP, including key concepts like inheritance and the <code>super()</code> function, and provide practical examples to help you get started.</p>
+<hr>
+<h3 id="what-are-objects">What Are Objects?</h3>
+<p>Objects are the building blocks of OOP. In Python, <strong>everything is an object</strong>, from simple data types like integers and strings to complex data structures and functions. When you create a variable, you&rsquo;re actually creating an object of a specific type (or class).</p>
+<h4 id="example-numbers-and-strings-as-objects">Example: Numbers and Strings as Objects</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>x <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>print(type(x))  <span style="color:#75715e"># Output: &lt;class &#39;int&#39;&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>greeting <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hello&#34;</span>
+</span></span><span style="display:flex;"><span>print(type(greeting))  <span style="color:#75715e"># Output: &lt;class &#39;str&#39;&gt;</span>
+</span></span></code></pre></div><p>Even collections like lists are objects:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>numbers <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>]
+</span></span><span style="display:flex;"><span>print(type(numbers))  <span style="color:#75715e"># Output: &lt;class &#39;list&#39;&gt;</span>
+</span></span></code></pre></div><hr>
+<h3 id="built-in-methods">Built-in Methods</h3>
+<p>Each object type in Python comes with its own set of methods—functions that can be used to manipulate or interact with the object. These methods are accessed using dot notation.</p>
+<h4 id="example-string-methods">Example: String Methods</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>greeting <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hello&#34;</span>
+</span></span><span style="display:flex;"><span>print(greeting<span style="color:#f92672">.</span>upper())  <span style="color:#75715e"># Output: HELLO</span>
+</span></span></code></pre></div><h4 id="example-list-methods">Example: List Methods</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>numbers <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>]
+</span></span><span style="display:flex;"><span>numbers<span style="color:#f92672">.</span>append(<span style="color:#ae81ff">4</span>)
+</span></span><span style="display:flex;"><span>print(numbers)  <span style="color:#75715e"># Output: [1, 2, 3, 4]</span>
+</span></span></code></pre></div><p>However, methods are type-specific. Trying to call a string method on an integer will result in an error:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>x <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>print(x<span style="color:#f92672">.</span>upper())  <span style="color:#75715e"># Raises AttributeError</span>
+</span></span></code></pre></div><hr>
+<h3 id="creating-custom-classes">Creating Custom Classes</h3>
+<p>Python lets you define your own classes to create custom objects tailored to your needs. A class serves as a blueprint for creating objects, and each object is an instance of that class.</p>
+<h4 id="example-defining-a-simple-class">Example: Defining a Simple Class</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Dog</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">bark</span>(self):
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;Woof!&#34;</span>)
+</span></span></code></pre></div><p>You can create an instance (object) of the <code>Dog</code> class and use its method:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>my_dog <span style="color:#f92672">=</span> Dog()
+</span></span><span style="display:flex;"><span>my_dog<span style="color:#f92672">.</span>bark()  <span style="color:#75715e"># Output: Woof!</span>
+</span></span></code></pre></div><hr>
+<h3 id="attributes-and-methods">Attributes and Methods</h3>
+<p>Classes can have attributes (data) and methods (functions). These define the properties and behaviors of objects created from the class. To initialize attributes, you use the special <code>__init__</code> method, which is automatically called when an object is created.</p>
+<h4 id="example-adding-attributes-with-__init__">Example: Adding Attributes with <code>__init__</code></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Dog</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, name, age):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> name
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>age <span style="color:#f92672">=</span> age
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">bark</span>(self):
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>name<span style="color:#e6db74">}</span><span style="color:#e6db74"> says Woof!&#34;</span>)
+</span></span></code></pre></div><p>Here’s how you can use this class:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>my_dog <span style="color:#f92672">=</span> Dog(<span style="color:#e6db74">&#34;Buddy&#34;</span>, <span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span>print(my_dog<span style="color:#f92672">.</span>name)  <span style="color:#75715e"># Output: Buddy</span>
+</span></span><span style="display:flex;"><span>print(my_dog<span style="color:#f92672">.</span>age)   <span style="color:#75715e"># Output: 3</span>
+</span></span><span style="display:flex;"><span>my_dog<span style="color:#f92672">.</span>bark()       <span style="color:#75715e"># Output: Buddy says Woof!</span>
+</span></span></code></pre></div><hr>
+<h3 id="inheritance-and-the-super-function">Inheritance and the <code>super()</code> Function</h3>
+<p>Inheritance allows one class (child class) to derive attributes and methods from another class (parent class). This is particularly useful for code reuse and extension.</p>
+<p>When a child class overrides the <code>__init__</code> method, it’s important to ensure that the parent class’s <code>__init__</code> method is called. This is done using the <code>super().__init__()</code> function.</p>
+<h4 id="example-using-super__init__-in-a-subclass">Example: Using <code>super().__init__()</code> in a Subclass</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Animal</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, species):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>species <span style="color:#f92672">=</span> species
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Dog</span>(Animal):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, name, age, species<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Dog&#34;</span>):
+</span></span><span style="display:flex;"><span>        super()<span style="color:#f92672">.</span>__init__(species)  <span style="color:#75715e"># Initialize parent class attributes</span>
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> name
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>age <span style="color:#f92672">=</span> age
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">bark</span>(self):
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>name<span style="color:#e6db74">}</span><span style="color:#e6db74">, the </span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>species<span style="color:#e6db74">}</span><span style="color:#e6db74">, says Woof!&#34;</span>)
+</span></span></code></pre></div><p>Here’s how it works:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>my_dog <span style="color:#f92672">=</span> Dog(<span style="color:#e6db74">&#34;Buddy&#34;</span>, <span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span>print(my_dog<span style="color:#f92672">.</span>species)  <span style="color:#75715e"># Output: Dog</span>
+</span></span><span style="display:flex;"><span>my_dog<span style="color:#f92672">.</span>bark()          <span style="color:#75715e"># Output: Buddy, the Dog, says Woof!</span>
+</span></span></code></pre></div><p>In this example:</p>
+<ul>
+<li>The <code>Animal</code> class serves as the parent class.</li>
+<li>The <code>Dog</code> class extends <code>Animal</code> and adds its own attributes (<code>name</code> and <code>age</code>).</li>
+<li>The <code>super().__init__(species)</code> call ensures the <code>species</code> attribute from <code>Animal</code> is properly initialized.</li>
+</ul>
+<hr>
+<h3 id="class-and-static-methods">Class and Static Methods</h3>
+<p>In addition to instance methods, Python supports class methods and static methods:</p>
+<ul>
+<li><strong>Class methods</strong> work at the class level and are defined using the <code>@classmethod</code> decorator.</li>
+<li><strong>Static methods</strong> don’t access class or instance attributes and are defined with the <code>@staticmethod</code> decorator.</li>
+</ul>
+<h4 id="example-class-method">Example: Class Method</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Animal</span>:
+</span></span><span style="display:flex;"><span>    count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, name):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> name
+</span></span><span style="display:flex;"><span>        Animal<span style="color:#f92672">.</span>count <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@classmethod</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_count</span>(cls):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> cls<span style="color:#f92672">.</span>count
+</span></span></code></pre></div><p>Usage:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a1 <span style="color:#f92672">=</span> Animal(<span style="color:#e6db74">&#34;Cat&#34;</span>)
+</span></span><span style="display:flex;"><span>a2 <span style="color:#f92672">=</span> Animal(<span style="color:#e6db74">&#34;Dog&#34;</span>)
+</span></span><span style="display:flex;"><span>print(Animal<span style="color:#f92672">.</span>get_count())  <span style="color:#75715e"># Output: 2</span>
+</span></span></code></pre></div><h4 id="example-static-method">Example: Static Method</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MathUtil</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@staticmethod</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">add</span>(x, y):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> x <span style="color:#f92672">+</span> y
+</span></span></code></pre></div><p>Usage:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>result <span style="color:#f92672">=</span> MathUtil<span style="color:#f92672">.</span>add(<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>print(result)  <span style="color:#75715e"># Output: 15</span>
+</span></span></code></pre></div><hr>
+<h3 id="why-use-oop">Why Use OOP?</h3>
+<p>Object-oriented programming provides numerous benefits:</p>
+<ol>
+<li><strong>Encapsulation</strong>: Keeps related data and methods together.</li>
+<li><strong>Reusability</strong>: Inheritance allows you to extend existing code.</li>
+<li><strong>Readability</strong>: Code mirrors real-world entities and relationships.</li>
+</ol>
+<hr>
+<h3 id="real-world-example-employee-management-system">Real-World Example: Employee Management System</h3>
+<p>Let’s create a simple system for managing employees using OOP concepts.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Employee</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, name, position):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> name
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>position <span style="color:#f92672">=</span> position
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">describe</span>(self):
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>name<span style="color:#e6db74">}</span><span style="color:#e6db74"> works as a </span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>position<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Manager</span>(Employee):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, name, position, department):
+</span></span><span style="display:flex;"><span>        super()<span style="color:#f92672">.</span>__init__(name, position)
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>department <span style="color:#f92672">=</span> department
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">describe</span>(self):
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>name<span style="color:#e6db74">}</span><span style="color:#e6db74"> is a Manager of the </span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>department<span style="color:#e6db74">}</span><span style="color:#e6db74"> department.&#34;</span>)
+</span></span></code></pre></div><p>Usage:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>e1 <span style="color:#f92672">=</span> Employee(<span style="color:#e6db74">&#34;Alice&#34;</span>, <span style="color:#e6db74">&#34;Developer&#34;</span>)
+</span></span><span style="display:flex;"><span>m1 <span style="color:#f92672">=</span> Manager(<span style="color:#e6db74">&#34;Bob&#34;</span>, <span style="color:#e6db74">&#34;Manager&#34;</span>, <span style="color:#e6db74">&#34;Engineering&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>e1<span style="color:#f92672">.</span>describe()  <span style="color:#75715e"># Output: Alice works as a Developer</span>
+</span></span><span style="display:flex;"><span>m1<span style="color:#f92672">.</span>describe()  <span style="color:#75715e"># Output: Bob is a Manager of the Engineering department.</span>
+</span></span></code></pre></div><hr>
+<h3 id="conclusion">Conclusion</h3>
+<p>Object-oriented programming in Python enables developers to build organized, reusable, and scalable applications. Key concepts like inheritance, the <code>super()</code> function, and different types of methods (instance, class, and static) make OOP powerful and flexible.</p>
+<p>Start small by creating simple classes and gradually explore inheritance and method overriding. For practice, try creating a library system, a school management system, or a banking application. With consistent practice, you’ll master the art of OOP in Python!</p>
+]]></description>
+      
+    </item>
+    
+    
+  </channel>
+</rss>
