@@ -8,6 +8,12 @@
     <loc>/posts/</loc>
     <lastmod>2024-12-15T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>/tags/asas/</loc>
+    <lastmod>2024-12-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2024-12-14T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>/posts/test/</loc>
     <lastmod>2024-12-14T00:00:00+00:00</lastmod>
   </url><url>
@@ -15,9 +21,6 @@
     <lastmod>2024-12-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/posts/setting-up-esp8266/</loc>
-    <lastmod>2024-12-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/</loc>
     <lastmod>2024-12-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/linux/</loc>
