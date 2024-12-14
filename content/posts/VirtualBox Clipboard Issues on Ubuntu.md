@@ -1,5 +1,5 @@
 ---
-title: Troubleshooting VirtualBox Clipboard Issues on Ubuntu
+title: VirtualBox Clipboard Issues on Ubuntu
 date: 2024-12-09
 tags:
   - linux

@@ -28,7 +28,7 @@
 
 <title>
         
-            Download VS-Code on Linux  &ndash;
+            VirtualBox Clipboard Issues on Ubuntu  &ndash;
         
         Abdullah Salameh&#39;s Blog
     </title>
@@ -48,49 +48,49 @@
         <meta name="keywords" content='linux' />
     
     
-        <meta name="description" content="This guide explains downloading and installing Visual Studio Code on Linux using a `.deb` file. It includes navigating the website, terminal commands for installation, and a lighthearted waiting tip." />
+        <meta name="description" content="Having trouble with clipboard sharing in VirtualBox on Ubuntu? Despite enabling bidirectional settings and installing Guest Additions, copy-paste between host and guest systems fails. Here’s how to fix it by updating packages and enabling clipboard support." />
     
 
 <meta property="og:site_name"
     content='Abdullah Salameh&#39;s Blog' />
 
-    <meta property="og:title" content="Download VS-Code on Linux" />
+    <meta property="og:title" content="VirtualBox Clipboard Issues on Ubuntu" />
     <meta property="og:type" content="article" />
     
     <meta
         property="article:author" content="Abdullah Salameh" />
     <meta
         property="article:published_time"
-        content='2024-12-04T00:00:00Z&#43;0000' />
+        content='2024-12-09T00:00:00Z&#43;0000' />
     
         
             <meta property="article:tag" content="linux" />
         
     
-    <meta property="og:url" content="/posts/download-vs-code-on-linux/" />
+    <meta property="og:url" content="/posts/virtualbox-clipboard-issues-on-ubuntu/" />
     
     
     <meta property="og:image"
         content="/icon512.png" />
     
-        <meta property="og:description" content="This guide explains downloading and installing Visual Studio Code on Linux using a `.deb` file. It includes navigating the website, terminal commands for installation, and a lighthearted waiting tip." />
+        <meta property="og:description" content="Having trouble with clipboard sharing in VirtualBox on Ubuntu? Despite enabling bidirectional settings and installing Guest Additions, copy-paste between host and guest systems fails. Here’s how to fix it by updating packages and enabling clipboard support." />
     
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:domain"
       content=''
 />
-<meta property="twitter:url" content="/posts/download-vs-code-on-linux/" />
+<meta property="twitter:url" content="/posts/virtualbox-clipboard-issues-on-ubuntu/" />
 
 
-    <meta name="twitter:title" content="Download VS-Code on Linux" />
+    <meta name="twitter:title" content="VirtualBox Clipboard Issues on Ubuntu" />
     
     
     
     <meta name="twitter:image"
         content="/icon512.png" />
     
-        <meta name="twitter:description" content="This guide explains downloading and installing Visual Studio Code on Linux using a `.deb` file. It includes navigating the website, terminal commands for installation, and a lighthearted waiting tip." />
+        <meta name="twitter:description" content="Having trouble with clipboard sharing in VirtualBox on Ubuntu? Despite enabling bidirectional settings and installing Guest Additions, copy-paste between host and guest systems fails. Here’s how to fix it by updating packages and enabling clipboard support." />
     
 
 <link rel="manifest" href="/manifest/index.json" />
@@ -194,12 +194,12 @@
                     <main>
 <article class="card single">
     
-        <h1>Download VS-Code on Linux</h1>
+        <h1>VirtualBox Clipboard Issues on Ubuntu</h1>
     
     
         <p class="date">
             <span title='Date'>󰃭 </span>
-    2024-12-04
+    2024-12-09
 
 
         </p>
@@ -207,24 +207,51 @@
     
     
     
-    <div><ol>
+    <div><p>I&rsquo;m running Ubuntu on VirtualBox on a Windows host. Despite setting up everything I could think of, the clipboard functionality refuses to cooperate. Here’s a breakdown of my situation and the steps I’ve tried so far.</p>
+<h4 id="whats-set-up">What’s Set Up:</h4>
+<ol>
 <li>
-<p>Visit the <a href="https://code.visualstudio.com/download">Visual Studio Code download page</a>.
-<img src="/images/Pasted%20image%2020241202122253.png" alt="Image Description"></p>
+<p><strong>Guest Additions Installed</strong>:<br>
+The <code>vbox_GAs_6.1.36</code> icon appears correctly, and shared folders between the VirtualBox guest and the Windows host work without a hitch.</p>
 </li>
 <li>
-<p>Download the appropriate <code>.deb</code> file for your system.</p>
+<p><strong>Extension Pack Installed</strong>:<br>
+I’ve installed <code>Oracle_VM_VirtualBox_Extension_Pack.vbox-extpack-6.1.36a</code>.</p>
 </li>
 <li>
-<p>Once the download is complete, open a terminal and run the following command to install it:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dpkg -i ./the-vscode-.deb-file
-</span></span></code></pre></div><p><em>(Replace <code>./the-vscode-.deb-file</code> with the actual file name you downloaded.)</em></p>
-<p><img src="/images/daa701f0-5f39-4852-a887-61a7d942ea7d.jpg" alt="Image Description"></p>
+<p><strong>Clipboard Settings</strong>:<br>
+Clipboard sharing is set to <em>Bidirectional</em> under the <strong>Devices</strong> menu.</p>
 </li>
 <li>
-<p>The installation process might take a while, so feel free to grab a snack while it completes.</p>
+<p><strong>Drag and Drop</strong>:<br>
+Set to <em>Bidirectional</em> as well, but it doesn’t work either.</p>
 </li>
 </ol>
+<h4 id="the-problem">The Problem:</h4>
+<ul>
+<li>Copying text from Google Chrome on the host and pasting it into Firefox within the VirtualBox guest doesn’t work.</li>
+<li>Copying text from Notepad on the host and pasting it into LibreOffice Writer on the guest also fails.</li>
+</ul>
+<h4 id="what-ive-tried">What I’ve Tried:</h4>
+<p>I’ve double-checked all settings and even reinstalled Guest Additions, but the clipboard issue persists.</p>
+<h4 id="possible-solution">Possible Solution:</h4>
+<p>If you’re facing a similar problem, the following commands might resolve it:</p>
+<ol>
+<li>
+<p><strong>Update and Install Necessary Packages</strong><br>
+Run the following commands in your Ubuntu terminal:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get update
+</span></span><span style="display:flex;"><span>sudo apt-get install virtualbox-guest-x11
+</span></span><span style="display:flex;"><span>sudo apt install linux-headers-<span style="color:#66d9ef">$(</span>uname -r<span style="color:#66d9ef">)</span> build-essential dkms
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Enable Clipboard Support</strong><br>
+Once the above packages are installed, run:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo VBoxClient --clipboard
+</span></span></code></pre></div><p>Then, restart your virtual machine, after restarting the VM if it still does not work do the same command again and it will work inshallah:</p>
+</li>
+</ol>
+<p>These steps should enable clipboard functionality. If it still doesn’t work, double-check that the Guest Additions installation was successful and matches your VirtualBox version.</p>
 </div>
 </article>
 
@@ -259,7 +286,7 @@ initComments({
     defaultHomeserverUrl: 'https:\/\/matrix.cactus.chat:8448',
     serverName: 'cactus.chat',
     siteName: "example.com",
-    commentSectionId: "a6241716960eeefc9cd05212c707e83f"
+    commentSectionId: "a28b177080e7565745b95ef0b5bef3be"
 })
 </script>
 
@@ -272,40 +299,6 @@ initComments({
             <h2>More posts like this</h2>
             <div class="postlist ">
                 <article class="card postlistitem">
-    <div>
-        <h2>
-            <a href="/posts/virtualbox-clipboard-issues-on-ubuntu/">VirtualBox Clipboard Issues on Ubuntu</a>
-        </h2>
-        <p class="date">
-            <span title='Date'>󰃭 </span>
-    2024-12-09
-
-
-            
-                | 
-                <span title='Tags'> </span>
-                
-                    <a href="/tags/linux">#linux</a>
-                
-            
-        </p>
-        
-            
-        
-        
-            <div class="articlePreview">
-                <p>
-                    
-                        Having trouble with clipboard sharing in VirtualBox on Ubuntu? Despite enabling bidirectional settings and installing Guest Additions, copy-paste between host and guest systems fails. Here’s how to fix it by updating packages and enabling clipboard support.
-                    
-                </p>
-                <p><a href="/posts/virtualbox-clipboard-issues-on-ubuntu/">Continue reading </a></p>
-            </div>
-        
-    </div>
-    <hr />
-</article>
-<article class="card postlistitem">
     <div>
         <h2>
             <a href="/posts/starting-a-blog/">Starting a blog</a>
@@ -336,6 +329,40 @@ initComments({
                     
                 </p>
                 <p><a href="/posts/starting-a-blog/">Continue reading </a></p>
+            </div>
+        
+    </div>
+    <hr />
+</article>
+<article class="card postlistitem">
+    <div>
+        <h2>
+            <a href="/posts/learning-vim/">Learning VIM</a>
+        </h2>
+        <p class="date">
+            <span title='Date'>󰃭 </span>
+    2024-12-05
+
+
+            
+                | 
+                <span title='Tags'> </span>
+                
+                    <a href="/tags/linux">#linux</a>
+                
+            
+        </p>
+        
+            
+        
+        
+            <div class="articlePreview">
+                <p>
+                    
+                        This guide covers installing Vim, understanding its modes (Normal, Insert, Visual, Command-Line), essential commands, combining actions, and customizing settings with `:set` for efficient text editing.
+                    
+                </p>
+                <p><a href="/posts/learning-vim/">Continue reading </a></p>
             </div>
         
     </div>

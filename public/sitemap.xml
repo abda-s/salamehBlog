@@ -3,12 +3,12 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>/</loc>
-    <lastmod>2024-12-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/esp/</loc>
-    <lastmod>2024-12-12T00:00:00+00:00</lastmod>
+    <lastmod>2024-12-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/posts/</loc>
+    <lastmod>2024-12-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/esp/</loc>
     <lastmod>2024-12-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/posts/setting-up-esp8266/</loc>
@@ -20,7 +20,7 @@
     <loc>/tags/linux/</loc>
     <lastmod>2024-12-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/troubleshooting-virtualbox-clipboard-issues-on-ubuntu/</loc>
+    <loc>/posts/virtualbox-clipboard-issues-on-ubuntu/</loc>
     <lastmod>2024-12-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/about/</loc>
@@ -37,8 +37,6 @@
   </url><url>
     <loc>/posts/download-vs-code-on-linux/</loc>
     <lastmod>2024-12-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/posts/untitled/</loc>
   </url><url>
     <loc>/categories/</loc>
   </url><url>
