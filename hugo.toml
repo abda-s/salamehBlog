@@ -70,7 +70,7 @@ summaryLength = 50  # number of words for article summaries
     umamiScriptUrl = "https://something.com/..."
     umamiWebsiteId = "example-tracking-code"
     enableShareOnFediverse = false  # enable a button at the end of an article to share it on the fediverse
-    tocBeforeImage = false  # show the table of contents before the main article image; default false
+    tocBeforeImage = true  # show the table of contents before the main article image; default false
     # WARNING: deprecated! Use [[menu.icons]] instead, look below
     # links = [
     #     ["GitLab", "https://gitlab.com/gabmus"],
