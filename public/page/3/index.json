@@ -12,8 +12,12 @@
         
         
     
-    "articles": [{"date":"0001-01-01","image":"","imageAlt":"","link":"/search/","summary":"","tags":[],"title":"Search"}],
-    "test": "test   Setting up ESP8266   A Beginner's Guide to Object-Oriented Programming (OOP) in Python   VirtualBox Clipboard Issues on Ubuntu   About me   Starting a blog   Learning VIM   Download VS-Code on Linux   Running ROS on Raspberry Pi   Manifest   Search   ",
+        
+        
+        
+    
+    "articles": [{"date":"0001-01-01","image":"","imageAlt":"","link":"/manifest/index.json","summary":"","tags":[],"title":"Manifest"},{"date":"0001-01-01","image":"","imageAlt":"","link":"/search/","summary":"","tags":[],"title":"Search"}],
+    "test": "How to make a pcb   ROS 2 Cheat Sheets   Setting up ESP8266   A Beginner's Guide to Object-Oriented Programming (OOP) in Python   VirtualBox Clipboard Issues on Ubuntu   About me   Starting a blog   Learning VIM   Download VS-Code on Linux   Running ROS on Raspberry Pi   Manifest   Search   ",
     "page": "3",
     "next": ""
 }
