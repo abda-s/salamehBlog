@@ -89,7 +89,8 @@ try {
 # Step 4: Build the Hugo site
 Write-Host "Building the Hugo site..."
 try {
-    hugo --buildDrafts
+    hugo 
+    # hugo --buildDrafts
 } catch {
     Write-Error "Hugo build failed."
     exit 1
