@@ -1,7 +1,7 @@
 ---
 title: esp32 setup
 description: A guide when you start out with esp32
-date: 
+date: 2025-01-08
 tags:
   - ESP
 draft: "false"
