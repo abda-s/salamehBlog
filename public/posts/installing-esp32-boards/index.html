@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html class="" lang="en"><head>
+    
+    <meta name="robots" content="noai, noimageai">
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=7" />
+
+    <link
+    rel="icon"
+    href='/favicon.png'
+/>
+<link
+    rel="shortcut icon"
+    href='/favicon.ico'
+    type="image/x-icon"
+/>
+<link
+    rel="apple-touch-icon"
+    href='/apple-touch-icon.png'
+/>
+
+    <link
+        rel="icon"
+        href='/logo.svg'
+        type="image/svg+xml"
+    />
+
+<title>
+        
+            esp32 setup  &ndash;
+        
+        Abdullah Salameh&#39;s Blog
+    </title>
+
+    
+    <link href="/symbols-nerd-font/symbols-nerd-font.css" rel="stylesheet" />
+    <link href="/jetbrains-mono/jetbrains-mono.css" rel="stylesheet" />
+
+    
+        <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
+    
+    
+    <link type="text/css" rel="stylesheet" href=/css/styles.9cbbae7ea584f9d0b823365a1be38866efc66a8ac6d693f61de4116c3145b86f256fea93ba492d5b457456651bc48386a13b8d79b2d43838be1cce257b8b8125.css integrity="sha512-nLuufqWE&#43;dC4IzZaG&#43;OIZu/GaorG1pP2HeQRbDFFuG8lb&#43;qTukktW0V0VmUbxIOGoTuNebLUODi&#43;HM4le4uBJQ==" />
+<meta name="author" content="Abdullah Salameh" />
+
+    
+        <meta name="keywords" content='ESP' />
+    
+    
+        <meta name="description" content="A guide when you start out with esp32" />
+    
+
+<meta property="og:site_name"
+    content='Abdullah Salameh&#39;s Blog' />
+
+    <meta property="og:title" content="esp32 setup" />
+    <meta property="og:type" content="article" />
+    
+    <meta
+        property="article:author" content="Abdullah Salameh" />
+    <meta
+        property="article:published_time"
+        content='0001-01-01T00:00:00Z&#43;0000' />
+    
+        
+            <meta property="article:tag" content="ESP" />
+        
+    
+    <meta property="og:url" content="/posts/installing-esp32-boards/" />
+    
+    
+    <meta property="og:image"
+        content="/icon512.png" />
+    
+        <meta property="og:description" content="A guide when you start out with esp32" />
+    
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:domain"
+      content=''
+/>
+<meta property="twitter:url" content="/posts/installing-esp32-boards/" />
+
+
+    <meta name="twitter:title" content="esp32 setup" />
+    
+    
+    
+    <meta name="twitter:image"
+        content="/icon512.png" />
+    
+        <meta name="twitter:description" content="A guide when you start out with esp32" />
+    
+
+<link rel="manifest" href="/manifest/index.json" />
+</head>
+
+
+<body>
+        <div id="baseContainer"><header class="">
+<div class="titleAndSearchContainer">
+        <div id="titleContainer">
+            
+                <a class="unstyledLink" href="/">
+                    <img src='/logo.svg' alt='Logo'/>
+                </a>
+            
+            <div class="rightOfLogo">
+                <div class="titleAndHamburger">
+                    <h1>
+                        <a class="unstyledLink" href="/">Abdullah Salameh&#39;s Blog</a>
+                        
+                    </h1>
+                    
+                </div>
+                <div id="wide_nav"><nav>
+    
+    <ul id="main-nav">
+        <li><a href="/">Home</a></li>
+        
+            <li><a href="/posts/">Posts</a></li>
+        
+        
+        
+        
+        
+        
+            <li><a href="/about/">About</a></li>
+        
+        
+            <li><a href="/tags/">Tags</a></li>
+        
+        
+    </ul>
+</nav>
+</div>
+            </div>
+        </div>
+        <div class="search">
+    <input id="searchbar" type="text" placeholder='Search' />
+    <span class="nerdlink" onclick="newSearch();">&#xf002;</span>
+</div>
+<script>
+    function newSearch() {
+        let term = searchbar.value.trim();
+        if (!term) return;
+        location.href = `/search/?q=${term}`;
+    }
+    searchbar.onkeyup = (ev) => {if (ev.keyCode == 13) newSearch()};
+</script>
+
+    </div>
+    <div id="links">
+        
+        
+        <a
+    
+        rel="noreferrer"
+    
+    target="_blank"
+    class="nerdlink"
+    href="https://github.com/abda-s">
+    
+    
+        &#xf09b;
+    
+    <span>
+        Github
+    </span>
+</a>
+<a
+    
+        rel="noreferrer"
+    
+    target="_blank"
+    class="nerdlink"
+    href="https://www.linkedin.com/in/abdullah-salameh/">
+    
+    
+        &#xf0e1;
+    
+    <span>
+        LinkedIn
+    </span>
+</a>
+
+    </div>
+    
+
+</header>
+<div id="contentContainer">
+                <div id="content">
+                    <main>
+<article class="card single">
+  
+  <h1>
+    esp32 setup
+  </h1>
+  
+  
+  <p class="date">
+    <span title='Date'>󰃭 </span>
+    0001-01-01
+
+
+  </p>
+  
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <ol>
+<li>In your Arduino IDE, go to File&gt; Preferences
+<img src="/images/cb01610af34d69ff1a3188871c335dcb.png" alt="Image Description"></li>
+<li>Enter the following into the “Additional Board Manager URLs” field:</li>
+</ol>
+<pre tabindex="0"><code>https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
+</code></pre><p>Then, click the “OK” button:
+<img src="/images/f7abe2e74e2ffe95efd890f0edf59f5a.png" alt="Image Description"></p>
+<p><strong>Note</strong>:if you already have the ESP8266 boards URL, you can separate the URLs with a comma as follows</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json, http://arduino.esp8266.com/stable/package_esp8266com_index.json
+</span></span></code></pre></div><ol start="3">
+<li>
+<p>Open the Boards Manager. Go to Tools &gt; Board &gt; Boards Manager…
+<img src="/images/52d1a8a26fe7b9561762c910a3ec0a93.png" alt="Image Description"></p>
+</li>
+<li>
+<p>Search for ESP32 and press install button for the “ESP32 by Espressif Systems“:
+<img src="/images/dd29c64227718cbc1cbccf3384af0775.png" alt="Image Description"></p>
+</li>
+<li>
+<p>That’s it. It should be installed after a few seconds.
+<img src="/images/b45bcc6dbf1e890d6af528b697911467.png" alt="Image Description"></p>
+</li>
+<li>
+<p>and don&rsquo;t forget to download the <a href="https://drive.google.com/file/d/1TCEtkAoYKrJs-ypomD6y4LwpcRnMuvAK/view?usp=sharing">drivers</a> for windows</p>
+</li>
+</ol>
+
+  </div>
+</article>
+
+
+
+
+<hr />
+
+
+<p class="articleTagsContainer">
+  <span> </span>
+  <strong>
+    Tags:</strong>
+  
+  <a  href="/tags/esp/">#
+    ESP</a>
+  
+</p>
+
+
+
+
+    <script
+        defer
+        src="https://example.com/js/commento.js"
+        data-no-fonts="true"
+    ></script>
+    <div id="commento"></div>
+
+
+<script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
+
+<div id="ficurinia-cactus-comments"></div>
+
+<script>
+initComments({
+    node: document.getElementById("ficurinia-cactus-comments"),
+    defaultHomeserverUrl: 'https:\/\/matrix.cactus.chat:8448',
+    serverName: 'cactus.chat',
+    siteName: "example.com",
+    commentSectionId: "20df68d713ec041261d4568b6bd8501c"
+})
+</script>
+
+
+    
+    
+        
+        <div class="relatedArticlesContainer">
+            <hr />
+            <h2>More posts like this</h2>
+            <div class="postlist ">
+                <article class="card postlistitem">
+    <div>
+        <h2>
+            <a href="/posts/setting-up-esp8266/">Setting up ESP8266</a>
+        </h2>
+        <p class="date">
+            <span title='Date'>󰃭 </span>
+    2024-12-12
+
+
+            
+                | 
+                <span title='Tags'> </span>
+                
+                    <a href="/tags/esp">#ESP</a>
+                
+            
+        </p>
+        
+            
+        
+        
+            <div class="articlePreview">
+                <p>
+                    
+                        A guide when you start out with esp8266
+                    
+                </p>
+                <p><a href="/posts/setting-up-esp8266/">Continue reading </a></p>
+            </div>
+        
+    </div>
+    <hr />
+</article>
+
+            </div>
+        </div>
+    
+
+
+                    </main><footer>
+    <hr />
+
+<p><small>
+        2025 &copy; 
+    </small></p>
+    <p><small>
+        <a href='https://gitlab.com/gabmus/hugo-ficurinia'>Ficurinia theme</a> for <a href='https://gohugo.io'>Hugo</a> by <a href='https://gabmus.org'>Gabriele Musco</a>. Licensed under <a href='https://www.gnu.org/licenses/agpl-3.0.html'>GNU AGPLv3</a>.
+    </small></p>
+</footer>
+</div>
+            </div>
+        </div>
+    
+        <script
+            async
+            defer
+            data-domain="example.com"
+            src="https://something.com/..."
+        ></script>
+    
+
+
+    
+        <script
+            async
+            defer
+            data-website-id="example-tracking-code"
+            src="https://something.com/..."
+        ></script>
+    
+
+
+</body>
+</html>

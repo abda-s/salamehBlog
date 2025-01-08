@@ -110,37 +110,120 @@ we need to know how the controls work
     Zooms in and out of the canvas.  
     Hold the scroll wheel and move the mouse to pan around the canvas.
 
+---
 
+### Adding Components to the Schematic
 
-now click on this icon to add the components 
+To add components, click on the following icon:  
 ![Image Description](/images/Pasted%20image%2020241226084528.png)
 
-it will give you this after loading for a sec 
+After a brief loading screen, this window will appear:  
 ![Image Description](/images/Pasted%20image%2020241226084706.png)
-in the search field type thew name of the components now lets add a resistor 
-type in the search feild **R** and the resistor will appear ![Image Description](/images/Pasted%20image%2020241226084855.png)
-press on the result and after that OK and place the resistor on the canvas 
 
-now lets add another component witch is the diode with the same steps 
+In the search field, type the name of the component you'd like to add. For example, to add a resistor:
 
-ok now lets add the 2n2222 transistor 
-we have a problem when we searched for it we didn't find any thing in KiCad 
+- Type **R** in the search field, and the resistor symbol will appear:  
+    ![Image Description](/images/Pasted%20image%2020241226084855.png)
+- Select the resistor from the results, click **OK**, and place it on the canvas.
 
-now lets learn how to add a new component to our library in KiCad 
+Next, follow the same steps to add a diode.
 
-lets open [snap EDA](https://www.snapeda.com) and search for the name of the component 
-![Image Description](/images/Pasted%20image%2020241226092718.png)
-now select the result that matches the look of your component 
+---
 
-now this is the page after you select the component 
+### Adding a Component Not Found in KiCad's Library
+
+For certain components, like the 2N2222 transistor, you may not find them in KiCad’s default library. Let’s go through the steps to add a new component to your library.
+
+#### Using SnapEDA to Download Components
+
+1. Open [SnapEDA](https://www.snapeda.com/) and search for the component by name:  
+    ![Image Description](/images/Pasted%20image%2020241226092718.png)
+2. Select the result that matches the look of your desired component.
+
+Here’s what the component’s page looks like:  
 ![Image Description](/images/Pasted%20image%2020241226092920.png)
-we have two things the Symbol we will use in the schematic and the footprint we will use in the pcb layout and the two of them have different ways to import them so lets import the symbol firstly 
-lets download the symbol and the footprint after we click the **Download Symbol and Footprint** button this will appear 
-![Image Description](/images/Pasted%20image%2020241226101900.png)
-select KiCad 
 
-- **Note** it will ask you to log in create an account or login and continue 
+- **Symbol**: Used in the schematic editor.
+- **Footprint**: Used in the PCB layout.
 
-now select the  version 
-![Image Description](/images/Pasted%20image%2020241226103113.png)
-I selected V6 & Later because my version 
+#### Downloading the Symbol and Footprint
+
+1. Click the **Download Symbol and Footprint** button. A window will pop up:  
+    ![Image Description](/images/Pasted%20image%2020241226101900.png)
+2. Select **KiCad** as the format.
+
+> **Note**: You will need to log in or create an account to continue.
+
+3. Choose the appropriate version. For example:  
+    ![Image Description](/images/Pasted%20image%2020241226103113.png)  
+    If you're using KiCad version 6 or later, select **V6 & Later**.
+    
+4. After downloading the `.zip` file, create a folder in your documents directory named `KiCad-lib`. This folder will store all your KiCad symbols and footprints.
+    
+5. Extract the downloaded file into the `KiCad-lib` folder.
+    
+
+> **Why this step?**  
+> Saving the files in a dedicated library folder ensures they remain accessible, even if the project folder is moved. Without this, KiCad may lose track of the symbols and footprints.
+
+---
+
+### Importing the Symbol into KiCad
+
+1. Open KiCad and go to **Preferences > Manage Symbol Libraries**:  
+    ![Image Description](/images/Pasted%20image%2020241229073019.png)
+    
+2. Click on **Add existing library to table**:  
+    ![Image Description](/images/Pasted%20image%2020241229073157.png)
+    
+3. Navigate to the folder where you extracted the file (`KiCad-lib`) and select the symbol file:  
+    ![Image Description](/images/Pasted%20image%2020241229073249.png)
+    
+4. The library will appear at the end of the table. Click **OK** to save the changes.
+    
+
+---
+
+### Adding the Imported Component to the Schematic
+
+Now, when you add a symbol and search for `2N2222`, it will appear in the list:  
+![Image Description](/images/Pasted%20image%2020241229073505.png)
+
+Select it, and you’re ready to place the component on your schematic!
+
+after adding all the components the resistor, the diode and the transistor it should look like this:
+![Image Description](/images/Pasted%20image%2020241229074606.png)
+
+now how can rotate the component it's pretty easy just select the component and press `R` on the keyboard let me arrange the parts 
+
+here is the parts arranged 
+![Image Description](/images/Pasted%20image%2020241229074806.png)
+now we have to connect all the parts together with wires so lets do that now
+
+you can press `W` on the keboard or ckilck this icon on the right tool bar:
+![Image Description](/images/Pasted%20image%2020241229074957.png)
+
+connect the parts together like this:
+![Image Description](/images/Pasted%20image%2020241229075122.png)
+
+now we need the `VCC` and `GND` lets add them with the add symbol as we did with the components and search for VCC and GND 
+after adding them and connecting them with wires here is it 
+![Image Description](/images/Pasted%20image%2020241229075353.png)
+now we can add the connectors for the input and the output 
+I connected the VCC and GND to them as shown in below 
+![Image Description](/images/Pasted%20image%2020241229075628.png)
+
+now we can connect the rest with wires but it will make a mess so we are going to use labels it's cleaner and more organized 
+
+to add a one press on your keyboard `CTRL + L` or click this icon on the right tool bar 
+![Image Description](/images/Pasted%20image%2020241229075851.png)
+
+after click on it will give you a page to name it 
+![Image Description](/images/Pasted%20image%2020241229080018.png)
+i named it M+ and i will connect it 
+
+and i will add M- and connect it 
+![Image Description](/images/Pasted%20image%2020241229080201.png)
+
+now we have to connect them to the input connector so we have to copy and past them the the input connector, and i did it for every thing M+,M-,PWM and laser_readings
+![Image Description](/images/Pasted%20image%2020241229080615.png)
