@@ -24,8 +24,12 @@
         
         
     
-    "articles": [{"date":"2024-12-05","image":"","imageAlt":"","link":"/posts/learning-vim/","summary":"This guide covers installing Vim, understanding its modes (Normal, Insert, Visual, Command-Line), essential commands, combining actions, and customizing settings with `:set` for efficient text editing.","tags":["linux"],"title":"Learning VIM"},{"date":"2024-12-04","image":"","imageAlt":"","link":"/posts/download-vs-code-on-linux/","summary":"This guide explains downloading and installing Visual Studio Code on Linux using a `.deb` file. It includes navigating the website, terminal commands for installation, and a lighthearted waiting tip.","tags":["linux"],"title":"Download VS-Code on Linux"},{"date":"0001-01-01","image":"","imageAlt":"","link":"/manifest/index.json","summary":"","tags":[],"title":"Manifest"},{"date":"0001-01-01","image":"","imageAlt":"","link":"/search/","summary":"","tags":[],"title":"Search"}],
-    "test": "ROS 2 Cheat Sheets   Setting up ESP8266   VirtualBox Clipboard Issues on Ubuntu   About me   Starting a blog   Learning VIM   Download VS-Code on Linux   Manifest   Search   ",
+        
+        
+        
+    
+    "articles": [{"date":"2024-12-05","image":"","imageAlt":"","link":"/posts/learning-vim/","summary":"This guide covers installing Vim, understanding its modes (Normal, Insert, Visual, Command-Line), essential commands, combining actions, and customizing settings with `:set` for efficient text editing.","tags":["linux"],"title":"Learning VIM"},{"date":"2024-12-04","image":"","imageAlt":"","link":"/posts/download-vs-code-on-linux/","summary":"This guide explains downloading and installing Visual Studio Code on Linux using a `.deb` file. It includes navigating the website, terminal commands for installation, and a lighthearted waiting tip.","tags":["linux"],"title":"Download VS-Code on Linux"},{"date":"0001-01-01","image":"","imageAlt":"","link":"/posts/installing-esp32-boards/","summary":"A guide when you start out with esp32","tags":["ESP"],"title":"esp32 setup"},{"date":"0001-01-01","image":"","imageAlt":"","link":"/manifest/index.json","summary":"","tags":[],"title":"Manifest"},{"date":"0001-01-01","image":"","imageAlt":"","link":"/search/","summary":"","tags":[],"title":"Search"}],
+    "test": "ROS 2 Cheat Sheets   Setting up ESP8266   VirtualBox Clipboard Issues on Ubuntu   About me   Starting a blog   Learning VIM   Download VS-Code on Linux   esp32 setup   Manifest   Search   ",
     "page": "2",
     "next": ""
 }
