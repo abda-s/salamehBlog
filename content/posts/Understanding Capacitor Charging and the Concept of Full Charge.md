@@ -1,7 +1,7 @@
 ---
 title: Understanding Capacitor Charging and the Concept of Full Charge
 description: Explore the science behind capacitor charging, the significance of 5τ, and why capacitors never truly reach full charge despite practical approximations.
-date: 2025-01-21
+date: 2025-01-20
 tags:
   - Electronics
 draft: "false"
