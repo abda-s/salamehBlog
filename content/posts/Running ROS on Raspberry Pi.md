@@ -119,10 +119,15 @@ You have two options but if you did as i said in the installation the ssh server
 
 "Airbox-E798":
 password: HH65Cm6U
-192.168.1.60
+192.168.1.160
+user: abda
+pass: 1231234
 
 sudo apt install python3-rpi.gpio
 sudo apt install python3-venv
 python3 -m venv venv
+
+u have to enter the env to run the code 
 source venv/bin/activate
+python -m pip install {bkg name}
 

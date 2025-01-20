@@ -30,7 +30,7 @@ https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32
 ![Image Description](/images/b45bcc6dbf1e890d6af528b697911467.png)
 
 
-6. and don't forget to download the [drivers](https://drive.google.com/file/d/1TCEtkAoYKrJs-ypomD6y4LwpcRnMuvAK/view?usp=sharing) for windows
+6. and don't forget to download the [drivers](https://drive.google.com/file/d/1TCEtkAoYKrJs-ypomD6y4LwpcRnMuvAK/view?usp=sharing) for windows 
 
 
 
