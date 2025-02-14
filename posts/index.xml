@@ -5,7 +5,60 @@
     <description>Recent content in Posts on Abdullah Salameh&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 21 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" /><icon>/logo.svg</icon>
+    <lastBuildDate>Fri, 14 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" /><icon>/logo.svg</icon>
+    
+    
+    <item>
+      <title>SpotX – No Ads on Spotify for Windows</title>
+      <link>/posts/spotx--no-ads-on-spotify-for-windows/</link>
+      <pubDate>Fri, 14 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/spotx--no-ads-on-spotify-for-windows/</guid>
+      <description><![CDATA[<h3 id="-all-the-files-you-need-spotify-client--spotx-are-here">🔗 All the files you need (Spotify client + SpotX) are here:</h3>
+<p>📂 <a href="https://drive.google.com/drive/folders/1eZp5y4L_wD7y1c9HiHbB6wscSIWAAx1p?usp=sharing">Google Drive Link</a></p>
+<p>If the SpotX GitHub repo is ever down, you can still install everything from this link!</p>
+<h2 id="-how-to-install">🚀 How to Install</h2>
+<ol>
+<li>
+<p><strong>Get the Spotify Client</strong></p>
+<ul>
+<li>Download it from this <strong><a href="https://docs.google.com/spreadsheets/d/1wztO1L4zvNykBRw7X4jxP8pvo11oQjT0O5DvZ_-S4Ok/edit?gid=803394557#gid=803394557">Google Sheets link</a></strong>.</li>
+<li>Or grab it from the <a href="https://drive.google.com/drive/folders/1eZp5y4L_wD7y1c9HiHbB6wscSIWAAx1p?usp=sharing">Google Drive</a>.
+<img src="/images/Pasted%20image%2020250214232044.png" alt="Image Description"></li>
+</ul>
+</li>
+<li>
+<p><strong>Close Spotify</strong> (if it&rsquo;s running).</p>
+</li>
+<li>
+<p><strong>Download SpotX</strong></p>
+<ul>
+<li>From the <a href="https://drive.google.com/drive/folders/1eZp5y4L_wD7y1c9HiHbB6wscSIWAAx1p?usp=sharing">Google Drive link</a>.</li>
+<li>Or get it from the <strong>official repo:</strong> <a href="https://github.com/SpotX-Official/SpotX">GitHub Repo</a>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Run the Installer</strong></p>
+<ul>
+<li>Right-click <code>Install_Auto.bat</code> → <strong>Run as administrator</strong>.</li>
+<li>It’ll patch Spotify automatically. Just let it do its thing.
+<img src="/images/Pasted%20image%2020250214232212.png" alt="Image Description"></li>
+</ul>
+</li>
+<li>
+<p><strong>Open Spotify</strong> and enjoy no ads! 🎶</p>
+</li>
+</ol>
+<h2 id="-extra-info">🔥 Extra Info</h2>
+<ul>
+<li>Works only with the <strong>desktop</strong> version of Spotify (NOT the Microsoft Store version).</li>
+<li>Blocks ads, disables tracking, and enables extra features.</li>
+</ul>
+<p>That’s it! Enjoy ad-free Spotify. 🚀</p>
+]]></description>
+      
+    </item>
+    
     
     
     <item>
