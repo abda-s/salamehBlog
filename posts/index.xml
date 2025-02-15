@@ -69,7 +69,7 @@
       <guid>/posts/understanding-uart-and-serial-communication/</guid>
       <description><![CDATA[<h1 id="data-transmission">Data Transmission</h1>
 <p>Data transmission can be categorized into two main types: <strong>Serial</strong> and <strong>Parallel</strong>. Serial communication, in particular, has several subtypes, including <strong>Asynchronous</strong>, <strong>Synchronous</strong>, and <strong>Isochronous</strong>. In this post, we’ll focus on <strong>UART (Universal Asynchronous Receiver-Transmitter)</strong>, which is an asynchronous method of communication. Unlike synchronous communication, UART does not require devices to share the same clock cycles or be synchronized.</p>
-<p><img src="Data%20transmission.png" alt="Data Transmission"></p>
+<p><img src="/images/Data%20transmission.png" alt="Image Description"></p>
 <hr>
 <h2 id="serial-vs-parallel-transmission">Serial vs. Parallel Transmission</h2>
 <ul>
@@ -81,7 +81,7 @@
 </li>
 </ul>
 <p>Both methods enable devices to communicate, but they differ in their approach. Serial transmission is often preferred for its simplicity and lower cost, while parallel transmission is used when speed is critical.</p>
-<p><img src="parallel%20vs%20serail.png" alt="Parallel vs. Serial"></p>
+<p><img src="/images/parallel%20vs%20serail.png" alt="Image Description"></p>
 <h3 id="key-terms">Key Terms:</h3>
 <ul>
 <li><strong>MSB (Most Significant Bit)</strong>: The bit with the highest value in a byte (e.g., 2^7).</li>
@@ -101,7 +101,7 @@
 <blockquote>
 <p><strong>Note</strong>: Asynchronous transmission is &ldquo;asynchronous at the byte level,&rdquo; but the bits within each byte are still synchronized.</p>
 </blockquote>
-<p><img src="serial%20byte.png" alt="Serial Byte"></p>
+<p><img src="/images/serial%20byte.png" alt="Image Description"></p>
 <hr>
 <h2 id="uart-universal-asynchronous-receiver-transmitter">UART: Universal Asynchronous Receiver-Transmitter</h2>
 <p>UART is a hardware device that facilitates asynchronous serial communication. It uses two wires:</p>
@@ -140,7 +140,7 @@
 <li>Not a protocol but refers to the voltage level used by UART.</li>
 <li>Example: USB-to-TTL converters.</li>
 </ul>
-<p><img src="TTL.png" alt="TTL"></p>
+<p><img src="/images/TTL.png" alt="Image Description"></p>
 <h4 id="rs-232">RS-232:</h4>
 <ul>
 <li>Uses higher voltage levels (+/- 12V) for long-range communication.</li>
@@ -152,7 +152,7 @@
 </li>
 <li>Active low logic.</li>
 </ul>
-<p><img src="files/RS232.png" alt="RS-232"></p>
+<p><img src="/images/RS232.png" alt="Image Description"></p>
 <hr>
 <h3 id="references">References:</h3>
 <ul>
