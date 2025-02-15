@@ -10,7 +10,7 @@ draft: "false"
 
 Data transmission can be categorized into two main types: **Serial** and **Parallel**. Serial communication, in particular, has several subtypes, including **Asynchronous**, **Synchronous**, and **Isochronous**. In this post, we’ll focus on **UART (Universal Asynchronous Receiver-Transmitter)**, which is an asynchronous method of communication. Unlike synchronous communication, UART does not require devices to share the same clock cycles or be synchronized.
 
-![Data Transmission](Data%20transmission.png)
+![Image Description](/images/Data%20transmission.png)
 
 ---
 
@@ -22,7 +22,7 @@ Data transmission can be categorized into two main types: **Serial** and **Paral
 
 Both methods enable devices to communicate, but they differ in their approach. Serial transmission is often preferred for its simplicity and lower cost, while parallel transmission is used when speed is critical.
 
-![Parallel vs. Serial](parallel%20vs%20serail.png)
+![Image Description](/images/parallel%20vs%20serail.png)
 
 ### Key Terms:
 - **MSB (Most Significant Bit)**: The bit with the highest value in a byte (e.g., 2^7).
@@ -47,7 +47,7 @@ Between bytes, there may be a gap or idle time, which helps the receiver prepare
 
 > **Note**: Asynchronous transmission is "asynchronous at the byte level," but the bits within each byte are still synchronized.
 
-![Serial Byte](serial%20byte.png)
+![Image Description](/images/serial%20byte.png)
 
 ---
 
@@ -85,7 +85,7 @@ The **baud rate** is a critical parameter in serial communication, especially in
 - Not a protocol but refers to the voltage level used by UART.
 - Example: USB-to-TTL converters.
 
-![TTL](TTL.png)
+![Image Description](/images/TTL.png)
 
 #### RS-232:
 - Uses higher voltage levels (+/- 12V) for long-range communication.
@@ -94,7 +94,7 @@ The **baud rate** is a critical parameter in serial communication, especially in
 	- +3V to +15V represents a "0" bit.
 - Active low logic.
 
-![RS-232](files/RS232.png)
+![Image Description](/images/RS232.png)
 
 ---
 ### References:
