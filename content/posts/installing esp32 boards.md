@@ -1,5 +1,5 @@
 ---
-title: esp32 setup
+title: Setting up ESP32
 description: A guide when you start out with esp32
 date: 2025-01-08
 tags:

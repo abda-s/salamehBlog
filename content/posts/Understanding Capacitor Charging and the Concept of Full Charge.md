@@ -62,7 +62,7 @@ Interestingly, the simulation showed the capacitor reaching exactly 12 V, which 
 ## Key Takeaways
 
 - At 5τ, a capacitor is 99.3% charged, not 100%.
-- It would take infinite time for a capacitor to reach exactly Vmax.
+- It would take infinite time for a capacitor to reach exactly $Vmax$.
 - Simulations and measurements often show Vmax due to rounding and device limitations.
 - This approximation is fine for real-world use, as the difference is too small to matter.
 
