@@ -1,5 +1,5 @@
 ---
-title: uart
+title: Understanding UART and Serial Communication
 description: " The basics of UART, serial communication, baud rates, and the differences between TTL and RS-232."
 date: 2025-02-14
 tags:
