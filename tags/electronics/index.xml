@@ -5,7 +5,70 @@
     <description>Recent content in Electronics on Abdullah Salameh&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 14 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="/tags/electronics/index.xml" rel="self" type="application/rss+xml" /><icon>/logo.svg</icon>
+    <lastBuildDate>Thu, 27 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="/tags/electronics/index.xml" rel="self" type="application/rss+xml" /><icon>/logo.svg</icon>
+    
+    
+    <item>
+      <title>Fixing My Ethernet Cable Issue</title>
+      <link>/posts/fixing-my-ethernet-cable-issue/</link>
+      <pubDate>Thu, 27 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/fixing-my-ethernet-cable-issue/</guid>
+      <description><![CDATA[<h2 id="the-setup">The Setup</h2>
+<p>My father brought an electrician home to wire an Ethernet cable from the router to my room. He ran the cable inside the wall, and everything seemed fine at first. However, when he crimped the RJ-45 connectors, he messed up, and the cable wasn’t working on my laptop. That meant I had to fix it myself.</p>
+<p>To do this, I needed:</p>
+<ul>
+<li>An Ethernet cable tester</li>
+<li>An Ethernet crimper</li>
+<li>RJ-45 plugs</li>
+</ul>
+<p>Here’s a photo of each item:</p>
+<p><img src="/images/Drawing%202025-02-28%2005.37.43.excalidraw.png" alt="Image Description"></p>
+<h2 id="understanding-the-ethernet-cable-tester">Understanding the Ethernet Cable Tester</h2>
+<p>Before jumping in, I had to figure out how the Ethernet cable tester actually works. I watched a few YouTube videos and learned that it’s just a connectivity tester. An Ethernet cable has eight wires, and the tester checks each one sequentially. If the wire is properly connected, its corresponding LED blinks. If an LED doesn’t blink, that wire isn’t connected properly, meaning the cable is faulty.</p>
+<p>To get comfortable with the tester, I tried it on an already working cable.</p>
+<p><img src="/images/IMG-20250228-WA0021.jpg" alt="Image Description"></p>
+<p>The LED numbers correspond to the pin numbers in the RJ-45 plug. Here’s an image showing the correct pin numbering:</p>
+<p><img src="/images/wmremove-transformed.png" alt="Image Description"></p>
+<h2 id="diagnosing-the-issue">Diagnosing the Issue</h2>
+<p>Now that I understood how the tester works, I tested the cable the electrician installed. I connected the first part of the tester in the living room and the second part in my bedroom.</p>
+<p><img src="/images/Pasted%20image%2020250228061200.png" alt="Image Description"></p>
+<p>Here’s a video showing that all LEDs turned on except for number 7. That’s why the cable wasn’t working.</p>
+<p><img src="/images/Timeline%201%201.gif" alt="Image Description"></p>
+<h2 id="fixing-the-ethernet-cable">Fixing the Ethernet Cable</h2>
+<p>To fix the issue, I had to replace the RJ-45 connectors on both ends of the cable. Initially, I only replaced the end in the living room and tested it again. If that fixed the issue, I wouldn’t need to replace the bedroom end. But in the end, I had to change both.</p>
+<p>Here’s the YouTube video that helped me with the process: <a href="https://youtu.be/T1Cp9F8qto8?si=mocguZS7ddZXiqb7">Watch it here</a>.</p>
+<h3 id="replacing-the-rj-45-plug">Replacing the RJ-45 Plug</h3>
+<h4 id="step-1-cutting-the-old-rj-45-plug">Step 1: Cutting the Old RJ-45 Plug</h4>
+<p><img src="/images/IMG-20250228-WA0011.jpg" alt="Image Description"></p>
+<h4 id="step-2-removing-the-outer-plastic-sheath">Step 2: Removing the Outer Plastic Sheath</h4>
+<p><img src="/images/IMG-20250228-WA0007.jpg" alt="Image Description"></p>
+<h4 id="step-3-untwisting-the-wires-and-cutting-excess-plastic">Step 3: Untwisting the Wires and Cutting Excess Plastic</h4>
+<p><img src="/images/IMG-20250228-WA0006.jpg" alt="Image Description"></p>
+<h4 id="step-4-arranging-the-wires-in-the-correct-order">Step 4: Arranging the Wires in the Correct Order</h4>
+<p>The correct color order follows the T568A standard:</p>
+<p><img src="/images/T568Aworking-3434845376.png" alt="Image Description"></p>
+<p>Here’s how it looked after arranging them:</p>
+<p><img src="/images/IMG-20250228-WA0004.jpg" alt="Image Description"></p>
+<h4 id="step-5-cutting-and-crimping-the-wires">Step 5: Cutting and Crimping the Wires</h4>
+<p>After cutting the wires to the correct length, I used the crimper to attach the new RJ-45 plug.</p>
+<p>Here’s the final result:</p>
+<p><img src="/images/IMG-20250228-WA0001.jpg" alt="Image Description"></p>
+<p>I repeated the same process in my bedroom:</p>
+<p><img src="/images/IMG-20250228-WA0002.jpg" alt="Image Description"></p>
+<h2 id="testing-the-fixed-cable">Testing the Fixed Cable</h2>
+<p>I tested the cable again using the tester.</p>
+<p>Now, it was time for the moment of truth. I tested the cable one more time using the Ethernet tester, and…</p>
+<p><img src="/images/Timeline%202.gif" alt="Image Description"></p>
+<p>Success! The tester confirmed that all the LEDs were lighting up correctly.</p>
+<p>To be completely sure, I connected one end to the router and the other to my laptop. It worked!</p>
+<p><img src="/images/WhatsApp%20Image%202025-02-28%20at%2006.57.16_a9c1cdcd.jpg" alt="Image Description"></p>
+<h3 id="conclusion">Conclusion</h3>
+<p>This was a fun hands-on experience, and I learned a lot about networking cables, testers, and crimping RJ-45 connectors. Hopefully, this helps anyone dealing with similar issues!</p>
+]]></description>
+      
+    </item>
+    
     
     
     <item>
