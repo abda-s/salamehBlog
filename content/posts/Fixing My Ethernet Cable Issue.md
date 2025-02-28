@@ -1,7 +1,7 @@
 ---
 title: Fixing My Ethernet Cable Issue
 description: Diagnosing and fixing an Ethernet cable issue by testing connections, replacing RJ-45 plugs, and ensuring proper wiring
-date: 2025-02-27
+date: 2025-02-26
 tags:
   - Electronics
 draft: "false"
