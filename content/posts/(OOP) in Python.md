@@ -2,7 +2,7 @@
 title: A Beginner's Guide to Object-Oriented Programming (OOP) in Python
 tags:
   - python
-draft: "true"
+draft: "false"
 date: 2024-12-09
 description: This blog covers the fundamentals of Object-Oriented Programming (OOP) in Python, explaining classes, objects, inheritance, and the `super()` function with practical examples to help beginners write modular and reusable code.
 ---
