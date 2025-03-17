@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "styles.css",
-	"sourceRoot": "C:/Users/3adas/Documents/salamehBlog",
+	"sourceRoot": "D:/Documents/salamehBlog",
 	"sources": [
 		"themes/hugo-ficurinia/assets/scss/style.scss"
 	],

@@ -27,7 +27,7 @@
 
 <title>
     
-    Understanding Capacitor Charging and the Concept of Full Charge &ndash;
+    Charging the BYD Seagull: How 8A and 32A Chargers Impact Its LFP Battery &ndash;
     
     Abdullah Salameh&#39;s Blog
   </title>
@@ -42,52 +42,54 @@
 <meta name="author" content="Abdullah Salameh" />
 
     
-        <meta name="keywords" content='Electronics' />
+        <meta name="keywords" content='Cars, Electronics' />
     
     
-        <meta name="description" content="Explore the science behind capacitor charging, the significance of 5τ, and why capacitors never truly reach full charge despite practical approximations." />
+        <meta name="description" content="How different charging rates affect the BYD Seagull’s lithium iron phosphate (LFP) battery. Learn about battery longevity, charging efficiency, and the best practices for maintaining performance." />
     
 
 <meta property="og:site_name"
     content='Abdullah Salameh&#39;s Blog' />
 
-    <meta property="og:title" content="Understanding Capacitor Charging and the Concept of Full Charge" />
+    <meta property="og:title" content="Charging the BYD Seagull: How 8A and 32A Chargers Impact Its LFP Battery" />
     <meta property="og:type" content="article" />
     
     <meta
         property="article:author" content="Abdullah Salameh" />
     <meta
         property="article:published_time"
-        content='2025-01-20T00:00:00Z&#43;0000' />
+        content='2025-03-15T00:00:00Z&#43;0000' />
     
+        
+            <meta property="article:tag" content="Cars" />
         
             <meta property="article:tag" content="Electronics" />
         
     
-    <meta property="og:url" content="/posts/understanding-capacitor-charging-and-the-concept-of-full-charge/" />
+    <meta property="og:url" content="/posts/charging-the-byd-seagull-how-8a-and-32a-chargers-impact-its-lfp-battery/" />
     
     
     <meta property="og:image"
         content="/icon512.png" />
     
-        <meta property="og:description" content="Explore the science behind capacitor charging, the significance of 5τ, and why capacitors never truly reach full charge despite practical approximations." />
+        <meta property="og:description" content="How different charging rates affect the BYD Seagull’s lithium iron phosphate (LFP) battery. Learn about battery longevity, charging efficiency, and the best practices for maintaining performance." />
     
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:domain"
       content=''
 />
-<meta property="twitter:url" content="/posts/understanding-capacitor-charging-and-the-concept-of-full-charge/" />
+<meta property="twitter:url" content="/posts/charging-the-byd-seagull-how-8a-and-32a-chargers-impact-its-lfp-battery/" />
 
 
-    <meta name="twitter:title" content="Understanding Capacitor Charging and the Concept of Full Charge" />
+    <meta name="twitter:title" content="Charging the BYD Seagull: How 8A and 32A Chargers Impact Its LFP Battery" />
     
     
     
     <meta name="twitter:image"
         content="/icon512.png" />
     
-        <meta name="twitter:description" content="Explore the science behind capacitor charging, the significance of 5τ, and why capacitors never truly reach full charge despite practical approximations." />
+        <meta name="twitter:description" content="How different charging rates affect the BYD Seagull’s lithium iron phosphate (LFP) battery. Learn about battery longevity, charging efficiency, and the best practices for maintaining performance." />
     
 
 <link rel="manifest" href="/manifest/index.json" />
@@ -195,13 +197,13 @@
 <article class="card single">
   
   <h1>
-    Understanding Capacitor Charging and the Concept of Full Charge
+    Charging the BYD Seagull: How 8A and 32A Chargers Impact Its LFP Battery
   </h1>
   
   
   <p class="date">
     <span title='Date'>󰃭 </span>
-    2025-01-20
+    2025-03-15
 
 
   </p>
@@ -215,46 +217,34 @@
   
   
   <div>
-    <p>While taking a <a href="https://youtube.com/playlist?list=PLww54WQ2wa5qVh1p8iPi7HspX7N9hbvbc&amp;si=9h1KH2NZG2lSLsaB">course with Walid Issa</a>, we explored the fascinating behavior of capacitors. During one of the experiments, an interesting observation about capacitor charging sparked my curiosity. My friend <a href="https://www.linkedin.com/in/ahmad-awad-36b481301/">Ahmad Awad</a> and I decided to dive deeper into the topic, conducting research that ultimately led to this blog.</p>
-<p>When analyzing capacitors, we often hear that a capacitor is &ldquo;fully charged&rdquo; when the elapsed time equals 5 times the time constant (“5τ”). However, upon closer look, this statement needs some clarification. Let&rsquo;s dive into the theory, practical observations, and what &ldquo;fully charged&rdquo; really means.</p>
-<h2 id="observations-from-the-simulation">Observations from the Simulation</h2>
-<p><img src="/images/Pasted%20image%2020250121022953.png" alt="Image Description">
-<img src="/images/Pasted%20image%2020250121023020.png" alt="Image Description"></p>
-<p>In a recent calculation, the capacitor was expected to be fully charged in 0.25 seconds. However, the voltage across the capacitor at this point was 11.923 V instead of the expected 12 V. The error was calculated as:</p>
-<p>$$ \frac{12 - 11.923}{12} \times 100 = 0.6% $$</p>
-<p>This raised the question: Why is there an error when the capacitor is supposed to be fully charged at 5τ?</p>
-<h2 id="the-truth-about-5τ">The Truth About 5τ</h2>
-<p>The value of 5τ does not mean the capacitor is 100% charged. Instead, it means the capacitor has reached about 99.3% of its maximum voltage. Using the data from the simulation, we can confirm this:</p>
-<p>$$ \frac{11.923}{12} \times 100 = 99.33% $$</p>
-<p>This matches the theoretical prediction. While the capacitor seems nearly charged at 5τ, it never fully reaches 100% because of the exponential nature of its charging curve.</p>
-<h2 id="theoretical-explanation">Theoretical Explanation</h2>
-<p><img src="/images/Pasted%20image%2020250121015614.png" alt="Image Description"></p>
-<p>The voltage across a charging capacitor is given by the equation:</p>
-<p>$$ V(t) = V_{\text{max}} \left( 1 - e^{-\frac{t}{RC}} \right) $$</p>
-<p>where:</p>
+    <p>The BYD Seagull is a compact electric vehicle equipped with lithium iron phosphate (LFP) batteries, known for their durability and thermal stability. Understanding how different charging rates affect these batteries is crucial for optimizing both vehicle performance and battery longevity.</p>
+<h2 id="byd-seagulls-charging-capabilities">BYD Seagull&rsquo;s Charging Capabilities</h2>
+<p>The Seagull offers two battery options: a 30.08 kWh LFP battery and a 38.88 kWh LFP BYD Blade battery. Its charging infrastructure supports:</p>
 <ul>
-<li>Vmax is the maximum voltage the capacitor can charge to (12 V in this case).</li>
-<li>t is the time elapsed.</li>
-<li>RC is the time constant of the circuit.</li>
+<li><strong>AC Charging</strong>: Up to 6.6 kW</li>
+<li><strong>DC Fast Charging</strong>: 30 kW or 40 kW</li>
 </ul>
-<p>As time passes, $$e^{-t/RC}$$ gets closer to zero.</p>
-<p><img src="/images/Pasted%20image%2020250121015737.png" alt="Image Description">
-This means it would take infinite time for the capacitor to reach exactly Vmax. In practice, we consider the capacitor &ldquo;fully charged&rdquo; when it’s close enough to Vmax, such as 99.3% at 5τ.</p>
-<h2 id="the-simulation-discrepancy">The Simulation Discrepancy</h2>
-<p><img src="/images/Pasted%20image%2020250121020039.png" alt="Image Description"></p>
-<p>Interestingly, the simulation showed the capacitor reaching exactly 12 V, which seems to go against the theory. Why did this happen?</p>
-<ol>
-<li><strong>Oscilloscope Precision:</strong> Oscilloscopes show voltages with limited precision. If the capacitor voltage is extremely close to the maximum (e.g., 11.999999 V), the oscilloscope rounds it to 12 V.</li>
-<li><strong>Rounding Effects:</strong> The actual voltage might still be slightly below 12 V, but the measuring device’s resolution hides these small differences. Higher-resolution equipment would show the tiny gap.</li>
-</ol>
-<h2 id="key-takeaways">Key Takeaways</h2>
+<p>These specifications indicate that the Seagull is designed to handle various charging scenarios, from standard home charging to faster public charging stations.</p>
+<h2 id="understanding-c-rates-and-their-impact">Understanding C-Rates and Their Impact</h2>
+<p>The C-rate measures the rate at which a battery is charged or discharged relative to its capacity. A 1C rate means charging the entire battery in one hour. For the Seagull&rsquo;s 30.08 kWh battery:</p>
 <ul>
-<li>At 5τ, a capacitor is 99.3% charged, not 100%.</li>
-<li>It would take infinite time for a capacitor to reach exactly $Vmax$.</li>
-<li>Simulations and measurements often show Vmax due to rounding and device limitations.</li>
-<li>This approximation is fine for real-world use, as the difference is too small to matter.</li>
+<li><strong>1C Rate</strong>: 30.08 kW</li>
+<li><strong>0.5C Rate</strong>: 15.04 kW</li>
 </ul>
-<p>Understanding these details gives a clearer picture of how capacitors behave and avoids common misunderstandings about what &ldquo;fully charged&rdquo; means.</p>
+<h2 id="charging-with-an-8a-charger">Charging with an 8A Charger</h2>
+<p>An 8-ampere (A) charger operating at 230 volts (V) delivers approximately 1.84 kW (8A × 230V). This translates to a C-rate of about 0.061 for the 30.08 kWh battery (1.84 kW ÷ 30.08 kWh). Such a low C-rate is considered gentle on the battery, minimizing stress and potentially extending its lifespan.</p>
+<h2 id="charging-with-a-32a-charger">Charging with a 32A Charger</h2>
+<p>A 32A charger at 230V provides around 7.36 kW (32A × 230V). For the 30.08 kWh battery, this results in a C-rate of approximately 0.245 (7.36 kW ÷ 30.08 kWh). This rate is still within the battery&rsquo;s designed AC charging capacity of 6.6 kW, indicating that the vehicle&rsquo;s onboard charger would limit the charging power to prevent potential overcharging.</p>
+<h2 id="research-insights-on-lfp-batteries-and-charging-rates">Research Insights on LFP Batteries and Charging Rates</h2>
+<p>Studies have shown that LFP batteries exhibit resilience to higher charging rates. For instance, research indicates that charging at rates up to 4C does not significantly impact the battery&rsquo;s lifespan. Specifically, capacity degradation was 15% at a 1C rate and 17% at a 4C rate after 4,000 cycles, with similar degradation observed up to 1,000 cycles.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Both 8A and 32A chargers operate within the BYD Seagull&rsquo;s charging specifications, suggesting minimal adverse effects on the LFP battery&rsquo;s health. The vehicle&rsquo;s battery management system is designed to regulate charging rates, ensuring optimal performance and longevity. However, consistently using higher charging rates can lead to increased heat generation, which may affect battery health over time. Therefore, balancing charging speeds based on daily driving needs and charging availability is advisable to maintain battery integrity.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/BYD_Seagull">https://en.wikipedia.org/wiki/BYD_Seagull</a></li>
+<li><a href="https://findingspress.org/api/v1/articles/21459-impact-of-charging-rates-on-electric-vehicle-battery-life.pdf">https://findingspress.org/api/v1/articles/21459-impact-of-charging-rates-on-electric-vehicle-battery-life.pdf</a></li>
+<li><a href="https://moscow.sci-hub.ru/5155/011d5b81780c4ac3e787a937c78bd05a/10.1016@j.jpowsour.2016.04.140.pdf">https://moscow.sci-hub.ru/5155/011d5b81780c4ac3e787a937c78bd05a/10.1016@j.jpowsour.2016.04.140.pdf</a></li>
+</ul>
 
   </div>
 </article>
@@ -269,6 +259,9 @@ This means it would take infinite time for the capacitor to reach exactly Vmax. 
   <span> </span>
   <strong>
     Tags:</strong>
+  
+  <a  href="/tags/cars/">#
+    Cars</a>
   
   <a  href="/tags/electronics/">#
     Electronics</a>
@@ -296,7 +289,7 @@ initComments({
     defaultHomeserverUrl: 'https:\/\/matrix.cactus.chat:8448',
     serverName: 'cactus.chat',
     siteName: "example.com",
-    commentSectionId: "552ed0170aaeef0d88c472bc8fb60faa"
+    commentSectionId: "d97b816c05ac5b3c986ac9e03d70c617"
 })
 </script>
 
@@ -309,42 +302,6 @@ initComments({
             <h2>More posts like this</h2>
             <div class="postlist ">
                 <article class="card postlistitem">
-    <div>
-        <h2>
-            <a href="/posts/charging-the-byd-seagull-how-8a-and-32a-chargers-impact-its-lfp-battery/">Charging the BYD Seagull: How 8A and 32A Chargers Impact Its LFP Battery</a>
-        </h2>
-        <p class="date">
-            <span title='Date'>󰃭 </span>
-    2025-03-15
-
-
-            
-                | 
-                <span title='Tags'> </span>
-                
-                    <a href="/tags/cars">#Cars</a>
-                
-                    <a href="/tags/electronics">#Electronics</a>
-                
-            
-        </p>
-        
-            
-        
-        
-            <div class="articlePreview">
-                <p>
-                    
-                        How different charging rates affect the BYD Seagull’s lithium iron phosphate (LFP) battery. Learn about battery longevity, charging efficiency, and the best practices for maintaining performance.
-                    
-                </p>
-                <p><a href="/posts/charging-the-byd-seagull-how-8a-and-32a-chargers-impact-its-lfp-battery/">Continue reading </a></p>
-            </div>
-        
-    </div>
-    <hr />
-</article>
-<article class="card postlistitem">
     <div>
         <h2>
             <a href="/posts/fixing-my-ethernet-cable-issue/">Fixing My Ethernet Cable Issue</a>
@@ -373,6 +330,40 @@ initComments({
                     
                 </p>
                 <p><a href="/posts/fixing-my-ethernet-cable-issue/">Continue reading </a></p>
+            </div>
+        
+    </div>
+    <hr />
+</article>
+<article class="card postlistitem">
+    <div>
+        <h2>
+            <a href="/posts/understanding-uart-and-serial-communication/">Understanding UART and Serial Communication</a>
+        </h2>
+        <p class="date">
+            <span title='Date'>󰃭 </span>
+    2025-02-14
+
+
+            
+                | 
+                <span title='Tags'> </span>
+                
+                    <a href="/tags/electronics">#Electronics</a>
+                
+            
+        </p>
+        
+            
+        
+        
+            <div class="articlePreview">
+                <p>
+                    
+                         The basics of UART, serial communication, baud rates, and the differences between TTL and RS-232.
+                    
+                </p>
+                <p><a href="/posts/understanding-uart-and-serial-communication/">Continue reading </a></p>
             </div>
         
     </div>
