@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html class="" lang="en"><head>
+  
+  <meta name="robots" content="noai, noimageai">
+  <meta name="viewport" content="width=device-width" />
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=7" />
+  <link
+    rel="icon"
+    href='/favicon.png'
+/>
+<link
+    rel="shortcut icon"
+    href='/favicon.ico'
+    type="image/x-icon"
+/>
+<link
+    rel="apple-touch-icon"
+    href='/apple-touch-icon.png'
+/>
+
+    <link
+        rel="icon"
+        href='/logo.svg'
+        type="image/svg+xml"
+    />
+
+<title>
+    
+    Understanding Incremental Rotary Encoders &ndash;
+    
+    Abdullah Salameh&#39;s Blog
+  </title>
+  
+  <link href="/symbols-nerd-font/symbols-nerd-font.css" rel="stylesheet" />
+  <link href="/jetbrains-mono/jetbrains-mono.css" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
+  
+  
+  <link type="text/css" rel="stylesheet" href=/css/styles.9cbbae7ea584f9d0b823365a1be38866efc66a8ac6d693f61de4116c3145b86f256fea93ba492d5b457456651bc48386a13b8d79b2d43838be1cce257b8b8125.css integrity="sha512-nLuufqWE&#43;dC4IzZaG&#43;OIZu/GaorG1pP2HeQRbDFFuG8lb&#43;qTukktW0V0VmUbxIOGoTuNebLUODi&#43;HM4le4uBJQ==" />
+<meta name="author" content="Abdullah Salameh" />
+
+    
+        <meta name="keywords" content='Electronics' />
+    
+    
+        <meta name="description" content="A **rotary encoder** converts shaft position into signals, used in robotics and automation. This article focuses on **incremental encoders** and how to interface them with an ESP32." />
+    
+
+<meta property="og:site_name"
+    content='Abdullah Salameh&#39;s Blog' />
+
+    <meta property="og:title" content="Understanding Incremental Rotary Encoders" />
+    <meta property="og:type" content="article" />
+    
+    <meta
+        property="article:author" content="Abdullah Salameh" />
+    <meta
+        property="article:published_time"
+        content='2025-03-29T00:00:00Z&#43;0000' />
+    
+        
+            <meta property="article:tag" content="Electronics" />
+        
+    
+    <meta property="og:url" content="/posts/understanding-incremental-rotary-encoders/" />
+    
+    
+    <meta property="og:image"
+        content="/icon512.png" />
+    
+        <meta property="og:description" content="A **rotary encoder** converts shaft position into signals, used in robotics and automation. This article focuses on **incremental encoders** and how to interface them with an ESP32." />
+    
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:domain"
+      content=''
+/>
+<meta property="twitter:url" content="/posts/understanding-incremental-rotary-encoders/" />
+
+
+    <meta name="twitter:title" content="Understanding Incremental Rotary Encoders" />
+    
+    
+    
+    <meta name="twitter:image"
+        content="/icon512.png" />
+    
+        <meta name="twitter:description" content="A **rotary encoder** converts shaft position into signals, used in robotics and automation. This article focuses on **incremental encoders** and how to interface them with an ESP32." />
+    
+
+<link rel="manifest" href="/manifest/index.json" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.css" integrity="sha384-oPZp6k5NmJiwU9zpTDoFeIzUgz5tB9ZVsltlf15o5rN1lV9d8oHfYXh2GvByqVZW" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.js" integrity="sha384-kmruA2TbT8VUpOb8B3RIFu0BcHp3Sw/OB2rbRzjLHpzkUs6+/c1kDrl7UwFvJclM" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+        <div id="baseContainer"><header class="">
+<div class="titleAndSearchContainer">
+        <div id="titleContainer">
+            
+                <a class="unstyledLink" href="/">
+                    <img src='/logo.svg' alt='Logo'/>
+                </a>
+            
+            <div class="rightOfLogo">
+                <div class="titleAndHamburger">
+                    <h1>
+                        <a class="unstyledLink" href="/">Abdullah Salameh&#39;s Blog</a>
+                        
+                    </h1>
+                    
+                </div>
+                <div id="wide_nav"><nav>
+    
+    <ul id="main-nav">
+        <li><a href="/">Home</a></li>
+        
+            <li><a href="/posts/">Posts</a></li>
+        
+        
+        
+        
+        
+        
+            <li><a href="/about/">About</a></li>
+        
+        
+            <li><a href="/tags/">Tags</a></li>
+        
+        
+    </ul>
+</nav>
+</div>
+            </div>
+        </div>
+        <div class="search">
+    <input id="searchbar" type="text" placeholder='Search' />
+    <span class="nerdlink" onclick="newSearch();">&#xf002;</span>
+</div>
+<script>
+    function newSearch() {
+        let term = searchbar.value.trim();
+        if (!term) return;
+        location.href = `/search/?q=${term}`;
+    }
+    searchbar.onkeyup = (ev) => {if (ev.keyCode == 13) newSearch()};
+</script>
+
+    </div>
+    <div id="links">
+        
+        
+        <a
+    
+        rel="noreferrer"
+    
+    target="_blank"
+    class="nerdlink"
+    href="https://github.com/abda-s">
+    
+    
+        &#xf09b;
+    
+    <span>
+        Github
+    </span>
+</a>
+<a
+    
+        rel="noreferrer"
+    
+    target="_blank"
+    class="nerdlink"
+    href="https://www.linkedin.com/in/abdullah-salameh/">
+    
+    
+        &#xf0e1;
+    
+    <span>
+        LinkedIn
+    </span>
+</a>
+
+    </div>
+    
+
+</header>
+<div id="contentContainer">
+                <div id="content">
+                    <main>
+<article class="card single">
+  
+  <h1>
+    Understanding Incremental Rotary Encoders
+  </h1>
+  
+  
+  <p class="date">
+    <span title='Date'>󰃭 </span>
+    2025-03-29
+
+
+  </p>
+  
+
+  
+
+  
+
+  
+  
+  
+  <div>
+    <p>A <strong>rotary encoder</strong> is a device that converts the angular position of a shaft into analog or digital output signals. These encoders are commonly used in industrial automation, robotics, and consumer electronics.</p>
+<h2 id="types-of-rotary-encoders">Types of Rotary Encoders</h2>
+<p>There are two main types of rotary encoders:</p>
+<h3 id="absolute-encoders">Absolute Encoders</h3>
+<p>An <strong>absolute encoder</strong> maintains position information even when power is removed. It provides the current angular position of the shaft at any given moment.</p>
+<h3 id="incremental-encoders">Incremental Encoders</h3>
+<p>An <strong>incremental encoder</strong>, on the other hand, does not retain position information when powered off. It provides motion data based on changes from an initial reference point. To determine an absolute position, the system must first move to a known reference angle.</p>
+<p>In this article, we will focus on <strong>incremental encoders</strong> and provide a simple ESP32 code to interface with them.</p>
+<h2 id="how-incremental-encoders-work">How Incremental Encoders Work</h2>
+<p>Incremental encoders have two main output signals:</p>
+<ul>
+<li><strong>A (Channel A)</strong></li>
+<li><strong>B (Channel B)</strong></li>
+</ul>
+<p>These signals indicate movement and direction when the shaft rotates. Some encoders also include a third signal, <strong>Z</strong>, which serves as a reference point for position calibration.</p>
+<h3 id="signal-representation">Signal Representation</h3>
+<p>Here is an image illustrating signals <strong>A</strong>, <strong>B</strong>, and <strong>Z</strong>:</p>
+<p><img src="/images/moving_disc_with_slits-1771498052.png" alt="Image Description"></p>
+<h2 id="quadrature-outputs">Quadrature Outputs</h2>
+<p>Incremental encoders employ a <strong>quadrature encoder</strong> to generate their <em>A</em> and <em>B</em> output signals. The pulses from these outputs are quadrature-encoded, meaning that <em>A</em> and <em>B</em> are phase-shifted by 90 degrees when the encoder moves at a constant speed.</p>
+<p><img src="/images/Quadrature_Diagram.psd.png" alt="Image Description"></p>
+<p>At any given moment, the phase difference between the <em>A</em> and <em>B</em> signals indicates the encoder&rsquo;s rotation direction:</p>
+<ul>
+<li>
+<p>A phase difference of <strong>+90°</strong> corresponds to <strong>clockwise rotation</strong>.</p>
+</li>
+<li>
+<p>A phase difference of <strong>−90°</strong> corresponds to <strong>counterclockwise rotation</strong>.</p>
+</li>
+</ul>
+<p><img src="/images/quadrature-969270470.jpg" alt="Image Description"></p>
+<p><img src="/images/Incremental_directional_encoder.gif" alt="Image Description"></p>
+<h3 id="quadrature-encoding-table">Quadrature Encoding Table</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Step</th>
+          <th><code>outputA</code></th>
+          <th><code>outputB</code></th>
+          <th>Rotation Direction</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>LOW</td>
+          <td>LOW</td>
+          <td>Start Position</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>HIGH</td>
+          <td>LOW</td>
+          <td>Clockwise</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>HIGH</td>
+          <td>HIGH</td>
+          <td>Clockwise</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>LOW</td>
+          <td>HIGH</td>
+          <td>Clockwise</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>LOW</td>
+          <td>LOW</td>
+          <td>Next Step</td>
+      </tr>
+      <tr>
+          <td>6</td>
+          <td>LOW</td>
+          <td>HIGH</td>
+          <td>Counterclockwise</td>
+      </tr>
+      <tr>
+          <td>7</td>
+          <td>HIGH</td>
+          <td>HIGH</td>
+          <td>Counterclockwise</td>
+      </tr>
+      <tr>
+          <td>8</td>
+          <td>HIGH</td>
+          <td>LOW</td>
+          <td>Counterclockwise</td>
+      </tr>
+      <tr>
+          <td>9</td>
+          <td>LOW</td>
+          <td>LOW</td>
+          <td>Next Step</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="resolution-of-an-incremental-encoder">Resolution of an Incremental Encoder</h2>
+<p>The <strong>resolution</strong> of an incremental encoder determines its precision. It is specified as:</p>
+<ul>
+<li><strong>Pulses per Revolution (PPR)</strong> for rotary encoders.</li>
+<li><strong>Pulses per Unit Distance (e.g., mm)</strong> for linear encoders.</li>
+</ul>
+<p>Each signal edge (rising and falling transitions of <em>A</em> and <em>B</em>) represents a detected position change. Since each full cycle has four edges (rising <em>A</em>, rising <em>B</em>, falling <em>A</em>, falling <em>B</em>), the measurement resolution is <strong>one-fourth of a full <em>A</em> or <em>B</em> output cycle</strong>.</p>
+<p>For example, a <strong>1000 pulse-per-revolution (PPR) rotary encoder</strong> has:</p>
+<ul>
+<li>Per-cycle measurement resolution = <strong>360° / 1000 cycles = 0.36° per pulse</strong></li>
+<li>Effective resolution = <strong>0.36° / 4 = 0.09° per edge</strong></li>
+</ul>
+<h2 id="esp32-code-for-incremental-encoder">ESP32 Code for Incremental Encoder</h2>
+<p>Below is a simple <strong>ESP32 Arduino</strong> code to read an incremental rotary encoder:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">#define outputA 17
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define outputB 16
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">volatile</span> <span style="color:#66d9ef">int</span> counter <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">volatile</span> <span style="color:#66d9ef">int</span> aLastState;  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> IRAM_ATTR <span style="color:#a6e22e">handleEncoder</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">int</span> aState <span style="color:#f92672">=</span> digitalRead(outputA);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (aState <span style="color:#f92672">!=</span> aLastState) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (digitalRead(outputB) <span style="color:#f92672">!=</span> aState) {
+</span></span><span style="display:flex;"><span>      counter<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>      counter<span style="color:#f92672">--</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  aLastState <span style="color:#f92672">=</span> aState;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setup</span>() {
+</span></span><span style="display:flex;"><span>  pinMode(outputA, INPUT);
+</span></span><span style="display:flex;"><span>  pinMode(outputB, INPUT);
+</span></span><span style="display:flex;"><span>  Serial.begin(<span style="color:#ae81ff">9600</span>);
+</span></span><span style="display:flex;"><span>  aLastState <span style="color:#f92672">=</span> digitalRead(outputA);
+</span></span><span style="display:flex;"><span>  attachInterrupt(digitalPinToInterrupt(outputA), handleEncoder, CHANGE);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">loop</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> lastCounter <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (lastCounter <span style="color:#f92672">!=</span> counter) {
+</span></span><span style="display:flex;"><span>    Serial.print(<span style="color:#e6db74">&#34;Position: &#34;</span>);
+</span></span><span style="display:flex;"><span>    Serial.println(counter);
+</span></span><span style="display:flex;"><span>    lastCounter <span style="color:#f92672">=</span> counter;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="why-use-an-interrupt-instead-of-digitalread-in-the-loop">Why Use an Interrupt Instead of <code>digitalRead</code> in the Loop?</h3>
+<p>Using an <strong>interrupt function</strong> (<code>attachInterrupt</code>) allows the microcontroller to <strong>immediately detect</strong> changes in the encoder signal without continuously checking in the <code>loop()</code>. If we used <code>digitalRead</code> in the loop, we might miss some pulses, especially if the encoder rotates quickly. Interrupts ensure <strong>real-time response</strong> to changes in the encoder&rsquo;s state, leading to more accurate readings.</p>
+<h3 id="understanding-volatile-and-iram_attr">Understanding <code>volatile</code> and <code>IRAM_ATTR</code></h3>
+<ul>
+<li>
+<p><strong><code>volatile</code></strong>: This keyword tells the compiler that a variable can be modified by an interrupt, preventing optimization that might lead to incorrect behavior.</p>
+</li>
+<li>
+<p><strong><code>IRAM_ATTR</code></strong>: This attribute ensures that the interrupt handler function (<code>handleEncoder</code>) is stored in <strong>IRAM (Instruction RAM)</strong> for faster execution, which is crucial for real-time processing.</p>
+</li>
+</ul>
+<h3 id="why-cant-we-use-serialprint-in-handleencoder">Why Can&rsquo;t We Use <code>Serial.print</code> in <code>handleEncoder</code>?</h3>
+<p>The <code>handleEncoder</code> function is an <strong>Interrupt Service Routine (ISR)</strong>, which should execute as quickly as possible. Using <code>Serial.print</code> inside an ISR can cause issues because:</p>
+<ul>
+<li><strong>Serial communication is slow</strong> compared to ISR execution speed.</li>
+<li><strong>Serial functions use interrupts internally</strong>, which may conflict with the encoder ISR.</li>
+<li><strong>Delays in ISR execution can cause missed pulses</strong>, leading to inaccurate readings.</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>Incremental rotary encoders are fundamental in position and motion sensing applications. Understanding how they generate quadrature signals allows precise control and tracking of rotary motion. With an ESP32 and a simple interrupt-driven approach, you can easily integrate an incremental encoder into your projects.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://howtomechatronics.com/tutorials/arduino/rotary-encoder-works-use-arduino/">https://howtomechatronics.com/tutorials/arduino/rotary-encoder-works-use-arduino/</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Rotary_encoder">https://en.wikipedia.org/wiki/Rotary_encoder</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Incremental_encoder">https://en.wikipedia.org/wiki/Incremental_encoder</a></li>
+<li><a href="https://esp32io.com/tutorials/esp32-rotary-encoder">https://esp32io.com/tutorials/esp32-rotary-encoder</a></li>
+</ul>
+
+  </div>
+</article>
+
+
+
+
+<hr />
+
+
+<p class="articleTagsContainer">
+  <span> </span>
+  <strong>
+    Tags:</strong>
+  
+  <a  href="/tags/electronics/">#
+    Electronics</a>
+  
+</p>
+
+
+
+
+    <script
+        defer
+        src="https://example.com/js/commento.js"
+        data-no-fonts="true"
+    ></script>
+    <div id="commento"></div>
+
+
+<script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
+
+<div id="ficurinia-cactus-comments"></div>
+
+<script>
+initComments({
+    node: document.getElementById("ficurinia-cactus-comments"),
+    defaultHomeserverUrl: 'https:\/\/matrix.cactus.chat:8448',
+    serverName: 'cactus.chat',
+    siteName: "example.com",
+    commentSectionId: "1e100543099ab5bc9c58c13dbbee8df2"
+})
+</script>
+
+
+    
+    
+        
+        <div class="relatedArticlesContainer">
+            <hr />
+            <h2>More posts like this</h2>
+            <div class="postlist ">
+                <article class="card postlistitem">
+    <div>
+        <h2>
+            <a href="/posts/charging-the-byd-seagull-how-8a-and-32a-chargers-impact-its-lfp-battery/">Charging the BYD Seagull: How 8A and 32A Chargers Impact Its LFP Battery</a>
+        </h2>
+        <p class="date">
+            <span title='Date'>󰃭 </span>
+    2025-03-15
+
+
+            
+                | 
+                <span title='Tags'> </span>
+                
+                    <a href="/tags/cars">#Cars</a>
+                
+                    <a href="/tags/electronics">#Electronics</a>
+                
+            
+        </p>
+        
+            
+        
+        
+            <div class="articlePreview">
+                <p>
+                    
+                        How different charging rates affect the BYD Seagull’s lithium iron phosphate (LFP) battery. Learn about battery longevity, charging efficiency, and the best practices for maintaining performance.
+                    
+                </p>
+                <p><a href="/posts/charging-the-byd-seagull-how-8a-and-32a-chargers-impact-its-lfp-battery/">Continue reading </a></p>
+            </div>
+        
+    </div>
+    <hr />
+</article>
+<article class="card postlistitem">
+    <div>
+        <h2>
+            <a href="/posts/fixing-my-ethernet-cable-issue/">Fixing My Ethernet Cable Issue</a>
+        </h2>
+        <p class="date">
+            <span title='Date'>󰃭 </span>
+    2025-02-26
+
+
+            
+                | 
+                <span title='Tags'> </span>
+                
+                    <a href="/tags/electronics">#Electronics</a>
+                
+            
+        </p>
+        
+            
+        
+        
+            <div class="articlePreview">
+                <p>
+                    
+                        Diagnosing and fixing an Ethernet cable issue by testing connections, replacing RJ-45 plugs, and ensuring proper wiring
+                    
+                </p>
+                <p><a href="/posts/fixing-my-ethernet-cable-issue/">Continue reading </a></p>
+            </div>
+        
+    </div>
+    <hr />
+</article>
+
+            </div>
+        </div>
+    
+
+
+                    </main><footer>
+  <hr />
+
+<p><small>
+      2025 &copy;
+      
+    </small></p>
+  <p><small>
+      <a href='https://gitlab.com/gabmus/hugo-ficurinia'>Ficurinia theme</a> for <a href='https://gohugo.io'>Hugo</a> by <a href='https://gabmus.org'>Gabriele Musco</a>. Licensed under <a href='https://www.gnu.org/licenses/agpl-3.0.html'>GNU AGPLv3</a>.
+    </small></p>
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+</footer></div>
+            </div>
+        </div>
+    
+        <script
+            async
+            defer
+            data-domain="example.com"
+            src="https://something.com/..."
+        ></script>
+    
+
+
+    
+        <script
+            async
+            defer
+            data-website-id="example-tracking-code"
+            src="https://something.com/..."
+        ></script>
+    
+
+
+</body>
+</html>

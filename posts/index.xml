@@ -5,7 +5,193 @@
     <description>Recent content in Posts on Abdullah Salameh&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 15 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" /><icon>/logo.svg</icon>
+    <lastBuildDate>Sat, 29 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" /><icon>/logo.svg</icon>
+    
+    
+    <item>
+      <title>Understanding Incremental Rotary Encoders</title>
+      <link>/posts/understanding-incremental-rotary-encoders/</link>
+      <pubDate>Sat, 29 Mar 2025 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/understanding-incremental-rotary-encoders/</guid>
+      <description><![CDATA[<p>A <strong>rotary encoder</strong> is a device that converts the angular position of a shaft into analog or digital output signals. These encoders are commonly used in industrial automation, robotics, and consumer electronics.</p>
+<h2 id="types-of-rotary-encoders">Types of Rotary Encoders</h2>
+<p>There are two main types of rotary encoders:</p>
+<h3 id="absolute-encoders">Absolute Encoders</h3>
+<p>An <strong>absolute encoder</strong> maintains position information even when power is removed. It provides the current angular position of the shaft at any given moment.</p>
+<h3 id="incremental-encoders">Incremental Encoders</h3>
+<p>An <strong>incremental encoder</strong>, on the other hand, does not retain position information when powered off. It provides motion data based on changes from an initial reference point. To determine an absolute position, the system must first move to a known reference angle.</p>
+<p>In this article, we will focus on <strong>incremental encoders</strong> and provide a simple ESP32 code to interface with them.</p>
+<h2 id="how-incremental-encoders-work">How Incremental Encoders Work</h2>
+<p>Incremental encoders have two main output signals:</p>
+<ul>
+<li><strong>A (Channel A)</strong></li>
+<li><strong>B (Channel B)</strong></li>
+</ul>
+<p>These signals indicate movement and direction when the shaft rotates. Some encoders also include a third signal, <strong>Z</strong>, which serves as a reference point for position calibration.</p>
+<h3 id="signal-representation">Signal Representation</h3>
+<p>Here is an image illustrating signals <strong>A</strong>, <strong>B</strong>, and <strong>Z</strong>:</p>
+<p><img src="/images/moving_disc_with_slits-1771498052.png" alt="Image Description"></p>
+<h2 id="quadrature-outputs">Quadrature Outputs</h2>
+<p>Incremental encoders employ a <strong>quadrature encoder</strong> to generate their <em>A</em> and <em>B</em> output signals. The pulses from these outputs are quadrature-encoded, meaning that <em>A</em> and <em>B</em> are phase-shifted by 90 degrees when the encoder moves at a constant speed.</p>
+<p><img src="/images/Quadrature_Diagram.psd.png" alt="Image Description"></p>
+<p>At any given moment, the phase difference between the <em>A</em> and <em>B</em> signals indicates the encoder&rsquo;s rotation direction:</p>
+<ul>
+<li>
+<p>A phase difference of <strong>+90°</strong> corresponds to <strong>clockwise rotation</strong>.</p>
+</li>
+<li>
+<p>A phase difference of <strong>−90°</strong> corresponds to <strong>counterclockwise rotation</strong>.</p>
+</li>
+</ul>
+<p><img src="/images/quadrature-969270470.jpg" alt="Image Description"></p>
+<p><img src="/images/Incremental_directional_encoder.gif" alt="Image Description"></p>
+<h3 id="quadrature-encoding-table">Quadrature Encoding Table</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Step</th>
+          <th><code>outputA</code></th>
+          <th><code>outputB</code></th>
+          <th>Rotation Direction</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>LOW</td>
+          <td>LOW</td>
+          <td>Start Position</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>HIGH</td>
+          <td>LOW</td>
+          <td>Clockwise</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>HIGH</td>
+          <td>HIGH</td>
+          <td>Clockwise</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>LOW</td>
+          <td>HIGH</td>
+          <td>Clockwise</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>LOW</td>
+          <td>LOW</td>
+          <td>Next Step</td>
+      </tr>
+      <tr>
+          <td>6</td>
+          <td>LOW</td>
+          <td>HIGH</td>
+          <td>Counterclockwise</td>
+      </tr>
+      <tr>
+          <td>7</td>
+          <td>HIGH</td>
+          <td>HIGH</td>
+          <td>Counterclockwise</td>
+      </tr>
+      <tr>
+          <td>8</td>
+          <td>HIGH</td>
+          <td>LOW</td>
+          <td>Counterclockwise</td>
+      </tr>
+      <tr>
+          <td>9</td>
+          <td>LOW</td>
+          <td>LOW</td>
+          <td>Next Step</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="resolution-of-an-incremental-encoder">Resolution of an Incremental Encoder</h2>
+<p>The <strong>resolution</strong> of an incremental encoder determines its precision. It is specified as:</p>
+<ul>
+<li><strong>Pulses per Revolution (PPR)</strong> for rotary encoders.</li>
+<li><strong>Pulses per Unit Distance (e.g., mm)</strong> for linear encoders.</li>
+</ul>
+<p>Each signal edge (rising and falling transitions of <em>A</em> and <em>B</em>) represents a detected position change. Since each full cycle has four edges (rising <em>A</em>, rising <em>B</em>, falling <em>A</em>, falling <em>B</em>), the measurement resolution is <strong>one-fourth of a full <em>A</em> or <em>B</em> output cycle</strong>.</p>
+<p>For example, a <strong>1000 pulse-per-revolution (PPR) rotary encoder</strong> has:</p>
+<ul>
+<li>Per-cycle measurement resolution = <strong>360° / 1000 cycles = 0.36° per pulse</strong></li>
+<li>Effective resolution = <strong>0.36° / 4 = 0.09° per edge</strong></li>
+</ul>
+<h2 id="esp32-code-for-incremental-encoder">ESP32 Code for Incremental Encoder</h2>
+<p>Below is a simple <strong>ESP32 Arduino</strong> code to read an incremental rotary encoder:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">#define outputA 17
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define outputB 16
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">volatile</span> <span style="color:#66d9ef">int</span> counter <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">volatile</span> <span style="color:#66d9ef">int</span> aLastState;  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> IRAM_ATTR <span style="color:#a6e22e">handleEncoder</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">int</span> aState <span style="color:#f92672">=</span> digitalRead(outputA);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (aState <span style="color:#f92672">!=</span> aLastState) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (digitalRead(outputB) <span style="color:#f92672">!=</span> aState) {
+</span></span><span style="display:flex;"><span>      counter<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>      counter<span style="color:#f92672">--</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  aLastState <span style="color:#f92672">=</span> aState;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setup</span>() {
+</span></span><span style="display:flex;"><span>  pinMode(outputA, INPUT);
+</span></span><span style="display:flex;"><span>  pinMode(outputB, INPUT);
+</span></span><span style="display:flex;"><span>  Serial.begin(<span style="color:#ae81ff">9600</span>);
+</span></span><span style="display:flex;"><span>  aLastState <span style="color:#f92672">=</span> digitalRead(outputA);
+</span></span><span style="display:flex;"><span>  attachInterrupt(digitalPinToInterrupt(outputA), handleEncoder, CHANGE);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">loop</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> lastCounter <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (lastCounter <span style="color:#f92672">!=</span> counter) {
+</span></span><span style="display:flex;"><span>    Serial.print(<span style="color:#e6db74">&#34;Position: &#34;</span>);
+</span></span><span style="display:flex;"><span>    Serial.println(counter);
+</span></span><span style="display:flex;"><span>    lastCounter <span style="color:#f92672">=</span> counter;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="why-use-an-interrupt-instead-of-digitalread-in-the-loop">Why Use an Interrupt Instead of <code>digitalRead</code> in the Loop?</h3>
+<p>Using an <strong>interrupt function</strong> (<code>attachInterrupt</code>) allows the microcontroller to <strong>immediately detect</strong> changes in the encoder signal without continuously checking in the <code>loop()</code>. If we used <code>digitalRead</code> in the loop, we might miss some pulses, especially if the encoder rotates quickly. Interrupts ensure <strong>real-time response</strong> to changes in the encoder&rsquo;s state, leading to more accurate readings.</p>
+<h3 id="understanding-volatile-and-iram_attr">Understanding <code>volatile</code> and <code>IRAM_ATTR</code></h3>
+<ul>
+<li>
+<p><strong><code>volatile</code></strong>: This keyword tells the compiler that a variable can be modified by an interrupt, preventing optimization that might lead to incorrect behavior.</p>
+</li>
+<li>
+<p><strong><code>IRAM_ATTR</code></strong>: This attribute ensures that the interrupt handler function (<code>handleEncoder</code>) is stored in <strong>IRAM (Instruction RAM)</strong> for faster execution, which is crucial for real-time processing.</p>
+</li>
+</ul>
+<h3 id="why-cant-we-use-serialprint-in-handleencoder">Why Can&rsquo;t We Use <code>Serial.print</code> in <code>handleEncoder</code>?</h3>
+<p>The <code>handleEncoder</code> function is an <strong>Interrupt Service Routine (ISR)</strong>, which should execute as quickly as possible. Using <code>Serial.print</code> inside an ISR can cause issues because:</p>
+<ul>
+<li><strong>Serial communication is slow</strong> compared to ISR execution speed.</li>
+<li><strong>Serial functions use interrupts internally</strong>, which may conflict with the encoder ISR.</li>
+<li><strong>Delays in ISR execution can cause missed pulses</strong>, leading to inaccurate readings.</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>Incremental rotary encoders are fundamental in position and motion sensing applications. Understanding how they generate quadrature signals allows precise control and tracking of rotary motion. With an ESP32 and a simple interrupt-driven approach, you can easily integrate an incremental encoder into your projects.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://howtomechatronics.com/tutorials/arduino/rotary-encoder-works-use-arduino/">https://howtomechatronics.com/tutorials/arduino/rotary-encoder-works-use-arduino/</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Rotary_encoder">https://en.wikipedia.org/wiki/Rotary_encoder</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Incremental_encoder">https://en.wikipedia.org/wiki/Incremental_encoder</a></li>
+<li><a href="https://esp32io.com/tutorials/esp32-rotary-encoder">https://esp32io.com/tutorials/esp32-rotary-encoder</a></li>
+</ul>
+]]></description>
+      
+    </item>
+    
     
     
     <item>
