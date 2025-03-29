@@ -12,8 +12,12 @@
         
         
     
-    "articles": [{"date":"0001-01-01","image":"","imageAlt":"","link":"/search/","summary":"","tags":[],"title":"Search"}],
-    "test": "Charging the BYD Seagull: How 8A and 32A Chargers Impact Its LFP Battery   Fixing My Ethernet Cable Issue   SpotX – No Ads on Spotify for Windows   Understanding UART and Serial Communication   Understanding Capacitor Charging and the Concept of Full Charge   Setting up ESP32   ROS 2 Cheat Sheets   Setting up ESP8266   A Beginner's Guide to Object-Oriented Programming (OOP) in Python   VirtualBox Clipboard Issues on Ubuntu   About me   Starting a blog   Learning VIM   Download VS-Code on Linux   Manifest   Search   ",
+        
+        
+        
+    
+    "articles": [{"date":"0001-01-01","image":"","imageAlt":"","link":"/manifest/index.json","summary":"","tags":[],"title":"Manifest"},{"date":"0001-01-01","image":"","imageAlt":"","link":"/search/","summary":"","tags":[],"title":"Search"}],
+    "test": "Understanding Incremental Rotary Encoders   Charging the BYD Seagull: How 8A and 32A Chargers Impact Its LFP Battery   Fixing My Ethernet Cable Issue   SpotX – No Ads on Spotify for Windows   Understanding UART and Serial Communication   Understanding Capacitor Charging and the Concept of Full Charge   Setting up ESP32   ROS 2 Cheat Sheets   Setting up ESP8266   A Beginner's Guide to Object-Oriented Programming (OOP) in Python   VirtualBox Clipboard Issues on Ubuntu   About me   Starting a blog   Learning VIM   Download VS-Code on Linux   Manifest   Search   ",
     "page": "4",
     "next": ""
 }
