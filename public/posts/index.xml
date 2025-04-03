@@ -5,7 +5,63 @@
     <description>Recent content in Posts on Abdullah Salameh&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 29 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" /><icon>/logo.svg</icon>
+    <lastBuildDate>Wed, 02 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" /><icon>/logo.svg</icon>
+    
+    
+    <item>
+      <title>How to Open Bluetooth Devices with Win &#43; Shift &#43; B Using AutoHotkey</title>
+      <link>/posts/how-to-open-bluetooth-devices-with-win-&#43;-shift-&#43;-b-using-autohotkey/</link>
+      <pubDate>Wed, 02 Apr 2025 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/how-to-open-bluetooth-devices-with-win-&#43;-shift-&#43;-b-using-autohotkey/</guid>
+      <description><![CDATA[<p>If you&rsquo;re looking to streamline your workflow and access Bluetooth settings quickly, using <strong>Win + Shift + B</strong> to open Bluetooth devices is a fantastic shortcut! Here’s a step-by-step guide on how to set it up with <strong>AutoHotkey (AHK)</strong>.</p>
+<hr>
+<h3 id="step-1-install-autohotkey">Step 1: Install AutoHotkey</h3>
+<p>First, you&rsquo;ll need to install AutoHotkey on your system.</p>
+<ol>
+<li>Go to the <a href="https://www.autohotkey.com/">AutoHotkey website</a> and download the installer.</li>
+<li>Follow the instructions to install AutoHotkey on your computer.</li>
+</ol>
+<hr>
+<h3 id="step-2-create-the-autohotkey-script">Step 2: Create the AutoHotkey Script</h3>
+<p>Now that you have AutoHotkey installed, you’ll need to create a script that maps the <strong>Win + Shift + B</strong> keyboard shortcut to open Bluetooth settings.</p>
+<ol>
+<li>
+<p><strong>Right-click on your Desktop</strong>, select <strong>New</strong>, and then <strong>AutoHotkey Script</strong>.</p>
+</li>
+<li>
+<p>Name the script <strong>BluetoothShortcut.ahk</strong>.</p>
+</li>
+<li>
+<p><strong>Right-click</strong> the newly created file and select <strong>Edit Script</strong>.</p>
+</li>
+<li>
+<p>Delete any default content inside the file, and paste the following code:</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ahk" data-lang="ahk"><span style="display:flex;"><span>#+b::Run, ms<span style="color:#f92672">-</span>settings<span style="color:#f92672">:</span>bluetooth<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>return<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p><strong>Explanation:</strong>
+- <code>#</code> = Win key
+- <code>+</code> = Shift key
+- <code>b</code> = B key	
+This line of code tells AutoHotkey to open Bluetooth settings when <strong>Win + Shift + B</strong> is pressed.</p>
+<ol start="5">
+<li><strong>Save the file</strong> and <strong>double-click</strong> it to run the script.</li>
+</ol>
+<p>After this, pressing <strong>Win + Shift + B</strong> will instantly open Bluetooth settings on your Windows machine.</p>
+<hr>
+<h3 id="step-3-optional-run-on-startup">Step 3 (Optional): Run on Startup</h3>
+<p>If you want the script to run automatically every time you boot your computer, you can add it to your startup folder:</p>
+<ol>
+<li>Press <strong>Win + R</strong>, type <code>shell:startup</code>, and hit <strong>Enter</strong>.</li>
+<li>Copy your <strong>BluetoothShortcut.ahk</strong> script file into the <strong>Startup</strong> folder.</li>
+</ol>
+<p>Now, every time you start Windows, the Bluetooth shortcut will be ready to use! 🎉</p>
+]]></description>
+      
+    </item>
+    
     
     
     <item>
